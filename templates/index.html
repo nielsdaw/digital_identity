@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}Hello World{% endblock %}
+
+{%block content%}
+    <h1>Login demo app with Python Social Auth</h1>
+    {%if user.is_authenticated%}
+        <h1>Hello {{user.username}}</h1>
+        <small>This is your profile picture</small>
+        <img src="{{user.userprofile.photo_url}}" width=20% class="img-account" >
+        <a href="{% url 'logout' %}">Exit</a>
+        <p>{{ user.userprofile.photo_url }}</p>
+        l<p>Linkedin industry: {{ linkedin.l_industry }}</p>
+    {%else%}
+        <h3>Select login option:</h3>
+        {% load staticfiles %}
+        <p>
+            <a href="{% url 'social:begin' 'facebook' %}">
+            Login with facebook
+            </a>
+        </p>
+        <a href="{% url 'social:begin' 'instagram' %}">
+            Login with instagram
+        </a>
+    {%endif%}
+{%endblock%}

@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}Logged in{% endblock %}
+
+{%block content%}
+    {%if user.is_authenticated%}
+        <h1>Welcome there {{user.username}}</h1>
+        <p>
+            Your email: {{ user.email }}
+        </p>
+
+        <img src="{{ user.userprofile.photo_url }}" style=""class="img-account">
+        <p>user id: {{ user.id }}</p>
+        <p>profile id: {{ user.userprofile.facebook_id }}</p>
+        <hr>
+        <p>
+            linkedin industry: {{ linkedin.l_industry }}
+        </p>
+    {%else%}
+        <p id="p-large"a>You must be logged in to view this page</p>
+    {%endif%}
+        <hr>
+        <a href="{% url 'social:begin' 'instagram' %}">connect instagram</a>
+        <hr>
+        <a href="{% url 'social:begin' 'linkedin' %}">connect linkedin</a>
+        <hr>
+        <br><a href="{% url 'login' %}">Back to frontpage</a>
+{%endblock%}
