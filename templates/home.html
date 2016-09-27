@@ -11,20 +11,23 @@
         <p>user id: {{ user.id }}</p>
         <p><b>Facebook</b></p>
         <img src="{{ facebook.profile_picture_url }}" style=""class="img-account">
-        <p>facebook id: {{ facebook.fb_id }}</p>
-        <p>Your facebook email: {{ facebook.email }}</p>
+        <p>facebook id: {{ facebook.facebook_id }}</p>
+        <p>Your facebook email: {{ facebook.facebook_email }}</p>
         <hr>
 
-        <b>Instagram</b>
+        <p><b>Instagram</b></p>
         <img src="{{ instagram.profile_picture_url }}" style=""class="img-account">
-        <hr>
-        <p>instagram id: {{ instagram.i_id }}</p>
-        <p>instagram email: {{ instagram.i_email }}</p>
+        <p>instagram id: {{ instagram.instagram_id }}</p>
+        <p>number of pictures: {{ instagram.number_of_pictures }}</p>
+        <p>number of followers: {{ instagram.number_of_followers }}</p>
+        <p>number of people you are following: {{ instagram.number_of_following }}</p>
         <hr>
         <p><b>LinkedIn</b></p>
         <p>
             linkedin industry: {{ linkedin.l_industry }}
         </p>
+        <a href="https://api.instagram.com/v1/users/self/media/recent/?access_token={{ instagram.access_token }}">All photoes</a>
+        <a href="https://api.instagram.com/v1/users/self/media/liked?access_token={{ instagram.access_token }}">recent likes</a>
     {%else%}
         <p id="p-large"a>You must be logged in to view this page</p>
     {%endif%}

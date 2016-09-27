@@ -1,32 +1,14 @@
-from social_profile.models import UserProfile, FacebookProfile
+from social_profile.models import UserProfile, FacebookProfile, InstagramProfile
 from django.forms.models import model_to_dict
 
+
 def update_profile(strategy, backend, user, response, *args, **kwargs):
-    profile = ""
 
     # Facebook
     if backend.name == 'facebook':
-        profile = UserProfile.objects.get(user=user)
         print("facebook response: {}".format(response))
-        profile.facebook_id = response.get('id')
-        profile.facebook_username = response.get('name')
-        profile.photo_url = response['picture']['data']['url']
-        profile.save()
 
-        var = "{},\n{},\n{},\n{},\n{},\n{},\n{},\n{},\n{},\n{}".format(
-            response.get('id'),
-            response.get('first_name'),
-            response.get('last_name'),
-            response.get('email'),
-            response.get('gender'),
-            response['picture']['data']['url'],
-            response['friends']['summary']['total_count'],
-            response.get('link'),
-            response.get('age_range'),
-            response.get('updated_time')
-        )
-        print(var)
-
+        # create new facebook profile, without storing to database
         facebook_profile = FacebookProfile.objects.create_facebook_profile(
             response.get('id'),
             response.get('first_name'),
@@ -37,27 +19,41 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
             response['friends']['summary']['total_count'],
             response.get('link'),
             response['age_range']['min'],
-            response.get('updated_time')
+            response.get('updated_time'),
+            response.get('access_token')
         )
+        # change it to dict, in order to set in session
+        facebook_dict = model_to_dict(facebook_profile)
 
-        data = model_to_dict(facebook_profile)
-
-        print(data)
-
-        strategy.session_set('facebook', data)
+        # add facebook dict to session
+        strategy.session_set('facebook', facebook_dict)
 
     # Instagram
     elif backend.name == 'instagram':
-        profile = UserProfile.objects.get(user=user)
         print("instagram response: {}".format(response))
-        profile.instagram_username = response['user']['username']
-        profile.instagram_id = response['user']['id']
-        profile.photo_url = response['user']['profile_picture']
-        profile.save()
+
+        # create instagram object
+        instagram_profile = InstagramProfile.objects.create_instagram_profile(
+            response['user']['id'],
+            response['user']['profile_picture'],
+            response['user']['bio'],
+            response['user']['website'],
+            response['user']['username'],
+            response['user']['full_name'],
+            response['access_token'],
+            response['data']['counts']['followed_by'],
+            response['data']['counts']['media'],
+            response['data']['counts']['follows']
+        )
+        # change it to dict, in order to set in session
+        instagram_dict = model_to_dict(instagram_profile)
+
+        # add facebook dict to session
+        strategy.session_set('instagram', instagram_dict)
 
     # LinkedIn
     elif backend.name == 'linkedin':
-        print(response)
+        print("LinkedIn response: {}".format(response))
         linkedin = {
             'l_first_name': response.get('firstName'),
             'l_industry': response.get('industry')

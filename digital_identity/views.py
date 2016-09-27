@@ -1,11 +1,10 @@
-from django.core.urlresolvers import reverse
 from django.shortcuts import render, render_to_response
 from django.contrib import auth
 from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User
+from . import services
 
 
 
@@ -36,6 +35,12 @@ def logged(request):
     if 'facebook' in request.session:
         facebook = request.session.get('facebook')
         response_dict.update({'facebook': facebook})
+
+    if 'instagram' in request.session:
+        instagram = request.session.get('instagram')
+        response_dict.update({'instagram': instagram})
+        print(instagram)
+        services.get_recent_photos(instagram['access_token'])
 
     # LinkedIn dict
     if 'linkedin' in request.session:
