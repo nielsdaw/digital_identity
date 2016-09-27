@@ -1,5 +1,5 @@
-from social_profile.models import UserProfile
-
+from social_profile.models import UserProfile, FacebookProfile
+from django.forms.models import model_to_dict
 
 def update_profile(strategy, backend, user, response, *args, **kwargs):
     profile = ""
@@ -13,6 +13,39 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
         profile.photo_url = response['picture']['data']['url']
         profile.save()
 
+        var = "{},\n{},\n{},\n{},\n{},\n{},\n{},\n{},\n{},\n{}".format(
+            response.get('id'),
+            response.get('first_name'),
+            response.get('last_name'),
+            response.get('email'),
+            response.get('gender'),
+            response['picture']['data']['url'],
+            response['friends']['summary']['total_count'],
+            response.get('link'),
+            response.get('age_range'),
+            response.get('updated_time')
+        )
+        print(var)
+
+        facebook_profile = FacebookProfile.objects.create_facebook_profile(
+            response.get('id'),
+            response.get('first_name'),
+            response.get('last_name'),
+            response.get('email'),
+            response.get('gender'),
+            response['picture']['data']['url'],
+            response['friends']['summary']['total_count'],
+            response.get('link'),
+            response['age_range']['min'],
+            response.get('updated_time')
+        )
+
+        data = model_to_dict(facebook_profile)
+
+        print(data)
+
+        strategy.session_set('facebook', data)
+
     # Instagram
     elif backend.name == 'instagram':
         profile = UserProfile.objects.get(user=user)
@@ -24,19 +57,11 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
 
     # LinkedIn
     elif backend.name == 'linkedin':
+        print(response)
         linkedin = {
             'l_first_name': response.get('firstName'),
             'l_industry': response.get('industry')
         }
         strategy.session_set('linkedin', linkedin)
-    #     profile = LinkedInProfile.objects.get(user=user)
-    #     print("linkedin response: {}".format(response))
-    #     profile.first_name = response.get('firstName')
-    #     profile.last_name = response.get('lastName')
-    #     profile.industry = response.get('industry')
-    #     print(profile.industry)
-    #     return profile
 
-
-    #profile.save()
 

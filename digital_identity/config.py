@@ -55,13 +55,47 @@ SOCIAL_AUTH_FACEBOOK_KEY = '1145374812173983'
 SOCIAL_AUTH_FACEBOOK_SECRET = 'aa7ef2b78c17b984b43ff4b55f1d2bd9'
 
 SOCIAL_AUTH_FACEBOOK_SCOPE = [
+    'public_profile',
     'email',
     'user_friends',
 ]
 
 SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
-  'fields': 'id, name, picture, email, age_range'
+  'fields': 'id,'
+            'name,'
+            'first_name,'
+            'last_name,'
+            'picture,'
+            'email,'
+            'age_range,'
+            'link,'
+            'gender,'
+            'locale,'
+            'timezone,'
+            'updated_time,'
+            'friends'
+
 }
+
+# -- Public available fields --
+# 'id,'
+# 'name,'
+# 'first_name,'
+# 'last_name,'
+# 'link,'
+# 'gender,'
+# 'locale,'
+# 'picture,'
+# 'email,'
+# 'age_range,'
+# 'timezone,'
+# 'updated,'
+# 'birthday,'
+# 'about,'
+# 'data,'
+# 'paging,'
+# 'summary'
+# 'friends' ['data'] or ['summary']
 
 
 # LinkedIn settings

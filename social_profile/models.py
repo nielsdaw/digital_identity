@@ -23,8 +23,48 @@ class UserProfile(models.Model):
         )
 
 
+class FacebookManager(models.Manager):
+    def create_facebook_profile(
+            self,
+            fb_id,
+            first_name,
+            last_name,
+            fb_email,
+            gender,
+            profile_picture_url,
+            friends_count,
+            link,
+            age_range,
+            last_updated
+    ):
+        facebook_profile = self.create(
+            fb_id=fb_id,
+            first_name=first_name,
+            last_name=last_name,
+            fb_email=fb_email,
+            gender=gender,
+            profile_picture_url=profile_picture_url,
+            friends_count=friends_count,
+            link=link,
+            age_range=age_range,
+            last_updated=last_updated
+        )
+        return facebook_profile
+
+
 class FacebookProfile(models.Model):
-    pass
+    fb_id = models.IntegerField(default=0)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    fb_email = models.EmailField()
+    gender = models.CharField(max_length=20)
+    profile_picture_url = models.TextField()
+    friends_count = models.IntegerField(default=0)  # friends['summary']['total_count']
+    link = models.TextField()
+    age_range = models.IntegerField(default=0)
+    last_updated = models.DateTimeField()
+
+    objects = FacebookManager()
 
 
 class InstagramProfile(models.Model):
@@ -35,8 +75,8 @@ class TwitterProfile(models.Model):
     pass
 
 
-class LinkedInProfile(models.Model):
-    pass
+#class LinkedInProfile(models.Model):
+ #   pass
 
 
 class SoundCloudProfile(models.Model):

@@ -30,14 +30,19 @@ def login(request):
 @login_required
 def logged(request):
     user = User.objects.get(pk=request.user.id)
+    response_dict = {"user": request.user}
 
-    # LinkedIn settings
+    # Facebook dict
+    if 'facebook' in request.session:
+        facebook = request.session.get('facebook')
+        response_dict.update({'facebook': facebook})
+
+    # LinkedIn dict
     if 'linkedin' in request.session:
         linked_in = request.session.get('linkedin')
-        print(linked_in['l_industry'])
-        return render_to_response("home.html", {"user": request.user,'linkedin':linked_in})
-    else:
-        return render_to_response("home.html", {"user": request.user})
+        response_dict.update({'linkedin': linked_in})
+
+    return render_to_response("home.html", response_dict)
 
 
 @login_required

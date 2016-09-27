@@ -4,15 +4,24 @@
 
 {%block content%}
     {%if user.is_authenticated%}
-        <h1>Welcome there {{user.username}}</h1>
+        <h1>Welcome there {{facebook.first_name }} {{facebook.last_name}}</h1>
         <p>
             Your email: {{ user.email }}
         </p>
-
-        <img src="{{ user.userprofile.photo_url }}" style=""class="img-account">
         <p>user id: {{ user.id }}</p>
-        <p>profile id: {{ user.userprofile.facebook_id }}</p>
+        <p><b>Facebook</b></p>
+        <img src="{{ facebook.profile_picture_url }}" style=""class="img-account">
+        <p>facebook id: {{ facebook.fb_id }}</p>
+        <p>Your facebook email: {{ facebook.email }}</p>
         <hr>
+
+        <b>Instagram</b>
+        <img src="{{ instagram.profile_picture_url }}" style=""class="img-account">
+        <hr>
+        <p>instagram id: {{ instagram.i_id }}</p>
+        <p>instagram email: {{ instagram.i_email }}</p>
+        <hr>
+        <p><b>LinkedIn</b></p>
         <p>
             linkedin industry: {{ linkedin.l_industry }}
         </p>
