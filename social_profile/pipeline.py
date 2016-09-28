@@ -1,4 +1,4 @@
-from social_profile.models import UserProfile, FacebookProfile, InstagramProfile
+from social_profile.models import FacebookProfile, InstagramProfile
 from django.forms.models import model_to_dict
 
 

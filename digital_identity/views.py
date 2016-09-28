@@ -38,9 +38,9 @@ def logged(request):
 
     if 'instagram' in request.session:
         instagram = request.session.get('instagram')
+        recent_photos = services.get_recent_photos(instagram['access_token'])
+        instagram.update({'photos': recent_photos})
         response_dict.update({'instagram': instagram})
-        print(instagram)
-        services.get_recent_photos(instagram['access_token'])
 
     # LinkedIn dict
     if 'linkedin' in request.session:

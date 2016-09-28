@@ -21,6 +21,12 @@
         <p>number of pictures: {{ instagram.number_of_pictures }}</p>
         <p>number of followers: {{ instagram.number_of_followers }}</p>
         <p>number of people you are following: {{ instagram.number_of_following }}</p>
+        <p>Your photos:</p>
+        {% for photo in instagram.photos %}
+
+            <img src="{{ photo }}" width="20%">
+
+        {% endfor %}
         <hr>
         <p><b>LinkedIn</b></p>
         <p>

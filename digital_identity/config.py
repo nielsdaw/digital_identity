@@ -53,6 +53,9 @@ SOCIAL_AUTH_INSTAGRAM_AUTH_EXTRA_ARGUMENTS = {
         'likes'
 }
 
+# --- NO FIELDS FOR INSTAGRAM, ONLY SCOPE ---
+
+
 
 # facebook auth
 
@@ -83,7 +86,7 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
 
 }
 
-# -- Public available fields --
+# --- FACEBOOK PUBLIC AVAILABLE FIELDS ---
 # 'id,'
 # 'name,'
 # 'first_name,'
@@ -112,12 +115,31 @@ SOCIAL_AUTH_LINKEDIN_SECRET = 'Z0yza5BLiAfq7xV6'
 
 SOCIAL_AUTH_LINKEDIN_SCOPE = ['r_basicprofile',]
 
-SOCIAL_AUTH_LINKEDIN_FIELD_SELECTORS = ['email-address', 'headline', 'industry']
+SOCIAL_AUTH_LINKEDIN_FIELD_SELECTORS = [
+    'email-address',
+    'headline',
+    'industry',
+    'location',
+    'current-share',
+    'num-connections',
+    'num-connections-capped',
+    'summary',
+    'specialties',
+    'positions',
+    'picture-url',
+]
 
-SOCIAL_AUTH_LINKEDIN_EXTRA_DATA = [('id', 'id'),
-                                   ('firstName', 'first_name'),
-                                   ('lastName', 'last_name'),
-                                   ('emailAddress', 'email_address'),
-                                   ('headline', 'headline'),
-                                   ('industry', 'industry')]
+# ---LINKEDIN PUBLIC AVAILABLE FIELDS ---
+#    'email-address',
+#     'headline',
+#     'industry',
+#     'location',
+#     'current-share',
+#     'num-connections',
+#     'num-connections-capped',
+#     'summary',
+#     'specialties',
+#     'positions',
+#     'picture-url',
+
 

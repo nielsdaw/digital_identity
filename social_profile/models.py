@@ -3,27 +3,6 @@ from django.contrib.auth.models import User
 
 # TODO restart all models in database
 
-class UserProfile(models.Model):
-    # TODO update this model - delete it maybe?
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    facebook_username = models.TextField(default="")
-    facebook_id = models.TextField(default="")
-    photo_url = models.TextField(default="")
-    instagram_id = models.TextField(default="")
-    instagram_username = models.TextField(default="")
-
-
-    def __str__(self):
-        return "fb_username: {}'" \
-               "facebook_id: {}"\
-               "inst_id: {} "\
-               "inst_username: {}".format(
-            self.facebook_username,
-            self.facebook_id,
-            self.instagram_id,
-            self.instagram_username
-        )
-
 
 class FacebookManager(models.Manager):
     """Manager for the FacebookProfile Model"""
@@ -129,8 +108,22 @@ class TwitterProfile(models.Model):
     pass
 
 
-#class LinkedInProfile(models.Model):
- #   pass
+class LinkedinProfile(models.Model):
+    pass
+    # first
+    # email-address
+    # headline
+    # 'industry',
+    # 'location',
+    # 'current-share',
+    # 'num-connections',
+    # 'num-connections-capped',
+    # 'summary',
+    # 'specialties',
+    # 'positions',
+    # 'picture-url',
+
+
 
 
 class SoundCloudProfile(models.Model):

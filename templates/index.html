@@ -1,26 +1,24 @@
 {% extends "layout.html" %}
 
-{% block title %}Hello World{% endblock %}
+{% block title %}I Am Who?{% endblock %}
 
 {%block content%}
-    <h1>Login demo app with Python Social Auth</h1>
-    {%if user.is_authenticated%}
-        <h1>Hello {{user.username}}</h1>
-        <small>This is your profile picture</small>
-        <img src="{{user.userprofile.photo_url}}" width=20% class="img-account" >
-        <a href="{% url 'logout' %}">Exit</a>
-        <p>{{ user.userprofile.photo_url }}</p>
-        l<p>Linkedin industry: {{ linkedin.l_industry }}</p>
-    {%else%}
-        <h3>Select login option:</h3>
-        {% load staticfiles %}
-        <p>
-            <a href="{% url 'social:begin' 'facebook' %}">
-            Login with facebook
-            </a>
-        </p>
-        <a href="{% url 'social:begin' 'instagram' %}">
-            Login with instagram
-        </a>
-    {%endif%}
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-offset-3 ">
+            <div class="text-center">
+                <h1>Welcome</h1>
+                <p class="p-t-2 lead"><b>What?</b><br>The purpose of this site is to provide a service, where you can view and manage
+                    your many different social media accounts in <u>one place</u>
+                </p>
+                <p class="lead">
+                    <b>How?</b><br>Choose your social media accounts you wan't to connect to the service. The service
+                    will then retrieve your information from the chosen social media(s).<br>
+                    <u>None</u> of the information is stored and it's only you who has access to the information!
+                </p>
+                <p>
+                    <a href="{% url 'social:begin' 'facebook' %}">Login with facebook</a>
+                </p>
+            </div>
+        </div>
+    </div>
 {%endblock%}
