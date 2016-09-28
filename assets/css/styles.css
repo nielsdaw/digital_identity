@@ -16,9 +16,9 @@ body{
     font-size:6rem;
 }
 
-.disable-hover{
-    background-color: transparent;
-}
+/*.disable-hover{*/
+    /*background-color: transparent;*/
+/*}*/
 
 .p-t-1{
     padding-top: 1rem;
@@ -39,3 +39,43 @@ body{
 .p-t-5{
     padding-top: 5rem;
 }
+
+/* Green check icon */
+#check_green {
+    color: #5fba7d;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 1.3em;
+}
+
+/* No hover effect on fb element */
+.no-hover-facebook a:hover {
+    background-color: #3b5998;
+    border-color:transparent;
+    color:#fff;
+    cursor: default;
+}
+
+/* No hover effect on instagram */
+.no-hover-instagram a:hover {
+    background-color: #3f729b;
+    border-color:transparent;
+    color:#fff;
+    cursor: default;
+}
+
+/* No hover effect on linkedIn */
+.no-hover-linkedin a:hover {
+    background-color: #007bb6;
+    border-color:transparent;
+    color:#fff;
+    cursor: default;
+}
+
+
+.btn-color-w:hover {
+    color:#fff;
+}
+
+
+
+

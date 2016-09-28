@@ -23,8 +23,10 @@
         {% block css %}{% endblock %}
     </head>
     <body>
-        <!-- body content -->
-        {% block content %}{% endblock %}
+        <div class="container-fluid">
+            <!-- body content -->
+            {% block content %}{% endblock %}
+        </div>
 
         <!-- JavaScript -->
         {% block javascript %}{% endblock %}
