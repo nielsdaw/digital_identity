@@ -8,12 +8,17 @@ body{
     padding-top: 5rem;
 }
 
-/*font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+/*div{*/
+    /*border: 1px solid black;*/
+/*}*/
 
-div{
-    border: 1px solid black;
+.header{
+    font-size:6rem;
 }
 
+.disable-hover{
+    background-color: transparent;
+}
 
 .p-t-1{
     padding-top: 1rem;
