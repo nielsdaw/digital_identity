@@ -4,6 +4,11 @@ from django.forms.models import model_to_dict
 
 def update_profile(strategy, backend, user, response, *args, **kwargs):
 
+    if 'social_media' not in strategy.session:
+        social_media_dict = {}
+    else:
+        social_media_dict = strategy.session_get('social_media')
+
     # Facebook
     if backend.name == 'facebook':
         print("facebook response: {}".format(response))
@@ -25,8 +30,8 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
         # change it to dict, in order to set in session
         facebook_dict = model_to_dict(facebook_profile)
 
-        # add facebook dict to session
-        strategy.session_set('facebook', facebook_dict)
+        # add facebook dict to social media dict
+        social_media_dict.update({'facebook': facebook_dict})
 
     # Instagram
     elif backend.name == 'instagram':
@@ -48,8 +53,8 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
         # change it to dict, in order to set in session
         instagram_dict = model_to_dict(instagram_profile)
 
-        # add facebook dict to session
-        strategy.session_set('instagram', instagram_dict)
+        # add instagram dict to social media dict
+        social_media_dict.update({'instagram': instagram_dict})
 
     # LinkedIn
     elif backend.name == 'linkedin':
@@ -58,6 +63,9 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
             'l_first_name': response.get('firstName'),
             'l_industry': response.get('industry')
         }
-        strategy.session_set('linkedin', linkedin)
 
+        # add linkedin dict to social media dict
+        social_media_dict.update({'linkedin': linkedin})
 
+    print(social_media_dict)
+    strategy.session_set('social_media', social_media_dict)

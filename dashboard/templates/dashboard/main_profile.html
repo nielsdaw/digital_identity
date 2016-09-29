@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}Connect your profiles{% endblock %}
+
+{%block content%}
+    {{ request.session.facebook.facebook_email }}
+    <div class="row">
+        {% for social in request.session.social_media %}
+
+            {% if social == 'facebook'  %}
+                <div class="col-xs-12 col-md-4">
+                    <div class="text-center">
+                        <p>Facebook connected</p>
+                    </div>
+                </div>
+
+            {% elif social == 'instagram'%}
+                <div class="col-xs-12 col-md-4">
+                    <div class="text-center">
+                        <p>Instagram connected</p>
+                    </div>
+                </div>
+
+           {% elif social == 'linkedin'%}
+                <div class="col-xs-12 col-md-4">
+                    <div class="text-center">
+                        <p>Linkedin connected</p>
+                    </div>
+                </div>
+
+            {% endif %}
+        {% endfor %}
+     </div>
+{% endblock %}
+
+
+
+
+
+            <div class="col-xs-12 col-md-4">
+                <div class="text-center">
+                    <h1>Hi there {{facebook.first_name }} {{facebook.last_name}}</h1>
+                    <p class="lead">
+                        Connect your desired social media profiles below:
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4">
+                <div class="text-center">
+                    <h1>Hi there {{facebook.first_name }} {{facebook.last_name}}</h1>
+                    <p class="lead">
+                        Connect your desired social media profiles below:
+                    </p>
+                </div>
+            </div>
