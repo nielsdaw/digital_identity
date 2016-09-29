@@ -1,4 +1,4 @@
-from social_profile.models import FacebookProfile, InstagramProfile
+from dashboard.models import FacebookProfile, InstagramProfile
 from django.forms.models import model_to_dict
 
 
@@ -8,7 +8,7 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
     if backend.name == 'facebook':
         print("facebook response: {}".format(response))
 
-        # create new facebook profile, without storing to database
+        # create new facebook dashboard, without storing to database
         facebook_profile = FacebookProfile.objects.create_facebook_profile(
             response.get('id'),
             response.get('first_name'),

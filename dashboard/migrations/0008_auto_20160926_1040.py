@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('social_profile', '0007_userprofile_photo_url'),
+        ('dashboard', '0007_userprofile_photo_url'),
     ]
 
     operations = [

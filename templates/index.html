@@ -3,6 +3,15 @@
 {% block title %}I Am Who?{% endblock %}
 
 {%block content%}
+    {% if messages %}
+        <h1>{{ message }}</h1>
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
     <div class="row">
         <div class="col-xs-12 col-md-6 col-lg-offset-3 ">
             <div class="text-center">
@@ -17,7 +26,7 @@
                 </p>
                 <p class="lead">In order to use the service login with facebook</p>
                 <div class="col-md-6 col-lg-offset-3">
-                    <a href="{% url 'social:begin' 'facebook' %}" class="btn btn-block btn-social btn-md btn-facebook">
+                    <a href="{% url 'social:begin' 'facebook'%}" class="btn btn-block btn-social btn-md btn-facebook">
                       <span class="fa fa-facebook"></span>
                       Login in with Facebook
                     </a>

@@ -2,8 +2,9 @@ from django.shortcuts import render, render_to_response
 from django.contrib import auth
 from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
+from django.contrib.messages import get_messages
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
+from django.contrib import messages
 from . import services
 
 
@@ -18,17 +19,15 @@ class Home(TemplateView):
 
 
 def login(request):
-    # LinkedIn settings
-    if 'linkedin' in request.session:
-        linked_in = request.session.get('linkedin')
-        return render_to_response("index.html", {"user": request.user, 'linkedin': linked_in})
-    else:
-        return render_to_response("index.html", {"user": request.user})
+    return render_to_response("index.html", {"user": request.user})
+
+
+def login_error(request):
+    pass
 
 
 @login_required
 def logged(request):
-    user = User.objects.get(pk=request.user.id)
     response_dict = {"user": request.user}
 
     # Facebook dict

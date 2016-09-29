@@ -21,9 +21,10 @@ urlpatterns = [
     url(r'^home/$', views.logged, name="home"),
     url(r'^logout/$', views.logout, name="logout"),
     url(r'^login/$', views.login, name="login"),
+    #url(r'^account/login/$', views.login_error, name="login_error"),
     url(r'^$', views.Home.as_view(), name='index'),
     url(r'^admin/', admin.site.urls),
     url('', include('social.apps.django_app.urls', namespace='social')),
     url('', include('django.contrib.auth.urls', namespace='auth')),
-    url(r'^profile/', include('social_profile.urls', namespace='profile'))
+    url(r'^dashboard/', include('dashboard.urls', namespace='dashboard'))
 ]

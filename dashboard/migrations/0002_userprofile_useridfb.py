@@ -9,7 +9,7 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('social_profile', '0001_initial'),
+        ('dashboard', '0001_initial'),
     ]
 
     operations = [

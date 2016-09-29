@@ -46,12 +46,24 @@ body{
     text-shadow: 1px 1px 1px #ccc;
     font-size: 1.3em;
 }
+/* Red signout button */
+#signout_red{
+    color: #dd4b39;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 1.3em;
+}
+
+#signout_font{
+    color: #dd4b39;
+    font-size: 1.3em;
+}
+
+
 
 /* No hover effect on fb element */
 .no-hover-facebook a:hover {
     background-color: #3b5998;
     border-color:transparent;
-    color:#fff;
     cursor: default;
 }
 
@@ -59,7 +71,6 @@ body{
 .no-hover-instagram a:hover {
     background-color: #3f729b;
     border-color:transparent;
-    color:#fff;
     cursor: default;
 }
 
@@ -67,13 +78,7 @@ body{
 .no-hover-linkedin a:hover {
     background-color: #007bb6;
     border-color:transparent;
-    color:#fff;
     cursor: default;
-}
-
-
-.btn-color-w:hover {
-    color:#fff;
 }
 
 

@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social.apps.django_app.default',
-    'social_profile',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -127,6 +127,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
+# Login URL's
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+#LOGIN_ERROR_URL = '/account/login/'
+
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
 )
@@ -146,9 +152,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 
-# Custom namespace
 
-SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
 
 

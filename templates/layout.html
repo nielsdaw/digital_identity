@@ -24,6 +24,16 @@
     </head>
     <body>
         <div class="container-fluid">
+            {% if user.is_authenticated %}
+            <div class="row">
+                <div class="col-xs-2 col-md-2">
+                    <a href="{% url 'logout' %}" id="signout_font">
+                        <i class="fa fa-sign-out" id="signout_red" aria-hidden="true"></i>
+                        Sign-Out
+                    </a>
+                </div>
+            </div>
+            {% endif %}
             <!-- body content -->
             {% block content %}{% endblock %}
         </div>
