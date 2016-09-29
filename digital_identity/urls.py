@@ -15,16 +15,36 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+
 from . import views
 
 urlpatterns = [
-    url(r'^home/$', views.logged, name="home"),
-    url(r'^logout/$', views.logout, name="logout"),
-    url(r'^login/$', views.login, name="login"),
-    #url(r'^account/login/$', views.login_error, name="login_error"),
-    url(r'^$', views.Home.as_view(), name='index'),
-    url(r'^admin/', admin.site.urls),
+    url(
+        r"login/$",
+        views.LoginView.as_view(),
+        name="login"
+    ),
+    url(
+        r"logout/$",
+        views.LogoutView.as_view(),
+        name="logout"
+    ),
+    url(
+        r'^$',
+        views.IndexView.as_view(),
+        name='index'
+    ),
+    url(
+        r'^home/',
+        views.HomePageView.as_view(),
+        name='home'
+    ),
+    url(
+        r'^admin/',
+        admin.site.urls
+    ),
+    url(r'^dashboard/', include('dashboard.urls', namespace='dashboard')),
     url('', include('social.apps.django_app.urls', namespace='social')),
     url('', include('django.contrib.auth.urls', namespace='auth')),
-    url(r'^dashboard/', include('dashboard.urls', namespace='dashboard'))
+
 ]

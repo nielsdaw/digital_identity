@@ -27,7 +27,7 @@ SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/home/'
 # -SOCIAL_AUTH_NEW_ASSOCIATION_REDIRECT_URL = '/new-association-redirect-url/'
 
 # The user will be redirected to this URL when a social account is disconnected
-# -SOCIAL_AUTH_DISCONNECT_REDIRECT_URL = '/account-disconnected-redirect-url/'
+SOCIAL_AUTH_DISCONNECT_REDIRECT_URL = '/logout/'
 
 # Inactive users can be redirected to this URL when trying to authenticate.
 # -SOCIAL_AUTH_INACTIVE_USER_URL = '/inactive-user/'

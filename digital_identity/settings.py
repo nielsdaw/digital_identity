@@ -129,9 +129,8 @@ STATIC_URL = '/static/'
 
 
 # Login URL's
-LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = '/'
-#LOGIN_ERROR_URL = '/account/login/'
+LOGIN_URL = 'auth:login'
+LOGIN_Redirect_URL = 'home'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),

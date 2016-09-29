@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% block title %}I Am Who?{% endblock %}
+{% block title %}HowDoILook{% endblock %}
 
 {%block content%}
     {% if messages %}
@@ -22,13 +22,12 @@
                 <p class="lead">
                     <b>How?</b><br>Choose your social media accounts you wan't to connect to the service. The service
                     will then retrieve your information from the chosen social media(s).<br>
-                    <u>None</u> of the information is stored and it's only you who has access to the information!<br> <a href="">Read more about privacy policy here</a>
+                    <u>None</u> of the information is stored and it's only you who has access to the information!<br> <a href="">Read more about our privacy policy here</a>
                 </p>
-                <p class="lead">In order to use the service login with facebook</p>
-                <div class="col-md-6 col-lg-offset-3">
-                    <a href="{% url 'social:begin' 'facebook'%}" class="btn btn-block btn-social btn-md btn-facebook">
-                      <span class="fa fa-facebook"></span>
-                      Login in with Facebook
+                <div class="col-md-6 col-lg-offset-3 p-t-2">
+                    <a href="{% url 'auth:login' %}" class="btn btn-block btn-md btn-success">
+                      <i class="fa fa-sign-in" aria-hidden="true"></i>
+                        Continue to login
                     </a>
                 </div>
             </div>

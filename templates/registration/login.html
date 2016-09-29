@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}I Am Who?{% endblock %}
+
+{%block content%}
+    {% if messages %}
+        <h1>{{ message }}</h1>
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-offset-3 ">
+            <div class="text-center">
+                <h1 class="header">
+                    Login with
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                </h1>
+                <p class="p-t-3 lead">In order to use the service you must login with facebook.
+                    <br>(the service isn't working if you don't have a facebook account)
+                </p>
+                <p class="lead">
+                    When you have logged in you will be able to connect your other social media accounts,
+                    e.g.
+                    <i class="fa fa-instagram" aria-hidden="true"></i>,
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>,
+                    <i class="fa fa-twitter" aria-hidden="true"></i>,
+                    <i class="fa fa-google" aria-hidden="true"></i>
+                    or
+                    <i class="fa fa-spotify" aria-hidden="true"></i>
+
+
+                </p>
+                <div class="col-md-6 col-lg-offset-3 p-t-4">
+                    <a href="{% url 'social:begin' 'facebook'%}" class="btn btn-block btn-social btn-md btn-facebook">
+                      <span class="fa fa-facebook"></span>
+                      Login in with Facebook
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{%endblock%}
