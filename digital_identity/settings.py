@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 
+
 from .config import *
 
 
@@ -50,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'digital_identity.middleware.socialcancel.RedirectSocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'digital_identity.urls'
@@ -147,5 +149,3 @@ AUTHENTICATION_BACKENDS = (
     'social.backends.linkedin.LinkedinOAuth',
     'django.contrib.auth.backends.ModelBackend',
 )
-
-
