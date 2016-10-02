@@ -29,6 +29,8 @@ SECRET_KEY = 'h+*y%fxl&k*7+4j%5pyl*vrez(fu42k=ar!f)4ge18%$he#w81'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# ALLOWED_HOSTS = [ '*']
+
 
 # Application definition
 
@@ -49,9 +51,10 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'digital_identity.middleware.socialcancel.RedirectSocialAuthExceptionMiddleware',
+    'social.apps.django_app.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'digital_identity.urls'
@@ -135,6 +138,10 @@ LOGIN_Redirect_URL = 'home'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
 )
+
+# Redirect URL
+
+LOGIN_ERROR_URL = 'home'
 
 
 # -- Social Auth settings --
