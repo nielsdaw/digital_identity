@@ -110,6 +110,7 @@ class TwitterProfile(models.Model):
 
 class LinkedinProfile(models.Model):
     pass
+    #first_name = mod
     # first
     # email-address
     # headline

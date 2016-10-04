@@ -46,7 +46,7 @@ SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.associate_user',
     'social.pipeline.social_auth.load_extra_data',
     'social.pipeline.user.user_details',
-    'dashboard.pipeline.update_profile',
+    'digital_identity.pipeline.update_profile',
 )
 
 # pipeline session fields
@@ -109,7 +109,6 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
             'timezone,'
             'updated_time,'
             'friends'
-
 }
 
 # --- FACEBOOK PUBLIC AVAILABLE FIELDS ---
@@ -152,7 +151,7 @@ SOCIAL_AUTH_LINKEDIN_FIELD_SELECTORS = [
     'summary',
     'specialties',
     'positions',
-    'picture-url',
+    'picture-urls::(original)',
 ]
 
 # ---LINKEDIN PUBLIC AVAILABLE FIELDS ---

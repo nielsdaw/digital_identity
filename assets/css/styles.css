@@ -1,16 +1,19 @@
 body{
-    background-image: url("../img/background/Elegant_Background-2.jpg");
+    background: url("../img/background/Elegant_Background-2.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     overflow-x: hidden;
-    padding-top: 5rem;
 }
 
 /*div{*/
     /*border: 1px solid black;*/
 /*}*/
+
+.menu-bar{
+    height: 40px;
+}
 
 .header{
     font-size:6rem;
@@ -40,24 +43,69 @@ body{
     padding-top: 5rem;
 }
 
+.p-r-1{
+    padding-right: 1rem;
+}
+
+.p-l-2{
+    padding-right: 2rem;
+}
+
+.p-l-3{
+    padding-right: 3rem;
+}
+
+.p-b-1{
+    padding-bottom: 1rem;
+}
+
+.p-b-2{
+    padding-bottom: 2rem;
+}
+
+.p-b-3{
+    padding-bottom: 3rem;
+}
+
+.p-l-1{
+    padding-left: 1rem;
+}
+
+.p-l-2{
+    padding-left: 2rem;
+}
+
+.p-l-3{
+    padding-left: 3rem;
+}
+
+.custom-pill{
+    margin-top: 8px;
+}
+
+
+
+
 /* Green check icon */
 #check_green {
     color: #5fba7d;
     text-shadow: 1px 1px 1px #ccc;
     font-size: 1.3em;
 }
-/* Red signout button */
-#signout_red{
-    color: #dd4b39;
+/* white signout button */
+#signout-white{
+    color: #ffffff;
     text-shadow: 1px 1px 1px #ccc;
     font-size: 1.3em;
 }
 
-#signout_font{
-    color: #dd4b39;
-    font-size: 1.3em;
+.sign-out-red{
+    color: #d43f3a;
 }
 
+.connect-green{
+    color: #0d6aad;
+}
 
 
 /* No hover effect on fb element */
@@ -81,6 +129,75 @@ body{
     cursor: default;
 }
 
+.profile-well{
+    background-color: #92f0cf66;
+    border: 1px #000000;
+    color: snow;
+}
 
+.profile-img{
+    height: 12em;
+}
+
+
+.nav-button{
+    background-color: #92f0cfb3;
+    border: 1px #92f0cfb3;
+}
+
+
+
+.navbar .container-fluid{
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.navbar-default .navbar-collapse {
+    background-color: transparent;
+}
+
+.navbar-default .navbar-form{
+    background-color: transparent;
+}
+
+.navbar-default .navbar-toggle{
+    background-color: #92f0cfb3;
+    border: transparent;
+}
+
+.navbar-default .navbar-toggle .icon-bar{
+    background-color: #ffffff;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border: transparent;
+}
+
+.container-fluid > .navbar-collapse, .container-fluid > .navbar-header, .container > .navbar-collapse, .container > .navbar-header{
+    margin-left: 0;
+}
+
+.nav-justified > li{
+    border: 1px snow;
+}
+
+.nav-pills > li.active > a{
+    background-color: #92f0cfcc;
+}
+
+.nav > li > a:focus, .nav > li > a:hover{
+    background-color: #70bfa3cc;
+    color: snow;
+}
+
+.nav-pills > li.active > a:hover{
+    background-color: #70bfa3cc;
+    color: snow;
+}
 
 

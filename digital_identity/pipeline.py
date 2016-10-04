@@ -1,5 +1,6 @@
 from dashboard.models import FacebookProfile, InstagramProfile
 from django.forms.models import model_to_dict
+from digital_identity import services
 
 
 def update_profile(strategy, backend, user, response, *args, **kwargs):
@@ -27,6 +28,9 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
             response.get('updated_time'),
             response.get('access_token')
         )
+        # get correct size of profile picture
+        facebook_profile.profile_picture_url = services.get_fb_photo_url(response.get('access_token'), 250, 250)
+
         # change it to dict, in order to set in session
         facebook_dict = model_to_dict(facebook_profile)
 
