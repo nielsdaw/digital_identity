@@ -15,6 +15,10 @@ body{
     height: 40px;
 }
 
+.menu-bar-color{
+    background-color: rgba(146, 240, 207, 0.3)
+}
+
 .header{
     font-size:6rem;
 }
@@ -79,13 +83,6 @@ body{
     padding-left: 3rem;
 }
 
-.custom-pill{
-    margin-top: 8px;
-}
-
-
-
-
 /* Green check icon */
 #check_green {
     color: #5fba7d;
@@ -131,6 +128,7 @@ body{
 
 .profile-well{
     background-color: #92f0cf66;
+    background-color: rgba(146, 240, 207, 0.3);
     border: 1px #000000;
     color: snow;
 }
@@ -145,59 +143,5 @@ body{
     border: 1px #92f0cfb3;
 }
 
-
-
-.navbar .container-fluid{
-    margin-left: 0;
-    padding-left: 0;
-}
-
-.navbar-default {
-    background-color: transparent;
-    border-color: transparent;
-}
-
-.navbar-default .navbar-collapse {
-    background-color: transparent;
-}
-
-.navbar-default .navbar-form{
-    background-color: transparent;
-}
-
-.navbar-default .navbar-toggle{
-    background-color: #92f0cfb3;
-    border: transparent;
-}
-
-.navbar-default .navbar-toggle .icon-bar{
-    background-color: #ffffff;
-}
-
-.navbar-default .navbar-collapse, .navbar-default .navbar-form {
-    border: transparent;
-}
-
-.container-fluid > .navbar-collapse, .container-fluid > .navbar-header, .container > .navbar-collapse, .container > .navbar-header{
-    margin-left: 0;
-}
-
-.nav-justified > li{
-    border: 1px snow;
-}
-
-.nav-pills > li.active > a{
-    background-color: #92f0cfcc;
-}
-
-.nav > li > a:focus, .nav > li > a:hover{
-    background-color: #70bfa3cc;
-    color: snow;
-}
-
-.nav-pills > li.active > a:hover{
-    background-color: #70bfa3cc;
-    color: snow;
-}
 
 

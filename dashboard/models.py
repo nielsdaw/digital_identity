@@ -1,7 +1,4 @@
 from django.db import models
-from django.contrib.auth.models import User
-
-# TODO restart all models in database
 
 
 class FacebookManager(models.Manager):
@@ -56,7 +53,9 @@ class FacebookProfile(models.Model):
 
 
 class InstagramManager(models.Manager):
-    """Manager for the InstagramProfil Model"""
+    """
+        Manager for the InstagramProfil Model
+    """
 
     def create_instagram_profile(
             self,
@@ -87,7 +86,9 @@ class InstagramManager(models.Manager):
 
 
 class InstagramProfile(models.Model):
-    """ InstagramProfile Model, used to store data from the Instagram API """
+    """
+        InstagramProfile Model, used to store data from the Instagram API
+    """
 
     instagram_id = models.IntegerField(default=0)
     profile_picture_url = models.TextField(default="")
@@ -103,28 +104,66 @@ class InstagramProfile(models.Model):
     objects = InstagramManager()
 
 
-class TwitterProfile(models.Model):
-    # TODO create this model - Twitter
-    pass
+class LinkedinManager(models.Manager):
+    """
+        Manager for the LinkedinProfile Model
+    """
+
+    def create_linkedin_profile(
+            self,
+            first_name,
+            last_name,
+            email,
+            headline,
+            industry,
+            location,
+            recent_shared,
+            number_of_connections,
+            summary,
+            specialities,
+            current_position,
+            profile_picture_url
+    ):
+        linkedin_profile = self.create(
+            first_name=first_name,
+            last_name=last_name,
+            email=email,
+            headline=headline,
+            industry=industry,
+            location=location,
+            recent_shared=recent_shared,
+            number_of_connections=number_of_connections,
+            summary=summary,
+            specialities=specialities,
+            current_position=current_position,
+            profile_picture_url=profile_picture_url
+        )
+        return linkedin_profile
 
 
 class LinkedinProfile(models.Model):
+    """
+        LinkedIn Profile Model, used to store data from the LinkedIn API
+    """
+    first_name = models.CharField(default="", max_length=255)
+    last_name = models.CharField(default="", max_length=255)
+    email = models.EmailField(default="")
+    headline = models.TextField(default="")
+    industry = models.TextField(default="")
+    location = models.TextField(default="")
+    recent_shared = models.TextField(default="")
+    number_of_connections = models.IntegerField(default=0)
+    summary = models.TextField(default="")
+    specialities = models.TextField(default="")
+    current_position = models.TextField(default="")
+    profile_picture_url = models.TextField(default="")
+
+    objects = LinkedinManager()
+
+
+class TwitterProfile(models.Model):
+    # TODO create this model - Twitter
     pass
-    #first_name = mod
-    # first
-    # email-address
-    # headline
-    # 'industry',
-    # 'location',
-    # 'current-share',
-    # 'num-connections',
-    # 'num-connections-capped',
-    # 'summary',
-    # 'specialties',
-    # 'positions',
-    # 'picture-url',
-
-
 
 
 class SoundCloudProfile(models.Model):

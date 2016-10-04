@@ -138,7 +138,7 @@ SOCIAL_AUTH_LINKEDIN_KEY = '77mgcls2owj2is'
 
 SOCIAL_AUTH_LINKEDIN_SECRET = 'Z0yza5BLiAfq7xV6'
 
-SOCIAL_AUTH_LINKEDIN_SCOPE = ['r_basicprofile',]
+SOCIAL_AUTH_LINKEDIN_SCOPE = ['r_basicprofile','r_emailaddress']
 
 SOCIAL_AUTH_LINKEDIN_FIELD_SELECTORS = [
     'email-address',

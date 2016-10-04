@@ -1,9 +1,18 @@
-from dashboard.models import FacebookProfile, InstagramProfile
+from dashboard.models import FacebookProfile, InstagramProfile, LinkedinProfile
 from django.forms.models import model_to_dict
 from digital_identity import services
 
 
 def update_profile(strategy, backend, user, response, *args, **kwargs):
+    """
+
+    :param strategy: current strategy
+    :param backend: backend
+    :param user: current user
+    :param response: the response
+    :param args: self said
+    :param kwargs: u know
+    """
 
     if 'social_media' not in strategy.session:
         social_media_dict = {}
@@ -14,7 +23,7 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
     if backend.name == 'facebook':
         print("facebook response: {}".format(response))
 
-        # create new facebook dashboard, without storing to database
+        # instantiate new facebook dashboard, without storing to database
         facebook_profile = FacebookProfile.objects.create_facebook_profile(
             response.get('id'),
             response.get('first_name'),
@@ -41,7 +50,7 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
     elif backend.name == 'instagram':
         print("instagram response: {}".format(response))
 
-        # create instagram object
+        # instantiate instagram object
         instagram_profile = InstagramProfile.objects.create_instagram_profile(
             response['user']['id'],
             response['user']['profile_picture'],
@@ -63,13 +72,33 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
     # LinkedIn
     elif backend.name == 'linkedin':
         print("LinkedIn response: {}".format(response))
-        linkedin = {
-            'l_first_name': response.get('firstName'),
-            'l_industry': response.get('industry')
-        }
+
+        # instantiate linkedin object
+        linkedin_profile = LinkedinProfile.objects.create_linkedin_profile(
+            response['firstName'],
+            response['lastName'],
+            response['emailAddress'],
+            response['headline'],
+            response['industry'],
+            response['location']['name'],
+            response['currentShare']['content']['title'],
+            response['numConnections'],
+            response['summary'] if 'summary' in response else "",
+            response['specialties'] if 'specialities' in response else "",
+            response['positions']['_total'],
+            response['pictureUrls']['values'][0]
+        )
+
+        print("here?")
+
+        # change it to dict, in order to set in session
+        linkedin_dict = model_to_dict(linkedin_profile)
 
         # add linkedin dict to social media dict
-        social_media_dict.update({'linkedin': linkedin})
+        social_media_dict.update({'linkedin': linkedin_dict})
 
+    # only for log print
     print(social_media_dict)
+
+    #update social media in session
     strategy.session_set('social_media', social_media_dict)
