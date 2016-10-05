@@ -16,7 +16,18 @@ body{
 }
 
 .menu-bar-color{
-    background-color: rgba(146, 240, 207, 0.3)
+    background-color: #286090;
+    background-color: rgba(40, 96, 144, 0.8);
+    border: #204d74;
+    color: snow;
+}
+
+.menu-bar-color:hover{
+    background-color: snow;
+    background-color: snow;
+    border: #000000;
+    color: #000000;
+
 }
 
 .header{
@@ -130,17 +141,34 @@ body{
     background-color: #92f0cf66;
     background-color: rgba(146, 240, 207, 0.3);
     border: 1px #000000;
-    color: snow;
+    color: #000000;
 }
 
 .profile-img{
-    height: 12em;
+    height: 168px;
+    width: 168px;
 }
 
 
 .nav-button{
     background-color: #92f0cfb3;
     border: 1px #92f0cfb3;
+}
+
+.btn-more-info{
+    background-color: #35809e;
+    background-color: rgba(53,128,158, 1);
+    border-color: rgba(53,128,158, 1);
+}
+
+.facebook-color{
+    color: #4267b2;
+    color: rgba(66, 103, 178,1);
+}
+
+.linkedin-color{
+    color: #006fa6;
+    color: 	rgba(0, 111, 166,1);
 }
 
 

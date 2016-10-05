@@ -89,8 +89,6 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
             response['pictureUrls']['values'][0]
         )
 
-        print("here?")
-
         # change it to dict, in order to set in session
         linkedin_dict = model_to_dict(linkedin_profile)
 

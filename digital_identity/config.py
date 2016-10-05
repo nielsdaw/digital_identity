@@ -108,7 +108,9 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
             'locale,'
             'timezone,'
             'updated_time,'
-            'friends'
+            'friends,'
+            'about,'
+            'birthday'
 }
 
 # --- FACEBOOK PUBLIC AVAILABLE FIELDS ---
@@ -151,6 +153,7 @@ SOCIAL_AUTH_LINKEDIN_FIELD_SELECTORS = [
     'summary',
     'specialties',
     'positions',
+    'picture-url',
     'picture-urls::(original)',
 ]
 

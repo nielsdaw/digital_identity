@@ -10,13 +10,23 @@ class MainProfileView(TemplateView):
     template_name = "dashboard/main_profile.html"
 
     def get(self, request, *args, **kwargs):
-        if 'instagram' in request.session:
+        if 'instagram' in request.session['social_media']:
             fb = request.session['social_media']['instagram']
             print("what is in session: {}".format(fb))
-        if 'facebook' in request.session:
+        if 'facebook' in request.session['social_media']:
             fb = request.session['social_media']['facebook']
             print("what is in session: {}".format(fb))
-        if 'linkedin' in request.session:
+        if 'linkedin' in request.session['social_media']:
             fb = request.session['social_media']['linkedin']
             print("what is in session: {}".format(fb))
         return render(request, self.template_name, {'user': request.user})
+
+
+class FacebookDetailView(TemplateView):
+    template_name = "dashboard/facebook_detail.html"
+
+    def get(self, request, *args, **kwargs):
+        if 'facebook' in request.session['social_media']:
+            fb = request.session['social_media']['facebook']
+            print("what is in session: {}".format(fb))
+        return render(request, self.template_name, {'facebook': request.session['social_media']['facebook']})
