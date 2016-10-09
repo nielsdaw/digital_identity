@@ -87,7 +87,7 @@
                         </div>
                         <div class="row p-t-1">
                             <div class="col-md-6 col-md-offset-3">
-                                <a href="" class="btn btn-block btn-md btn-info btn-more-info">
+                                <a href="" class="btn btn-block btn-md btn-primary btn-more-info">
                                     <i class="fa fa-info-circle" aria-hidden="true"></i>
                                     View more details
                                 </a>
@@ -126,7 +126,7 @@
                         </div>
                         <div class="row p-t-1">
                             <div class="col-md-6 col-md-offset-3">
-                                <a href="" class="btn btn-block btn-md btn-info">
+                                <a href="" class="btn btn-block btn-md btn-primary btn-more-info">
                                     <i class="fa fa-info-circle" aria-hidden="true"></i>
                                     View more details
                                 </a>
@@ -134,8 +134,20 @@
                         </div>
                     </div>
                 </div>
-
             {% endif %}
         {% endfor %}
      </div>
+    <div class="row p-t-4 p-b-3">
+        <div class="text-center">
+            <p class="lead">
+                <small>Do you wish to include more profiles?</small>
+            </p>
+            <div class="col-xs-8 col-xs-offset-2 col-md-2 col-md-offset-5">
+                <a href="{% url 'home' %}" class="btn btn-block btn-sm btn-primary btn-more-info">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    Connect more profiles
+                </a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

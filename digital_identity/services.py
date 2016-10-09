@@ -20,6 +20,26 @@ def get_recent_instagram_photos(auth_token):
     return url_of_photos
 
 
+def get_recent_instagram_likes(auth_token):
+    """
+    Call the instagram API to get all recent likes from user with auth token.
+    :param auth_token:
+    :return: Return a list with all liked images url's
+    """
+    url = 'https://api.instagram.com/v1/users/self/media/liked?'
+    params = {'access_token': auth_token, 'count': 100}
+    r = requests.get(url, params=params)
+    print('url: {}'.format(r.url))
+    recent_likes = r.json()
+
+    print("recent likes: {}".format(recent_likes))
+
+
+
+
+
+
+
 # --- Facebook services ---
 
 def get_fb_photo_url(auth_token, height, width):

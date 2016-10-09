@@ -49,6 +49,7 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
     # Instagram
     elif backend.name == 'instagram':
         print("instagram response: {}".format(response))
+        services.get_recent_instagram_likes(response['access_token'])
 
         # instantiate instagram object
         instagram_profile = InstagramProfile.objects.create_instagram_profile(
@@ -94,6 +95,12 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
 
         # add linkedin dict to social media dict
         social_media_dict.update({'linkedin': linkedin_dict})
+
+
+
+    # Spotify
+    elif backend.name == 'spotify':
+        print("spotify response: {}".format(response))
 
     # only for log print
     print(social_media_dict)

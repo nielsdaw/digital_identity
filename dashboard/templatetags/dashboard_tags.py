@@ -5,12 +5,6 @@ from .. import models
 register = template.Library()
 
 
-@register.simple_tag()
-def get_social_dict(value):
-    print("called")
-    print(value)
-    return value
-
 # @register.simple_tag(takes_context=True)
 # def get_other_communities(context):
 #     if context["user"].is_authenticated():

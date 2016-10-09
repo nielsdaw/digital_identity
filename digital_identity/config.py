@@ -2,6 +2,21 @@
 
 # -- Social Auth Settings --
 
+
+# used social backends
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.Facebook2OAuth2',
+    'social.backends.instagram.InstagramOAuth2',
+    'social.backends.linkedin.LinkedinOAuth2',
+    'social.backends.linkedin.LinkedinOAuth',
+    'django.contrib.auth.backends.ModelBackend',
+    'social.backends.spotify.SpotifyOAuth2',
+)
+
+
+
+
 # Custom namespace
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
@@ -78,6 +93,8 @@ SOCIAL_AUTH_INSTAGRAM_AUTH_EXTRA_ARGUMENTS = {
         'relationships '
         'likes'
 }
+
+
 
 # --- NO FIELDS FOR INSTAGRAM, ONLY SCOPE ---
 
@@ -170,4 +187,11 @@ SOCIAL_AUTH_LINKEDIN_FIELD_SELECTORS = [
 #     'positions',
 #     'picture-url',
 
+
+
+# --- Spotify settings ---
+
+
+SOCIAL_AUTH_SPOTIFY_KEY = '845e2d5527754c459cb4fe92e9b06661'
+SOCIAL_AUTH_SPOTIFY_SECRET = 'aed67941109f430e9be00f45c236539e'
 

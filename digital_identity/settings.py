@@ -144,15 +144,3 @@ STATICFILES_DIRS = (
 LOGIN_ERROR_URL = 'home'
 
 
-# -- Social Auth settings --
-
-
-# used social backends
-
-AUTHENTICATION_BACKENDS = (
-    'social.backends.facebook.Facebook2OAuth2',
-    'social.backends.instagram.InstagramOAuth2',
-    'social.backends.linkedin.LinkedinOAuth2',
-    'social.backends.linkedin.LinkedinOAuth',
-    'django.contrib.auth.backends.ModelBackend',
-)

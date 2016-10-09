@@ -5,6 +5,7 @@ body{
     -o-background-size: cover;
     background-size: cover;
     overflow-x: hidden;
+    font-size: 18px;
 }
 
 /*div{*/
@@ -149,6 +150,11 @@ body{
     width: 168px;
 }
 
+.profile-img-detail{
+    height: 240px;
+    width: 240px;
+
+}
 
 .nav-button{
     background-color: #92f0cfb3;
@@ -169,6 +175,21 @@ body{
 .linkedin-color{
     color: #006fa6;
     color: 	rgba(0, 111, 166,1);
+}
+
+.spotify-color{
+    color: #2ebd59;
+    color: rgba(46, 189, 89, 1);
+}
+
+.spotify-button{
+    background-color: rgba(46, 189, 89, 1);
+    background-color: #2ebd59;
+}
+
+.spotify-button:hover{
+    color: #fff;
+    background-color: #227d3d;
 }
 
 
