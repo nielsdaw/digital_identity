@@ -181,8 +181,8 @@ SOCIAL_AUTH_LINKEDIN_FIELD_SELECTORS = [
 #     'location',
 #     'current-share',
 #     'num-connections',
-#     'num-connections-capped',
 #     'summary',
+#     'num-connections-capped',
 #     'specialties',
 #     'positions',
 #     'picture-url',
@@ -194,4 +194,6 @@ SOCIAL_AUTH_LINKEDIN_FIELD_SELECTORS = [
 
 SOCIAL_AUTH_SPOTIFY_KEY = '845e2d5527754c459cb4fe92e9b06661'
 SOCIAL_AUTH_SPOTIFY_SECRET = 'aed67941109f430e9be00f45c236539e'
+
+
 
