@@ -1,4 +1,7 @@
 import requests
+import spotipy
+from instagram.client import InstagramAPI
+
 import json
 
 
@@ -35,8 +38,12 @@ def get_recent_instagram_likes(auth_token):
     print("recent likes: {}".format(recent_likes))
 
 
-
-
+    # access_token = "YOUR_ACCESS_TOKEN"
+    # client_secret = "YOUR_CLIENT_SECRET"
+    # api = InstagramAPI(access_token=access_token, client_secret=client_secret)
+    # recent_media, next_ = api.user_recent_media(user_id="userid", count=10)
+    # for media in recent_media:
+    #    print media.caption.text
 
 
 
@@ -56,3 +63,31 @@ def get_fb_photo_url(auth_token, height, width):
     r = requests.get(url, params=params)
     photo_url = r.json()
     return photo_url['data']['url']
+
+
+
+# ---- Spotify services ---
+
+def get_spotify_artists(auth_token):
+    """
+    :param auth_token:
+    :return: top artists of user
+    """
+    sp = spotipy.Spotify(auth=auth_token)
+    top_artists = sp.current_user_top_artists(5, 0, 'long_term')
+    return top_artists
+
+def get_spotify_tracks(auth_token):
+    """
+    :param auth_token:
+    :return: top_tracks of user
+    """
+    sp = spotipy.Spotify(auth=auth_token)
+    top_tracks = sp.current_user_top_tracks(5, 0, 'long_term')
+    return top_tracks
+
+
+
+
+
+

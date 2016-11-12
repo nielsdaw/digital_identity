@@ -1,11 +1,10 @@
-from dashboard.models import FacebookProfile, InstagramProfile, LinkedinProfile
+from dashboard.models import FacebookProfile, InstagramProfile, LinkedinProfile, SpotifyProfile
 from django.forms.models import model_to_dict
 from digital_identity import services
 
 
 def update_profile(strategy, backend, user, response, *args, **kwargs):
     """
-
     :param strategy: current strategy
     :param backend: backend
     :param user: current user
@@ -70,6 +69,7 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
         # add instagram dict to social media dict
         social_media_dict.update({'instagram': instagram_dict})
 
+
     # LinkedIn
     elif backend.name == 'linkedin':
         print("LinkedIn response: {}".format(response))
@@ -102,8 +102,19 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
     elif backend.name == 'spotify':
         print("spotify response: {}".format(response))
 
-    # only for log print
-    print(social_media_dict)
+        spotify_profile = SpotifyProfile.objects.create_spotify_profile(
+            response['display_name'],
+            response['email'],
+            response['followers']['total'],
+            response['access_token'],
+            response['images'][0]['url']
+        )
+        # change it to dict, in order to set in session
+        spotify_dict = model_to_dict(spotify_profile)
+
+        # add linkedin dict to social media dict
+        social_media_dict.update({'spotify': spotify_dict})
+
 
     #update social media in session
     strategy.session_set('social_media', social_media_dict)

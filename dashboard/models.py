@@ -161,6 +161,44 @@ class LinkedinProfile(models.Model):
     objects = LinkedinManager()
 
 
+class SpotifyManager(models.Manager):
+    """
+        Manager for the SpotifyProfile Model
+    """
+
+    def create_spotify_profile(
+            self,
+            display_name,
+            email,
+            followers,
+            access_token,
+            profile_picture_url,
+    ):
+        spotify_profile = self.create(
+            display_name=display_name,
+            email = email,
+            followers = followers,
+            access_token = access_token,
+            profile_picture_url = profile_picture_url
+        )
+
+        return spotify_profile
+
+
+class SpotifyProfile(models.Model):
+    """
+        Spotify Profile Model, used to store data from the LinkedIn API
+    """
+    display_name = models.CharField(default="", max_length=255)
+    email = models.EmailField(default="")
+    followers = models.TextField(default="")
+    access_token = models.TextField(default="")
+    profile_picture_url = models.TextField(default="")
+
+    objects = SpotifyManager()
+
+
+
 class TwitterProfile(models.Model):
     # TODO create this model - Twitter
     pass
@@ -169,15 +207,3 @@ class TwitterProfile(models.Model):
 class SoundCloudProfile(models.Model):
     # TODO create this model - SoundCLoud
     pass
-
-
-class SpotifyProfile(models.Model):
-    # TODO create this model - Spotify
-    pass
-
-
-class GoogleProfile(models.Model):
-    # TODO create this model - GoogleProfile
-    pass
-
-
