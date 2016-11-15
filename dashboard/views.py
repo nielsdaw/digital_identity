@@ -22,6 +22,13 @@ class MainProfileView(TemplateView):
         return render(request, self.template_name, {'user': request.user})
 
 
+class SocialMe(TemplateView):
+    template_name = "dashboard/social_me.html"
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, {'user': request.user})
+
+
 class FacebookDetailView(TemplateView):
     template_name = "dashboard/facebook_detail.html"
 

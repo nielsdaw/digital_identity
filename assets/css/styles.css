@@ -8,6 +8,64 @@ body{
     font-size: 18px;
 }
 
+@media (min-width: 1035px) {
+    .passport{
+        background: url("../img/passport1.jpeg");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow: hidden;
+        height: 470px;
+        opacity: 0.6;
+        border-radius: 15px;
+    }
+}
+
+@media (max-width: 1034px) {
+    .passport{
+        background: url("../img/passport1.jpeg");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow: hidden;
+        height: 840px;
+
+        opacity: 0.6;
+        border-radius: 15px;
+    }
+
+}
+
+
+
+.passport-img{
+    height: 250px;
+    opacity: 0.9;
+	filter: grayscale(100%);
+}
+
+.passport-text .lead{
+    color: black;
+    opacity: 1;
+}
+
+.barcode{
+
+}
+
+.social-div {
+    height: 200px;
+}
+
+.over img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 150px;
+}
+
 /*div{*/
     /*border: 1px solid black;*/
 /*}*/

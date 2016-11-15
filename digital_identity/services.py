@@ -1,6 +1,6 @@
 import requests
 import spotipy
-from instagram.client import InstagramAPI
+import facebook
 
 import json
 
@@ -38,12 +38,14 @@ def get_recent_instagram_likes(auth_token):
     print("recent likes: {}".format(recent_likes))
 
 
-    # access_token = "YOUR_ACCESS_TOKEN"
-    # client_secret = "YOUR_CLIENT_SECRET"
-    # api = InstagramAPI(access_token=access_token, client_secret=client_secret)
-    # recent_media, next_ = api.user_recent_media(user_id="userid", count=10)
-    # for media in recent_media:
-    #    print media.caption.text
+def get_media_locations(auth_token):
+    url = 'https://api.instagram.com/v1/users/self/media/recent/'
+    params = {'access_token': auth_token}
+    r = requests.get(url, params=params)
+    recent_photos = r.json()
+    url_of_photos = []
+    for item in recent_photos['data']:
+        url_of_photos.append(item['images'])
 
 
 
@@ -63,6 +65,12 @@ def get_fb_photo_url(auth_token, height, width):
     r = requests.get(url, params=params)
     photo_url = r.json()
     return photo_url['data']['url']
+
+
+def get_friends(auth_token):
+    graph = facebook.GraphAPI(access_token=auth_token, version='2.8')
+    friends = graph.get_connections(id='me', connection_name='friends')
+    print(rs)
 
 
 
