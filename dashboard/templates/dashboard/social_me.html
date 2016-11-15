@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% load static from staticfiles %}
 
 {% block title %}Social Me{% endblock %}
 
@@ -210,34 +211,40 @@
 
     <!-- third level rows - Leaflet map -->
     <div class="row">
-        <div class="col-md-12">
-            <div id="mapid"></div>
-        </div>
 
+            <div class="col-md-8 col-md-offset-2">
 
-
-
-
-
-
+                <div class="text-center">
+                    <h3>
+                        <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                        Places you've been (or would like to go)
+                    </h3>
+                </div>
+                <div id="mapid"></div>
+            </div>
      </div>
 
     <div class="row p-t-4 p-b-3">
-        <div class="text-center">
-            <p class="lead">
-                <small>Do you wish to include more profiles?</small>
-            </p>
-            <div class="col-xs-8 col-xs-offset-2 col-md-2 col-md-offset-5">
+        <div class="col-md-6 col-md-offset-3 well profile-well">
+            <div class="text-center">
+                <p class="lead">
+                    <small>Do you wish to include more social network profiles?</small>
+                </p>
+            </div>
+            <div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4">
                 <a href="{% url 'home' %}" class="btn btn-block btn-sm btn-primary btn-more-info">
                     <i class="fa fa-users" aria-hidden="true"></i>
                     Connect more profiles
                 </a>
             </div>
+
         </div>
+
     </div>
 {% endblock %}
 
 {% block javascript %}
     <!-- Leaflet javascript -->
     <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+    <script src="{% static 'js/custom-leaflet-map.js' %}"></script>
 {% endblock %}
