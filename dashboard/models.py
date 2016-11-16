@@ -16,7 +16,8 @@ class FacebookManager(models.Manager):
             link,
             age_range,
             last_updated,
-            auth_token
+            auth_token,
+            devices
     ):
         facebook_profile = self.create(
             facebook_id=facebook_id,
@@ -29,7 +30,8 @@ class FacebookManager(models.Manager):
             link=link,
             age_range=age_range,
             last_updated=last_updated,
-            auth_token=auth_token
+            auth_token=auth_token,
+            devices=devices
         )
         return facebook_profile
 
@@ -48,6 +50,7 @@ class FacebookProfile(models.Model):
     age_range = models.IntegerField(default=0)
     last_updated = models.DateTimeField(default="")
     auth_token = models.TextField(default="")
+    devices = models.TextField(default="")
 
     objects = FacebookManager()
 

@@ -63,7 +63,13 @@ body{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-height: 150px;
+    max-height: 135px;
+}
+
+
+.img-four img{
+    height: 100px;
+    width: 100px;
 }
 
 /*div{*/
@@ -202,9 +208,7 @@ body{
     background-color: #92f0cf66;
     background-color: rgba(146, 240, 207, 0.1);
     color: #000000;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #000000;
+    border: 1px solid rgba(0, 0,0, 0.3);
 }
 
 .profile-img{
@@ -256,11 +260,9 @@ body{
 }
 
 #mapid {
-    height: 400px;
+    height: 470px;
     border-radius: 3px;
-        border-style: groove;
-    border-width: 0.1px;
-    border-color: #000000;
+    border: 1px solid rgba(0, 0,0, 0.3);
 }
 
 

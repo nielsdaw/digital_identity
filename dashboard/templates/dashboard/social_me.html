@@ -10,123 +10,127 @@
 
 
 {%block content%}
+
+{% for social, item in request.session.social_media.items %}
+
     <div class="row">
         <div class="text-center">
             <h1 class="header">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                Your social identity
+                Your Social Me
             </h1>
         </div>
     </div>
 
-    <!-- first level rows -->
-    <div class="row p-t-4">
-        <div class="col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2 passport passport-height well well-md">
-            <div class="row">
-                <div class="col-md-4 col-xs-12 p-t-2">
-                    <div class="text-center p-b-1 ">
-                        <strong>
-                        Digitalt Pas<br>
-                        Digital Passport<br>
-                        Passeport Digitale
+    {% if social == 'facebook' %}
+        <!-- first level rows -->
+        <div class="row p-t-4">
+            <div class="col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2 passport passport-height well well-md">
+                <div class="row">
+                    <div class="col-md-4 col-xs-12 p-t-2">
+                        <div class="text-center p-b-1 ">
+                            <strong>
+                                Digitalt Pas<br>
+                                Digital Passport<br>
+                                Passeport Digitale
                             </strong>
-                    </div>
-                    <img src="https://avatars2.githubusercontent.com/u/7037813?v=3&s=400" alt="profile-picture" class="center-block img-rounded passport-img">
-                    <div class="text-center">
-                        <p>
-                            Passport number.:<br>
-                            <span><strong>202020359</strong></span>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-md-offset-1 col-xs-12 p-t-5">
-                    <div class="row">
-                        <div class="col-md-5 passport-text col-xs-6">
+                        </div>
+                        <img src="{{ item.profile_picture_url }}" alt="profile-picture" class="center-block img-rounded passport-img">
+                        <div class="text-center">
                             <p>
-                                Last Name:<br>
-                                <span class="lead"><strong>Dawartz</strong></span>
+                                Passport number.:<br>
+                                <span><strong>202020359</strong></span>
                             </p>
                         </div>
-                        <div class="col-md-offset-2 col-md-5 passport-text col-xs-6">
-                           <p>
-                                First Name:<br>
-                                <span class="lead"><strong>Niels Christian</strong></span>
-                            </p>
+                    </div>
+                    <div class="col-md-6 col-md-offset-1 col-xs-12 p-t-5">
+                        <div class="row">
+                            <div class="col-md-5 passport-text col-xs-6">
+                                <p>
+                                    Last Name:<br>
+                                    <span class="lead"><strong>{{ item.last_name }}</strong></span>
+                                </p>
+                            </div>
+                            <div class="col-md-offset-2 col-md-5 passport-text col-xs-6">
+                               <p>
+                                    First Name:<br>
+                                    <span class="lead"><strong>{{item.first_name}}</strong></span>
+                                </p>
 
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-5 passport-text col-xs-6">
-                            <p>
-                                Nationality:<br>
-                                <span class="lead"><strong>Danish</strong></span>
-                            </p>
+                        <div class="row">
+                            <div class="col-md-5 passport-text col-xs-6">
+                                <p>
+                                    Nationality:<br>
+                                    <span class="lead"><strong>Danish</strong></span>
+                                </p>
+                            </div>
+                            <div class="col-md-offset-2 col-md-5 passport-text col-xs-6">
+                                <p>
+                                    Gender/Sex:<br>
+                                     <span class="lead"><strong>{{ item.gender }}</strong></span>
+                                </p>
+                            </div>
                         </div>
-                        <div class="col-md-offset-2 col-md-5 passport-text col-xs-6">
-                            <p>
-                                Gender/Sex:<br>
-                                 <span class="lead"><strong>M</strong></span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-5 passport-text col-xs-6">
-                            <p>
-                                Date of birth:<br>
-                                <span class="lead"><strong>21 08 90</strong></span>
-                            </p>
+                        <div class="row">
+                            <div class="col-md-5 passport-text col-xs-6">
+                                <p>
+                                    Date of birth:<br>
+                                    <span class="lead"><strong>21 08 90</strong></span>
+                                </p>
 
+                            </div>
+                            <div class="col-md-offset-2 col-md-5 passport-text col-xs-6">
+                                <p>
+                                    Current city.:<br>
+                                    <span class="lead"><strong>Copenhagen</strong></span>
+                                </p>
+                            </div>
                         </div>
-                        <div class="col-md-offset-2 col-md-5 passport-text col-xs-6">
-                            <p>
-                                Current city.:<br>
-                                <span class="lead"><strong>Copenhagen</strong></span>
-                            </p>
+                        <div class="row">
+                            <div class="col-md-5 passport-text col-xs-6">
+                                <p>
+                                    Date of issue:<br>
+                                    <span class="lead"><strong>12 12 2016</strong></span>
+                                </p>
+                            </div>
+                            <div class="col-md-offset-2 col-md-5 passport-text col-xs-6">
+                                <p>
+                                    Date of expiry:<br>
+                                    <span class="lead"><strong>?</strong></span>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-5 passport-text col-xs-6">
-                            <p>
-                                Date of issue:<br>
-                                <span class="lead"><strong>12 12 2016</strong></span>
-                            </p>
+                        <div class="row">
+                            <div class="col-md-5 passport-text col-xs-6">
+                                <p>
+                                    Civil status:<br>
+                                    <span class="lead"><strong>Married</strong></span>
+                                </p>
+                            </div>
+                            <div class="col-md-offset-2 col-md-5 passport-text col-xs-6">
+                                <p>
+                                    Current devices:
+                                    <span class="lead"><strong>iPhone</strong></span>
+                                </p>
+                            </div>
                         </div>
-                        <div class="col-md-offset-2 col-md-5 passport-text col-xs-6">
-                            <p>
-                                Date of expiry:<br>
-                                <span class="lead"><strong>?</strong></span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-5 passport-text col-xs-6">
-                            <p>
-                                Civil status:<br>
-                                <span class="lead"><strong>Married</strong></span>
-                            </p>
-                        </div>
-                        <div class="col-md-offset-2 col-md-5 passport-text col-xs-6">
-                            <p>
-                                Current device:
-                                <span class="lead"><strong>iPhone</strong></span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-5 passport-text col-xs-6">
-                            <p>
-                                Email:<br>
-                                <span class="lead"><strong>nielsdaw@gmail.com</strong></span>
-                            </p>
+                        <div class="row">
+                            <div class="col-md-5 passport-text col-xs-6">
+                                <p>
+                                    Email:<br>
+                                    <span class="lead"><strong>{{ item.facebook_email }}</strong></span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    {% endif %}
 
     <!-- second rows -->
-    <div class="row">
+    <div class="row p-t-5">
         <div class="col-md-6">
             <div class="text-center">
                 <h3>
@@ -137,46 +141,36 @@
                 <div class="col-md-12">
                     <div class="profile-well well well-md">
                         <div class="row ">
-                            <div class="col-md-6">
+                            <div class="col-md-7 col-xs-7">
                                <p>
                                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>
                                    You are currently studying in University of Copenhagen
                                 </p>
-                               <p class="p-t-2">
+                               <p class="p-t-1">
                                    <i class="fa fa-industry" aria-hidden="true"></i>
                                    You have interests within computering and infomation technologies
                                 </p>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="over">
-                                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRL19Gz7JK9QCEZu0AZqxsGXqHqwY8lo70sr2HmjBZAa_ov5Zdi4x3pTTvm" alt="profile-picture" class="img-rounded img-responsive">
-                                </div>
-                            </div>
-                        </div>
-
-                       <div class="row p-t-1" >
-                            <div class="col-md-6">
-                               <p>
+                               <p class="p-t-1">
                                    <i class="fa fa-certificate" aria-hidden="true"></i>
                                    You have skills within python, html, css, javascript and more
                                 </p>
-                               <p class="p-t-2">
+                               <p class="p-t-1">
                                    <i class="fa fa-suitcase" aria-hidden="true"></i>
                                    You would like to work at, Google, facebook, Twitter and more
                                 </p>
-
                             </div>
-                            <div class="col-md-6">
-                                <div class="over">
-                                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQMcEwiTB6V1ygTZQn0WYbpb9CdekFwjehDcaeVA7veSLBzmM-FurbbWQ" alt="profile-picture" class="img-rounded img-responsive">
-                                </div>
-
+                            <div class="col-xs-5 col-md-5 img-four pull-right p-b-2">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png" alt="profile-picture" class="pull-right img-rounded img-responsive">
+                                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQMcEwiTB6V1ygTZQn0WYbpb9CdekFwjehDcaeVA7veSLBzmM-FurbbWQ" alt="profile-picture" class="pull-right img-rounded img-responsive">
+                                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQMcEwiTB6V1ygTZQn0WYbpb9CdekFwjehDcaeVA7veSLBzmM-FurbbWQ" alt="profile-picture" class="pull-right img-rounded img-responsive">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png" alt="profile-picture" class="pull-right img-rounded img-responsive">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="col-md-6">
             <div class="text-center">
                 <h3>
@@ -186,26 +180,36 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="profile-well well well-md">
-                      <div class="row ">
-                        <div class="col-md-6">
-                            <div class="over">
-                                <img src="https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png" alt="profile-picture" class="img-rounded img-responsive">
+                        <div class="row ">
+                            <div class="col-md-5 col-xs-5 img-four pull-left p-b-2">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png" alt="profile-picture" class="pull-left img-rounded img-responsive">
+                                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQMcEwiTB6V1ygTZQn0WYbpb9CdekFwjehDcaeVA7veSLBzmM-FurbbWQ" alt="profile-picture" class="pull-left img-rounded img-responsive">
+                                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQMcEwiTB6V1ygTZQn0WYbpb9CdekFwjehDcaeVA7veSLBzmM-FurbbWQ" alt="profile-picture" class="pull-left img-rounded img-responsive">
+                                <img src="https://scontent.xx.fbcdn.net/v/t1.0-1/p50x50/1521978_626535487381874_2126773489_n.jpg?oh=c430058240ba4d39c19ac082d552fb6e&oe=588DB721" alt="profile-picture" class="pull-left img-rounded img-responsive">
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <p>
-                                <i class="fa fa-headphones" aria-hidden="true"></i>
-                                You like listening to rock & roll, jazz, r&b
-                            </p>
-                            <p class="p-t-2">
-                               <i class="fa fa-music" aria-hidden="true"></i>
-                               Some of your favorite artists are Pink Floyd, Kanye West, and more.
-                            </p>
+                            <div class="col-md-7 ">
+                                <p>
+                                    <i class="fa fa-headphones" aria-hidden="true"></i>
+                                    You like listening to rock & roll, jazz, r&b
+                                </p>
+                                <p class="p-t-1">
+                                    <i class="fa fa-music" aria-hidden="true"></i>
+                                    Some of your favorite artists are Pink Floyd, Kanye West, and more.
+                                </p>
+                                <p class="p-t-1">
+                                    <i class="fa fa-glass" aria-hidden="true"></i>
+                                    You like going out in Demode, Mondo Disko and more.
+                                </p>
+                                <p class="p-t-1">
+                                    <i class="fa fa-cutlery" aria-hidden="true"></i>
+                                    Some of your favorite cafes and restaurants are La Bicicleta,
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
+
         </div>
     </div>
 
@@ -224,23 +228,25 @@
             </div>
      </div>
 
+    <!-- Last level - suggestion of more connections -->
     <div class="row p-t-4 p-b-3">
-        <div class="col-md-6 col-md-offset-3 well profile-well">
+        <div class="col-md-4 col-xs-6 col-xs-offset-3 col-md-offset-4 well profile-well">
             <div class="text-center">
                 <p class="lead">
                     <small>Do you wish to include more social network profiles?</small>
                 </p>
             </div>
-            <div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4">
+            <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
                 <a href="{% url 'home' %}" class="btn btn-block btn-sm btn-primary btn-more-info">
                     <i class="fa fa-users" aria-hidden="true"></i>
                     Connect more profiles
                 </a>
             </div>
-
         </div>
-
     </div>
+
+
+{% endfor %}
 {% endblock %}
 
 {% block javascript %}
