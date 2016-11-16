@@ -30,26 +30,6 @@
                 </div>
             </div>
 
-            <!-- Google -->
-            <div class="row p-t-1">
-                <div class="col-xs-10 col-xs-offset-1 col-md-4 col-lg-offset-4">
-                    {% if request.session.social_media.spotify %}
-                        <div class="no-hover-linkedin">
-                            <a class="btn btn-block btn-social btn-md btn-google btn-">
-                                <span class="fa fa-google"></span>
-                                Successfuly Connected
-                                <i class="fa fa-check-square" id="check_green" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    {% else %}
-                    <a href="{% url 'social:begin' 'google' %}" class="btn btn-block btn-social btn-md btn-google">
-                        <span class="fa fa-google"></span>
-                        Connect Google
-                    </a>
-                    {% endif %}
-                </div>
-            </div>
-
             <!-- Instagram -->
             <div class="row p-t-1">
                 <div class="col-xs-10 col-xs-offset-1 col-md-4 col-lg-offset-4">
@@ -66,26 +46,6 @@
                                 <span class="fa fa-instagram"></span>
                                 Connect Instagram
                             </a>
-                    {% endif %}
-                </div>
-            </div>
-
-            <!-- Twitter -->
-            <div class="row p-t-1">
-                <div class="col-xs-10 col-xs-offset-1 col-md-4 col-lg-offset-4">
-                    {% if request.session.social_media.spotify %}
-                        <div class="no-hover-linkedin">
-                            <a class="btn btn-block btn-social btn-md btn-twitter btn-">
-                                <span class="fa fa-twitter-square"></span>
-                                Successfuly Connected
-                                <i class="fa fa-check-square" id="check_green" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    {% else %}
-                    <a href="" class="btn btn-block btn-social btn-md btn-twitter">
-                        <span class="fa fa-twitter-square"></span>
-                        Connect Twitter
-                    </a>
                     {% endif %}
                 </div>
             </div>
@@ -114,11 +74,11 @@
             <div class="row p-t-1">
                 <div class="col-xs-10 col-xs-offset-1 col-md-4 col-lg-offset-4">
                     {% if request.session.social_media.spotify %}
-                        <div class="no-hover-linkedin">
-                            <a class="btn btn-block btn-social btn-md spotify-button btn-">
+                        <div class="no-hover-spotify">
+                            <a class="btn btn-block btn-social btn-md spotify-button btn">
                                 <span class="fa fa-spotify"></span>
                                 Successfuly Connected
-                                <i class="fa fa-check-square" id="check_green" aria-hidden="true"></i>
+                                <i class="fa fa-check-square" id="check_white" aria-hidden="true"></i>
                             </a>
                         </div>
                     {% else %}
@@ -130,30 +90,21 @@
                 </div>
             </div>
 
-            <!-- SoundCloud -->
-            <div class="row p-t-1">
+            <!-- Social Me Buton -->
+            <div class="row p-t-5">
                 <div class="col-xs-10 col-xs-offset-1 col-md-4 col-lg-offset-4">
-                    {% if request.session.social_media.spotify %}
-                        <div class="no-hover-linkedin">
-                            <a class="btn btn-block btn-social btn-md btn-soundcloud btn-">
-                                <span class="fa fa-soundcloud"></span>
-                                Successfuly Connected
-                                <i class="fa fa-check-square" id="check_green" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    {% else %}
-                    <a href="" class="btn btn-block btn-social btn-md btn-soundcloud">
-                        <span class="fa fa-soundcloud"></span>
-                        Connect SoundCloud
+                    <a href="{% url 'dashboard:social_me' %}" class="btn btn-block btn-lg btn-primary btn-more-info">
+                        <i class="fa fa-address-card" aria-hidden="true"></i>
+                        Go to Social Me
                     </a>
-                    {% endif %}
                 </div>
             </div>
 
-            <div class="row p-t-5">
+            <!-- Dashboard button -->
+            <div class="row p-t-1">
                 <div class="col-xs-10 col-xs-offset-1 col-md-4 col-lg-offset-4">
                     <a href="{% url 'dashboard:main' %}" class="btn btn-block btn-lg btn-primary btn-more-info">
-                        <i class="fa fa-dashboard" aria-hidden="true"></i>
+                        <i class="fa fa-users" aria-hidden="true"></i>
                         Go to dashboard of profiles
                     </a>
                 </div>

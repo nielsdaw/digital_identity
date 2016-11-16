@@ -167,6 +167,14 @@ body{
     text-shadow: 1px 1px 1px #ccc;
     font-size: 1.3em;
 }
+
+/* Green check icon */
+#check_white {
+    color: #fff;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 1.3em;
+}
+
 /* white signout button */
 #signout-white{
     color: #ffffff;
@@ -250,6 +258,7 @@ body{
 }
 
 .spotify-button{
+    color: #fff;
     background-color: rgba(46, 189, 89, 1);
     background-color: #2ebd59;
 }

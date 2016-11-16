@@ -62,7 +62,7 @@
                             <div class="col-md-5 passport-text col-xs-6">
                                 <p>
                                     Nationality:<br>
-                                    <span class="lead"><strong>Danish</strong></span>
+                                    <span class="lead" id="elem_city"><strong>Danish</strong></span>
                                 </p>
                             </div>
                             <div class="col-md-offset-2 col-md-5 passport-text col-xs-6">
@@ -83,7 +83,7 @@
                             <div class="col-md-offset-2 col-md-5 passport-text col-xs-6">
                                 <p>
                                     Current city.:<br>
-                                    <span class="lead"><strong>Copenhagen</strong></span>
+                                    <span class="lead"><strong>Madrid</strong></span>
                                 </p>
                             </div>
                         </div>
@@ -91,13 +91,13 @@
                             <div class="col-md-5 passport-text col-xs-6">
                                 <p>
                                     Date of issue:<br>
-                                    <span class="lead"><strong>12 12 2016</strong></span>
+                                    <span class="lead"><strong>{{ date }}</strong></span>
                                 </p>
                             </div>
                             <div class="col-md-offset-2 col-md-5 passport-text col-xs-6">
                                 <p>
                                     Date of expiry:<br>
-                                    <span class="lead"><strong>?</strong></span>
+                                    <span class="lead"><strong>Nov 12 3017</strong></span>
                                 </p>
                             </div>
                         </div>
@@ -111,12 +111,12 @@
                             <div class="col-md-offset-2 col-md-5 passport-text col-xs-6">
                                 <p>
                                     Current devices:
-                                    <span class="lead"><strong>iPhone</strong></span>
+                                    <span class="lead"><strong>{{ item.devices }}</strong></span>
                                 </p>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-5 passport-text col-xs-6">
+                            <div class="col-md-7 passport-text col-xs-6">
                                 <p>
                                     Email:<br>
                                     <span class="lead"><strong>{{ item.facebook_email }}</strong></span>
@@ -144,7 +144,7 @@
                             <div class="col-md-7 col-xs-7">
                                <p>
                                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                                   You are currently studying in University of Copenhagen
+                                   You are studying in IT University of Copenhagen
                                 </p>
                                <p class="p-t-1">
                                    <i class="fa fa-industry" aria-hidden="true"></i>
@@ -152,18 +152,18 @@
                                 </p>
                                <p class="p-t-1">
                                    <i class="fa fa-certificate" aria-hidden="true"></i>
-                                   You have skills within python, html, css, javascript and more
+                                   You have skills within HTML, CSS, Javascript, Python and more
                                 </p>
                                <p class="p-t-1">
                                    <i class="fa fa-suitcase" aria-hidden="true"></i>
-                                   You would like to work at, Google, facebook, Twitter and more
+                                   You would like to work at Facebook
                                 </p>
                             </div>
                             <div class="col-xs-5 col-md-5 img-four pull-right p-b-2">
-                                <img src="https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png" alt="profile-picture" class="pull-right img-rounded img-responsive">
-                                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQMcEwiTB6V1ygTZQn0WYbpb9CdekFwjehDcaeVA7veSLBzmM-FurbbWQ" alt="profile-picture" class="pull-right img-rounded img-responsive">
-                                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQMcEwiTB6V1ygTZQn0WYbpb9CdekFwjehDcaeVA7veSLBzmM-FurbbWQ" alt="profile-picture" class="pull-right img-rounded img-responsive">
-                                <img src="https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png" alt="profile-picture" class="pull-right img-rounded img-responsive">
+                                <img src="http://placehold.it/100x100" alt="profile-picture" class="pull-right img-rounded img-responsive">
+                                <img src="http://placehold.it/100x100" alt="profile-picture" class="pull-right img-rounded img-responsive">
+                                <img src="http://placehold.it/100x100" alt="profile-picture" class="pull-right img-rounded img-responsive">
+                                <img src="http://placehold.it/100x100" alt="profile-picture" class="pull-right img-rounded img-responsive">
                             </div>
                         </div>
                     </div>
@@ -182,28 +182,44 @@
                     <div class="profile-well well well-md">
                         <div class="row ">
                             <div class="col-md-5 col-xs-5 img-four pull-left p-b-2">
-                                <img src="https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png" alt="profile-picture" class="pull-left img-rounded img-responsive">
-                                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQMcEwiTB6V1ygTZQn0WYbpb9CdekFwjehDcaeVA7veSLBzmM-FurbbWQ" alt="profile-picture" class="pull-left img-rounded img-responsive">
-                                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQMcEwiTB6V1ygTZQn0WYbpb9CdekFwjehDcaeVA7veSLBzmM-FurbbWQ" alt="profile-picture" class="pull-left img-rounded img-responsive">
-                                <img src="https://scontent.xx.fbcdn.net/v/t1.0-1/p50x50/1521978_626535487381874_2126773489_n.jpg?oh=c430058240ba4d39c19ac082d552fb6e&oe=588DB721" alt="profile-picture" class="pull-left img-rounded img-responsive">
+
+                                {% if social == 'spotify' %}
+                                    <img src="http://placehold.it/100x100" alt="profile-picture" class="pull-left img-rounded img-responsive">
+                                    <img src="http://placehold.it/100x100" alt="profile-picture" class="pull-left img-rounded img-responsive">
+                                {% endif %}
+
+                                {% if social == 'facebook' %}
+                                    <img src="http://placehold.it/100x100" alt="profile-picture" class="pull-left img-rounded img-responsive">
+                                    <img src="http://placehold.it/100x100" alt="profile-picture" class="pull-left img-rounded img-responsive">
+                                {% endif %}
+
                             </div>
+
                             <div class="col-md-7 ">
-                                <p>
-                                    <i class="fa fa-headphones" aria-hidden="true"></i>
-                                    You like listening to rock & roll, jazz, r&b
-                                </p>
-                                <p class="p-t-1">
-                                    <i class="fa fa-music" aria-hidden="true"></i>
-                                    Some of your favorite artists are Pink Floyd, Kanye West, and more.
-                                </p>
-                                <p class="p-t-1">
-                                    <i class="fa fa-glass" aria-hidden="true"></i>
-                                    You like going out in Demode, Mondo Disko and more.
-                                </p>
-                                <p class="p-t-1">
-                                    <i class="fa fa-cutlery" aria-hidden="true"></i>
-                                    Some of your favorite cafes and restaurants are La Bicicleta,
-                                </p>
+                                {% if social == 'spotify' %}
+                                    <p>
+                                        <i class="fa fa-headphones" aria-hidden="true"></i>
+                                        You like listening to rock & roll, jazz, r&b
+                                    </p>
+                                    <p class="p-t-1">
+                                        <i class="fa fa-music" aria-hidden="true"></i>
+                                        Some of your favorite artists are Pink Floyd, Kanye West, and more.
+                                    </p>
+                                {% endif %}
+
+                                {% if social == 'facebook' %}
+                                    <p class="p-t-1">
+                                        <i class="fa fa-glass" aria-hidden="true"></i>
+                                        You like going out in some of these places:
+                                        Demode, La bicicleta, Mondo and more
+                                    </p>
+                                    <p class="p-t-1">
+                                        <i class="fa fa-cutlery" aria-hidden="true"></i>
+                                        Some of your favorite cafes and restaurants are:
+                                        La bicicleta, La pescata
+                                    </p>
+                                {% endif %}
+
                             </div>
                         </div>
                     </div>
@@ -223,6 +239,9 @@
                         <i class="fa fa-location-arrow" aria-hidden="true"></i>
                         Places you've been (or would like to go)
                     </h3>
+                    <p>
+                        Based on your likes and tags
+                    </p>
                 </div>
                 <div id="mapid"></div>
             </div>
@@ -252,5 +271,5 @@
 {% block javascript %}
     <!-- Leaflet javascript -->
     <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
-    <script src="{% static 'js/custom-leaflet-map.js' %}"></script>
+    <script src="{% static 'js/social-me.js' %}"></script>
 {% endblock %}

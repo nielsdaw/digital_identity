@@ -7,11 +7,11 @@ var currentLocation;
 var id = "nillernoels.24baa0ml";
 var access_token = "pk.eyJ1IjoibmlsbGVybm9lbHMiLCJhIjoiY2l2am50dmFhMDBiNzJ1cGd0bzVsY3VjMSJ9.Hr1EeBRdOpIOTYHxmXtZSA";
 var markers = [
-    [40.423775571194, -3.7021841036754, "<b>La Bicicletta</b><br>You've been here, Yay"],
-    [40.42299018029149, -3.702220219708498, "<b>Demode</b><br>You've been here too, Yay"],
-    [40.4239493, -3.7007546, "<b>My home</b><br>You've live here, Yay"],
-    [40.4156747, -3.6952896000000237, "<b>Mondo Disko</b><br>You've live here too, Yay"],
-    [40.4223334, -3.706136600000036, "<b>Vega</b><br>You've been eating here, Yay"]
+    [40.423775571194, -3.7021841036754, "<b>La Bicicletta</b><br>You've been here for a coffee"],
+    [40.42299018029149, -3.702220219708498, "<b>Demode</b><br>You've been here too party"],
+    [40.4239493, -3.7007546, "<b>Cafe bueno</b><br>You've been drinking tea here "],
+    [40.4156747, -3.6952896000000237, "<b>Mondo Disko</b><br>You've been partying here"],
+    [40.4223334, -3.706136600000036, "<b>Vega</b><br>You've been eating healthy here"]
 ]
 
 $(document).ready(function () {

@@ -126,7 +126,8 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
             'updated_time,'
             'friends,'
             'about,'
-            'birthday'
+            'birthday,'
+            'devices'
 }
 
 # --- FACEBOOK PUBLIC AVAILABLE FIELDS ---

@@ -8,6 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}{% endblock %}</title>
 
+        <link rel="icon" type="image/png" href="{% static 'img/favicon.ico' %}">
+
         <!-- FONT -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" type="text/css">
 
@@ -24,7 +26,10 @@
         <link rel="stylesheet" href="{% static 'css/simple-sidebar.css' %}">
 
         <!-- FontAwesome min css -->
-        <link rel="stylesheet" href="{% static 'css/font-awesome-4.6.3 2/css/font-awesome.min.css' %}">
+
+        <script src="https://use.fontawesome.com/3e885a4d09.js"></script>
+
+        <!-- <link rel="stylesheet" href="{% static 'css/font-awesome-4.6.3 2/css/font-awesome.min.css' %}"> -->
 
         {% block css %}{% endblock %}
 
