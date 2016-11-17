@@ -3,31 +3,28 @@
 {% block title %}Social Me{% endblock %}
 
 {%block content%}
-    {% if messages %}
-        {% for message in messages %}
-            <div class="col-xs-12 col-md-6 col-lg-offset-3">
-                <div class="alert alert-{{ message.tags }}">
-                    <a href="#" class="close text-center" data-dismiss="alert" aria-label="close" title="close">×</a>
-                    <strong>{{ message }}</strong>
-                </div>
-            </div>
-        {% endfor %}
-    {% endif %}
 
     <div class="row">
         <div class="col-xs-12 col-md-6 col-lg-offset-3 ">
             <div class="text-center">
-                <h1 class="header">Welcome to Social Me</h1>
-                <p class="p-t-2 lead"><b>What?</b><br>The purpose of this site is to provide a service, where you can view and manage
-                    your many different social media accounts in <u>one place</u>
+                <h1 class="header">Social Me</h1>
+                <p class="p-t-2 lead">
+                    <b>What?</b><br>
+                    This site provides a service, where you can view some of the information you provide to social medias (social me).
                 </p>
                 <p class="lead">
-                    <b>How?</b><br>Choose your social media accounts you wan't to connect to the service. The service
-                    will then retrieve your information from the chosen social media(s).<br>
-                    <u>None</u> of the information is stored and it's only you who has access to the information!<br> <a href="">Read more about our privacy policy here</a>
+                    <b>How?</b><br>
+                    Choose your social media accounts you wan't to connect to the service.
+                    The service will then retrieve your information from the chosen social media(s).<br>
                 </p>
+                <p class="lead">
+                    <b>Is it safe?</b><br>
+                    <u>None</u> of your information from social medias is stored and it's only you who has access to the information!<br><br>
+                    <a href="{% url 'privacy_policy' %}">Read more about our privacy policy here</a>
+                </p>
+
                 <div class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3 p-t-2">
-                    <a href="{% url 'auth:login' %}" class="btn btn-block btn-md btn-success">
+                    <a href="{% url 'auth:login' %}" class="btn btn-block btn-md btn-primary">
                       <i class="fa fa-sign-in" aria-hidden="true"></i>
                         Continue to login
                     </a>

@@ -26,10 +26,10 @@ SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
 # Used to redirect the user once the auth process ended successfully.
 # The value of ?next=/foo is used if it was present
-SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/home/'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/connect/'
 
 # URL where the user will be redirected in case of an error
-SOCIAL_AUTH_LOGIN_ERROR_URL = '/home/'
+SOCIAL_AUTH_LOGIN_ERROR_URL = '/connect/'
 
 
 # Used to redirect new registered users, will be used in place of SOCIAL_AUTH_LOGIN_REDIRECT_URL if defined.

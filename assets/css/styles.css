@@ -227,7 +227,6 @@ body{
 .profile-img-detail{
     height: 240px;
     width: 240px;
-
 }
 
 .nav-button{
@@ -272,6 +271,11 @@ body{
     height: 470px;
     border-radius: 3px;
     border: 1px solid rgba(0, 0,0, 0.3);
+}
+
+#logo-nav{
+    height:30px;
+    width: 60px;
 }
 
 

@@ -35,16 +35,30 @@ urlpatterns = [
         name='index'
     ),
     url(
-        r'^home/',
+        r'^connect/',
         views.HomePageView.as_view(),
-        name='home'
+        name='connect'
+    ),
+    url(
+        r'^privacy_policy/',
+        views.PrivacyPolicyView.as_view(),
+        name='privacy_policy'
     ),
     url(
         r'^admin/',
         admin.site.urls
     ),
-    url(r'^dashboard/', include('dashboard.urls', namespace='dashboard')),
-    url('', include('social.apps.django_app.urls', namespace='social')),
-    url('', include('django.contrib.auth.urls', namespace='auth')),
+    url(
+        r'^dashboard/',
+        include('dashboard.urls', namespace='dashboard')
+    ),
+    url(
+        '',
+        include('social.apps.django_app.urls', namespace='social')
+    ),
+    url(
+        '',
+        include('django.contrib.auth.urls', namespace='auth')
+    ),
 
 ]

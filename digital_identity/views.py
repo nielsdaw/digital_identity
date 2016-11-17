@@ -7,20 +7,24 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
-from . import services
-
 
 class IndexView(TemplateView):
     template_name = "index.html"
 
     def get(self, request, *args, **kwargs):
-        print("Index get visited")
+        return render(request, self.template_name,)
+
+
+class PrivacyPolicyView(TemplateView):
+    template_name = "privacy_policy.html"
+
+    def get(self, request, *args, **kwargs):
         return render(request, self.template_name,)
 
 
 @method_decorator(login_required, name='dispatch')
 class HomePageView(TemplateView):
-    template_name = "home.html"
+    template_name = "connect.html"
 
     def get_context_data(self, **kwargs):
         context = super(HomePageView, self).get_context_data(**kwargs)
@@ -44,7 +48,5 @@ class LogoutView(generic.RedirectView):
     url = reverse_lazy("index")
 
     def get(self, request, *args, **kwargs):
-        print("Logout view visited")
-        messages.add_message(request, messages.INFO, 'Logged out successfully - see you soon.')
         logout(request)
         return super().get(request, *args, **kwargs)
