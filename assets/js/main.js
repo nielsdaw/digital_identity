@@ -21,3 +21,15 @@ $(document).ready(function () {
     });
 });
 
+
+//Start Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+$(document).ready(function () {
+    window.cookieconsent_options = {
+        "message":"We use cookies",
+        "dismiss":"I understand",
+        "learnMore":"More info",
+        "link":'/privacy_policy',
+        "theme":"dark-bottom"
+    };
+});
+

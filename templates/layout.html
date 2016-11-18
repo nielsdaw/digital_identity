@@ -19,9 +19,6 @@
         <!-- Bootstrap min css -->
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
 
-        <!-- Bootstrap tour -->
-        <link href="bootstrap-tour.min.css" rel="stylesheet">
-
         <!-- Custom stylesheet -->
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
@@ -31,8 +28,6 @@
         <!-- FontAwesome min css -->
 
         <script src="https://use.fontawesome.com/3e885a4d09.js"></script>
-
-        <!-- <link rel="stylesheet" href="{% static 'css/font-awesome-4.6.3 2/css/font-awesome.min.css' %}"> -->
 
         {% block css %}{% endblock %}
 
@@ -69,6 +64,12 @@
                             </a>
                         </li>
                         <li>
+                            <a  href="" data-toggle="modal" data-target="#info-modal" id="menu-toggle">
+                                <i class="fa fa-info-circle"  aria-hidden="true"></i>
+                                Information
+                            </a>
+                        </li>
+                        <li>
                             <a href="{% url 'auth:logout' %}" id="menu-toggle">
                                 <i class="fa fa-sign-out"  aria-hidden="true"></i>
                                 Sign-out
@@ -77,6 +78,29 @@
                     </ul>
                 </div>
                 <!-- /#sidebar-wrapper END-->
+
+                <!-- Contact Modal -->
+                <div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-labelledby="info-modal">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-info-circle"  aria-hidden="true"></i> Practical Information</h4>
+                      </div>
+                      <div class="modal-body">
+                            Please feel free to send me an email at:<br>
+                            <a href="mailto:niels@dawartz.dk"><i class="fa fa-envelope-o" aria-hidden="true"></i> niels@dawartz.dk</a><br><br>
+
+                            You can at anytime read the Privacy Policy here:<br>
+                            <a href="{% url 'privacy_policy' %}"><i class="fa fa-info" aria-hidden="true"></i> Privacy Policy</a><br>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- -->
         {% endif %}
 
             <div id="page-content-wrapper">
@@ -102,15 +126,20 @@
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-         <!-- main js -->
-         <script src="{% static 'js/main.js' %}"></script>
-
         <!-- Latest compiled and minified bootstrap JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-        <!-- Bootstrap tour js -->
-        <script src="bootstrap-tour.min.js"></script>
+        <!-- main js -->
+         <script src="{% static 'js/main.js' %}"></script>
 
-        {% block javascript %}{% endblock %}
+        <!-- Minified Cookie Consent served from our CDN -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+
+
+
+
+        {% block javascript %}
+
+        {% endblock %}
     </body>
 </html>

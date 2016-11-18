@@ -1,6 +1,11 @@
 {% extends "layout.html" %}
+{% load static %}
 
 {% block title %}Connect your profiles{% endblock %}
+{% block css %}
+    <!-- Bootstrap tour -->
+    <link href="{% static 'css/bootstrap-tour.min.css' %}" rel="stylesheet">
+{% endblock %}
 
 {%block content%}
     {%if user.is_authenticated%}
@@ -32,7 +37,7 @@
 
             <!-- Instagram -->
             <div class="row p-t-1">
-                <div class="col-xs-10 col-xs-offset-1 col-md-4 col-lg-offset-4">
+                <div class="col-xs-10 col-xs-offset-1 col-md-4 col-lg-offset-4" id="connect-profiles">
                     {% if request.session.social_media.instagram %}
                         <div class="no-hover-instagram">
                             <a class="btn btn-block btn-social btn-md btn-instagram">
@@ -92,7 +97,7 @@
 
             <!-- Social Me Buton -->
             <div class="row p-t-5">
-                <div class="col-xs-10 col-xs-offset-1 col-md-4 col-lg-offset-4">
+                <div class="col-xs-10 col-xs-offset-1 col-md-4 col-lg-offset-4" id="social-me">
                     <a href="{% url 'dashboard:social_me' %}" class="btn btn-block btn-lg btn-primary btn-more-info">
                         <i class="fa fa-address-card" aria-hidden="true"></i>
                         Go to Social Me
@@ -102,8 +107,8 @@
 
             <!-- Dashboard button -->
             <div class="row p-t-1">
-                <div class="col-xs-10 col-xs-offset-1 col-md-4 col-lg-offset-4">
-                    <a href="{% url 'dashboard:main' %}" class="btn btn-block btn-lg btn-primary btn-more-info">
+                <div class="col-xs-10 col-xs-offset-1 col-md-4 col-lg-offset-4" id="dashboard">
+                    <a href="{% url 'dashboard:main' %}" class="btn btn-block btn-lg btn-primary btn-more-info" >
                         <i class="fa fa-users" aria-hidden="true"></i>
                         Go to dashboard of profiles
                     </a>
@@ -112,4 +117,10 @@
         </div>
     </div>
     {%endif%}
+
+    {% block javascript %}
+        <!-- Social me Tour js -->
+        <script src="{% static 'js/bootstrap-tour.min.js' %}"></script>
+        <script src="{% static 'js/walk-through.js' %}"></script>
+    {% endblock %}
 {%endblock%}

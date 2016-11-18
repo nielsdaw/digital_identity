@@ -278,4 +278,8 @@ body{
     width: 60px;
 }
 
+.tooltip{
+    border: 1px solid red;
+}
+
 

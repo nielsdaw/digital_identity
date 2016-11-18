@@ -33,7 +33,11 @@ class SocialMe(TemplateView):
     current_date = datetime.date.today()
 
     def get(self, request, *args, **kwargs):
-        return render(request, self.template_name, {'user': request.user, 'date': self.current_date})
+
+        social = request.session['social_media']
+        print("what is in social: {}".format(social))
+
+        return render(request, self.template_name, {'date': self.current_date, 'social': social})
 
 
 @method_decorator(login_required, name='dispatch')

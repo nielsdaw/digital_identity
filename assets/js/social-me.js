@@ -15,8 +15,8 @@ var markers = [
 ]
 
 $(document).ready(function () {
-    //createMap(mymap)
-    //setAllMarkers(markers);
+    createMap(mymap);
+    setAllMarkers(markers);
 });
 
 
