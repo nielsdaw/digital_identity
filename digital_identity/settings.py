@@ -141,14 +141,14 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
 
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, 'assets'),
-# )
-
-# Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'assets'),
+    os.path.join(BASE_DIR, 'assets'),
 )
+
+# # Extra places for collectstatic to find static files.
+# STATICFILES_DIRS = (
+#     os.path.join(PROJECT_ROOT, 'assets'),
+# )
 
 
 # Simplified static file serving.
