@@ -29,7 +29,9 @@ SECRET_KEY = 'h+*y%fxl&k*7+4j%5pyl*vrez(fu42k=ar!f)4ge18%$he#w81'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['myapp.com']
+ALLOWED_HOSTS = ['myapp.com',
+                 'dawartz.dk'
+                 ]
 
 
 # Application definition
@@ -131,16 +133,43 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-# Login URL's
-LOGIN_URL = 'auth:login'
-LOGIN_Redirect_URL = 'home'
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
 )
 
+# # Extra places for collectstatic to find static files.
+# STATICFILES_DIRS = (
+#     os.path.join(PROJECT_ROOT, 'static'),
+# )
+
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+
+# Login URL's
+LOGIN_URL = 'auth:login'
+LOGIN_Redirect_URL = 'home'
+
+
+
+
 # Redirect URL
 
 LOGIN_ERROR_URL = 'home'
+
+
+
+
 
 
