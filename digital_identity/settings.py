@@ -133,6 +133,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
+WSGI_APPLICATION = 'social_me.wsgi.application'
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
@@ -141,14 +143,14 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'assets'),
-)
-
-# # Extra places for collectstatic to find static files.
 # STATICFILES_DIRS = (
-#     os.path.join(PROJECT_ROOT, 'assets'),
+#     os.path.join(BASE_DIR, 'static'),
 # )
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
 
 
 # Simplified static file serving.
@@ -161,11 +163,7 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 LOGIN_URL = 'auth:login'
 LOGIN_Redirect_URL = 'home'
 
-
-
-
 # Redirect URL
-
 LOGIN_ERROR_URL = 'home'
 
 
