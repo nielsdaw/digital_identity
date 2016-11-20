@@ -1,1 +1,1 @@
-web: gunicorn digital_identity.wsgi --log-file -
+web: gunicorn gettingstarted.wsgi --log-file -
