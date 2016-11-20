@@ -34,7 +34,9 @@ DEBUG = False
 ALLOWED_HOSTS = ['myapp.com',
                  'dawartz.dk',
                  'localhost',
-                 'social--me.herokuapp.com'
+                 'social--me.herokuapp.com',
+                 'https://social--me.herokuapp.com',
+                 'social-me.dawartz.dk'
                  ]
 
 
@@ -61,6 +63,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'social.apps.django_app.middleware.SocialAuthExceptionMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'digital_identity.urls'
