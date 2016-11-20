@@ -29,7 +29,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = 'h+*y%fxl&k*7+4j%5pyl*vrez(fu42k=ar!f)4ge18%$he#w81'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['myapp.com',
                  'dawartz.dk',
