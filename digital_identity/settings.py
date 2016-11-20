@@ -33,7 +33,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['myapp.com',
                  'dawartz.dk',
-                 'localhost']
+                 'localhost',
+                 'social - -me.herokuapp.com'
+                 ]
 
 
 # Application definition
