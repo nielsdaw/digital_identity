@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/1.10/howto/deployment/wsgi/
 
 import os
 import sys
+import logging
 
 from django.core.wsgi import get_wsgi_application
 from whitenoise.django import DjangoWhiteNoise
@@ -22,6 +23,10 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "social_me.settings")
 application = get_wsgi_application()
 application = DjangoWhiteNoise(application)
 
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(name)s %(levelname)-8s %(message)s",
+)
 
 # -- original setting local
 # from django.core.wsgi import get_wsgi_application
