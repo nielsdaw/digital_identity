@@ -32,14 +32,10 @@ SECRET_KEY = 'h+*y%fxl&k*7+4j%5pyl*vrez(fu42k=ar!f)4ge18%$he#w81'
 DEBUG = True
 
 ALLOWED_HOSTS = ['myapp.com',
-                 'dawartz.dk',
                  'localhost',
-                 'social--me.herokuapp.com',
-                 'https://social--me.herokuapp.com',
-                 'social-me.dawartz.dk',
-                 '0.0.0.0'
+                 '0.0.0.0',
+                 '127.0.0.1',
                  ]
-
 
 # Application definition
 
