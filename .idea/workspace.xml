@@ -84,8 +84,8 @@
       <file leaf-file-name="production.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/social_me/settings/production.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="38" selection-end-column="40" />
+            <state relative-caret-position="450">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
                 <element signature="e#320#329#0" expanded="true" />
               </folding>
@@ -502,13 +502,6 @@
       <option name="presentableId" value="Default" />
       <updated>1478518452346</updated>
     </task>
-    <task id="LOCAL-00025" summary="changed settings for deployment">
-      <created>1479663238300</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1479663238300</updated>
-    </task>
     <task id="LOCAL-00026" summary="changed staticfiles to static when debug= False">
       <created>1479663880046</created>
       <option name="number" value="00026" />
@@ -845,7 +838,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479745314698</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="test of allowed_host">
+      <created>1479745328371</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1479745328371</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1354,8 +1354,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/social_me/settings/production.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="38" selection-end-column="40" />
+        <state relative-caret-position="450">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <element signature="e#320#329#0" expanded="true" />
           </folding>
