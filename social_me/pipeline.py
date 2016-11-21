@@ -1,6 +1,6 @@
 from dashboard.models import FacebookProfile, InstagramProfile, LinkedinProfile, SpotifyProfile
 from django.forms.models import model_to_dict
-from digital_identity import services
+from social_me import services
 
 
 def update_profile(strategy, backend, user, response, *args, **kwargs):

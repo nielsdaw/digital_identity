@@ -1,1 +1,1 @@
-web: gunicorn digital_identity.wsgi --log-file -
+web: gunicorn social_me.wsgi --log-file -

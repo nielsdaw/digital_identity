@@ -13,11 +13,11 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 
 # import social auth config
-from .config import *
+from ..config import *
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -36,7 +36,8 @@ ALLOWED_HOSTS = ['myapp.com',
                  'localhost',
                  'social--me.herokuapp.com',
                  'https://social--me.herokuapp.com',
-                 'social-me.dawartz.dk'
+                 'social-me.dawartz.dk',
+                 '0.0.0.0'
                  ]
 
 
@@ -66,7 +67,7 @@ MIDDLEWARE_CLASSES = [
     'social.apps.django_app.middleware.SocialAuthExceptionMiddleware',
 ]
 
-ROOT_URLCONF = 'digital_identity.urls'
+ROOT_URLCONF = 'social_me.urls'
 
 TEMPLATES = [
     {
@@ -87,7 +88,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'digital_identity.wsgi.application'
+WSGI_APPLICATION = 'social_me.wsgi.application'
 
 
 # Database
