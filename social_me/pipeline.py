@@ -35,7 +35,7 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
             response['age_range']['min'],
             response.get('updated_time'),
             response.get('access_token'),
-            response['devices'][0]['hardware'],
+            'ipad'
         )
         # get correct size of profile picture
         facebook_profile.profile_picture_url = services.get_fb_photo_url(response.get('access_token'), 250, 250)
