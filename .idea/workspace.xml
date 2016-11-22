@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dc3b095-c158-4018-9a2d-baa2f14560eb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/social-me-tour.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/main_profile.html" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/main_profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/social_me.html" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/social_me.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/social_me/settings/production.py" afterPath="$PROJECT_DIR$/social_me/settings/production.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/social_me/wsgi.py" afterPath="$PROJECT_DIR$/social_me/wsgi.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/styles.css" afterPath="$PROJECT_DIR$/static/css/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/walk-through.js" afterPath="$PROJECT_DIR$/static/js/walk-through.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/layout.html" afterPath="$PROJECT_DIR$/templates/layout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/privacy_policy.html" afterPath="$PROJECT_DIR$/templates/privacy_policy.html" />
     </list>
     <ignored path="social_me.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,21 +27,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="production.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="production.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/social_me/settings/production.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+            <state relative-caret-position="413">
+              <caret line="158" column="14" selection-start-line="158" selection-start-column="14" selection-end-line="158" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wsgi.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="wsgi.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/social_me/wsgi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="345">
+              <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -541,13 +531,6 @@
       <option name="presentableId" value="Default" />
       <updated>1478518452346</updated>
     </task>
-    <task id="LOCAL-00033" summary="changed staticfiles to static when debug= False">
-      <created>1479666208804</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1479666208804</updated>
-    </task>
     <task id="LOCAL-00034" summary="changed staticfiles to static when debug= False">
       <created>1479666381006</created>
       <option name="number" value="00034" />
@@ -884,7 +867,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479817849323</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="updated all templates to be responsive">
+      <created>1479825999427</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1479825999429</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TodoView">
@@ -898,9 +888,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19466881" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19466881" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -974,7 +964,8 @@
     <MESSAGE value="added logging to see error 500" />
     <MESSAGE value="changed https url to allowed host" />
     <MESSAGE value="added ssl configuration for prod settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="added ssl configuration for prod settings" />
+    <MESSAGE value="updated all templates to be responsive" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated all templates to be responsive" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1308,18 +1299,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/social_me/settings/production.py">
+    <entry file="file://$PROJECT_DIR$/social_me/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+        <state relative-caret-position="345">
+          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/social_me/wsgi.py">
+    <entry file="file://$PROJECT_DIR$/social_me/settings/production.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="413">
+          <caret line="158" column="14" selection-start-line="158" selection-start-column="14" selection-end-line="158" selection-end-column="14" />
           <folding />
         </state>
       </provider>
