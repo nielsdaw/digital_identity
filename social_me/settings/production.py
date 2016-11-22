@@ -33,8 +33,8 @@ SECRET_KEY = 'h+*y%fxl&k*7+4j%5pyl*vrez(fu42k=ar!f)4ge18%$he#w81'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://social--me.herokuapp.com',
-                 'https://social-me.dawartz.dk',
+ALLOWED_HOSTS = ['social--me.herokuapp.com',
+                 'social-me.dawartz.dk',
                  ]
 
 
@@ -134,6 +134,14 @@ USE_TZ = True
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+SECURE_SSL_REDIRECT = True
+
+SESSION_COOKIE_SECURE = True
+
+CSRF_COOKIE_SECURE = True
+
+
 
 #static files
 
