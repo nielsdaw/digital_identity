@@ -111,7 +111,7 @@
                                 {% if user.is_authenticated %}<!-- Menu bar -->
                                     <div class="col-md-3 fixed-hidden" id="menu-div">
                                         <a class="btn menu-bar-color" id="menu-toggle-2">
-                                            <i class="fa fa-bars" aria-hidden="true"></i>
+                                            <i class="fa fa-bars" id="side-bar" aria-hidden="true"></i>
                                         </a>
                                     </div><!-- Menu bar END -->
                                 {% endif %}
@@ -121,7 +121,9 @@
                     <!-- body content -->
                     {% block content %}{% endblock %}
                 </div>
+
             </div> <!-- page-content wrapper END -->
+
         </div> <!-- Wrapper END -->
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

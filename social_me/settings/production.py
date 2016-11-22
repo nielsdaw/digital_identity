@@ -132,6 +132,8 @@ USE_L10N = True
 USE_TZ = True
 
 
+# SSL config - remember to turn on when deploying
+
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
@@ -154,7 +156,7 @@ STATICFILES_DIRS = (
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-print("Prod: {}".format(STATIC_ROOT))
+print("Prod:")
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 

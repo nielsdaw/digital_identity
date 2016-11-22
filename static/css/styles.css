@@ -20,6 +20,12 @@ body{
         opacity: 0.6;
         border-radius: 15px;
     }
+
+    .passport-img{
+        height: 250px;
+        opacity: 0.9;
+        filter: grayscale(100%);
+    }
 }
 
 @media (max-width: 1034px) {
@@ -30,21 +36,23 @@ body{
         -o-background-size: cover;
         background-size: cover;
         overflow: hidden;
-        height: 840px;
-
+        height: 600px;
+        overflow-y: auto;
         opacity: 0.6;
         border-radius: 15px;
+    }
+
+    .passport-img{
+        height: 180px;
+        opacity: 0.9;
+        filter: grayscale(100%);
     }
 
 }
 
 
 
-.passport-img{
-    height: 250px;
-    opacity: 0.9;
-	filter: grayscale(100%);
-}
+
 
 .passport-text .lead{
     color: black;
