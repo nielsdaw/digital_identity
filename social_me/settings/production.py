@@ -135,13 +135,13 @@ USE_TZ = True
 # SSL config - remember to turn on when deploying
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-#
-# SECURE_SSL_REDIRECT = True
-#
-# SESSION_COOKIE_SECURE = True
-#
-# CSRF_COOKIE_SECURE = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+SECURE_SSL_REDIRECT = True
+
+SESSION_COOKIE_SECURE = True
+
+CSRF_COOKIE_SECURE = True
 
 
 

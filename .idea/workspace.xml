@@ -30,8 +30,8 @@
       <file leaf-file-name="production.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/social_me/settings/production.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="158" column="14" selection-start-line="158" selection-start-column="14" selection-end-line="158" selection-end-column="14" />
+            <state relative-caret-position="248">
+              <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="143" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -531,13 +531,6 @@
       <option name="presentableId" value="Default" />
       <updated>1478518452346</updated>
     </task>
-    <task id="LOCAL-00034" summary="changed staticfiles to static when debug= False">
-      <created>1479666381006</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1479666381006</updated>
-    </task>
     <task id="LOCAL-00035" summary="changed staticfiles to static when debug= False">
       <created>1479666588619</created>
       <option name="number" value="00035" />
@@ -874,7 +867,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479825999429</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="test without ssl">
+      <created>1479826450865</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1479826450865</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TodoView">
@@ -965,7 +965,8 @@
     <MESSAGE value="changed https url to allowed host" />
     <MESSAGE value="added ssl configuration for prod settings" />
     <MESSAGE value="updated all templates to be responsive" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated all templates to be responsive" />
+    <MESSAGE value="test without ssl" />
+    <option name="LAST_COMMIT_MESSAGE" value="test without ssl" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1309,8 +1310,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/social_me/settings/production.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="158" column="14" selection-start-line="158" selection-start-column="14" selection-end-line="158" selection-end-column="14" />
+        <state relative-caret-position="248">
+          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="143" selection-end-column="25" />
           <folding />
         </state>
       </provider>
