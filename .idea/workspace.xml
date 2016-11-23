@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5dc3b095-c158-4018-9a2d-baa2f14560eb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/privacy_policy.html" afterPath="$PROJECT_DIR$/templates/privacy_policy.html" />
     </list>
     <ignored path="social_me.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="privacy_policy.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="privacy_policy.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/privacy_policy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2145">
-              <caret line="143" column="48" selection-start-line="143" selection-start-column="48" selection-end-line="143" selection-end-column="48" />
+            <state relative-caret-position="165">
+              <caret line="11" column="68" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -89,11 +89,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
               <caret line="22" column="159" selection-start-line="22" selection-start-column="159" selection-end-line="22" selection-end-column="159" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="walk-through.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/walk-through.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="70" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -164,7 +174,6 @@
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/social_me/old_settings.py" />
         <option value="$PROJECT_DIR$/static/js/social-me-tour.js" />
-        <option value="$PROJECT_DIR$/static/js/walk-through.js" />
         <option value="$PROJECT_DIR$/dashboard/templates/dashboard/social_me.html" />
         <option value="$PROJECT_DIR$/dashboard/templates/dashboard/main_profile.html" />
         <option value="$PROJECT_DIR$/social_me/config.py" />
@@ -177,9 +186,10 @@
         <option value="$PROJECT_DIR$/templates/layout.html" />
         <option value="$PROJECT_DIR$/social_me/wsgi.py" />
         <option value="$PROJECT_DIR$/social_me/settings/__init__.py" />
-        <option value="$PROJECT_DIR$/templates/privacy_policy.html" />
         <option value="$PROJECT_DIR$/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/static/js/walk-through.js" />
+        <option value="$PROJECT_DIR$/templates/privacy_policy.html" />
       </list>
     </option>
   </component>
@@ -633,13 +643,6 @@
       <option name="presentableId" value="Default" />
       <updated>1478518452346</updated>
     </task>
-    <task id="LOCAL-00042" summary="changed staticfiles to static when debug= False">
-      <created>1479669936887</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1479669936887</updated>
-    </task>
     <task id="LOCAL-00043" summary="changed staticfiles to static when debug= False">
       <created>1479670616994</created>
       <option name="number" value="00043" />
@@ -976,7 +979,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479904171120</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="changed index text">
+      <created>1479905677695</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1479905677695</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1044,7 +1054,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="prepared for deploymenet" />
     <MESSAGE value="added .gitignore" />
     <MESSAGE value="updated static files&#10;" />
     <MESSAGE value="changed settings for deployment" />
@@ -1069,7 +1078,8 @@
     <MESSAGE value="added bottom padding to layout page" />
     <MESSAGE value="changed privacy policy" />
     <MESSAGE value="updated title" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated title" />
+    <MESSAGE value="changed index text" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed index text" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1277,14 +1287,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/walk-through.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/social-me-tour.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1377,14 +1379,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/privacy_policy.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2145">
-          <caret line="143" column="48" selection-start-line="143" selection-start-column="48" selection-end-line="143" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/main_profile.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-46">
@@ -1421,6 +1415,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="159" selection-start-line="22" selection-start-column="159" selection-end-line="22" selection-end-column="159" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/walk-through.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="70" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/privacy_policy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="68" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
           <folding />
         </state>
       </provider>
