@@ -93,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
-              <caret line="22" column="179" selection-start-line="22" selection-start-column="179" selection-end-line="22" selection-end-column="179" />
+              <caret line="22" column="157" selection-start-line="22" selection-start-column="157" selection-end-line="22" selection-end-column="157" />
               <folding />
             </state>
           </provider>
@@ -643,13 +643,6 @@
       <option name="presentableId" value="Default" />
       <updated>1478518452346</updated>
     </task>
-    <task id="LOCAL-00044" summary="changed staticfiles to static when debug= False">
-      <created>1479670674963</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1479670674963</updated>
-    </task>
     <task id="LOCAL-00045" summary="changed staticfiles to static when debug= False">
       <created>1479670831790</created>
       <option name="number" value="00045" />
@@ -986,7 +979,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479908621052</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="changed text in index">
+      <created>1479909116258</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1479909116258</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1054,7 +1054,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="updated static files&#10;" />
     <MESSAGE value="changed settings for deployment" />
     <MESSAGE value="changed staticfiles to static when debug= False" />
     <MESSAGE value="added load static to all templates" />
@@ -1079,7 +1078,8 @@
     <MESSAGE value="updated title" />
     <MESSAGE value="changed index text" />
     <MESSAGE value="changed tittle of privacy/terms of use" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed tittle of privacy/terms of use" />
+    <MESSAGE value="changed text in index" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed text in index" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1430,7 +1430,7 @@
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
-          <caret line="22" column="179" selection-start-line="22" selection-start-column="179" selection-end-line="22" selection-end-column="179" />
+          <caret line="22" column="157" selection-start-line="22" selection-start-column="157" selection-end-line="22" selection-end-column="157" />
           <folding />
         </state>
       </provider>
