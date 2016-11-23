@@ -93,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
-              <caret line="22" column="157" selection-start-line="22" selection-start-column="157" selection-end-line="22" selection-end-column="157" />
+              <caret line="22" column="158" selection-start-line="22" selection-start-column="158" selection-end-line="22" selection-end-column="158" />
               <folding />
             </state>
           </provider>
@@ -643,13 +643,6 @@
       <option name="presentableId" value="Default" />
       <updated>1478518452346</updated>
     </task>
-    <task id="LOCAL-00045" summary="changed staticfiles to static when debug= False">
-      <created>1479670831790</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1479670831790</updated>
-    </task>
     <task id="LOCAL-00046" summary="changed staticfiles to static when debug= False">
       <created>1479671350665</created>
       <option name="number" value="00046" />
@@ -986,7 +979,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479909116258</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="changed text in index">
+      <created>1479917005581</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1479917005581</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1430,7 +1430,7 @@
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
-          <caret line="22" column="157" selection-start-line="22" selection-start-column="157" selection-end-line="22" selection-end-column="157" />
+          <caret line="22" column="158" selection-start-line="22" selection-start-column="158" selection-end-line="22" selection-end-column="158" />
           <folding />
         </state>
       </provider>
