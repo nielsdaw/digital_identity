@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5dc3b095-c158-4018-9a2d-baa2f14560eb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/privacy_policy.html" afterPath="$PROJECT_DIR$/templates/privacy_policy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
     </list>
     <ignored path="social_me.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="privacy_policy.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="privacy_policy.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/privacy_policy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="68" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
+            <state relative-caret-position="360">
+              <caret line="56" column="46" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -89,11 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
-              <caret line="22" column="159" selection-start-line="22" selection-start-column="159" selection-end-line="22" selection-end-column="159" />
+              <caret line="22" column="179" selection-start-line="22" selection-start-column="179" selection-end-line="22" selection-end-column="179" />
               <folding />
             </state>
           </provider>
@@ -187,9 +187,9 @@
         <option value="$PROJECT_DIR$/social_me/wsgi.py" />
         <option value="$PROJECT_DIR$/social_me/settings/__init__.py" />
         <option value="$PROJECT_DIR$/templates/registration/login.html" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/static/js/walk-through.js" />
         <option value="$PROJECT_DIR$/templates/privacy_policy.html" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
       </list>
     </option>
   </component>
@@ -643,13 +643,6 @@
       <option name="presentableId" value="Default" />
       <updated>1478518452346</updated>
     </task>
-    <task id="LOCAL-00043" summary="changed staticfiles to static when debug= False">
-      <created>1479670616994</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1479670616994</updated>
-    </task>
     <task id="LOCAL-00044" summary="changed staticfiles to static when debug= False">
       <created>1479670674963</created>
       <option name="number" value="00044" />
@@ -986,7 +979,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479905677695</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="changed tittle of privacy/terms of use">
+      <created>1479908621052</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1479908621052</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1054,7 +1054,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="added .gitignore" />
     <MESSAGE value="updated static files&#10;" />
     <MESSAGE value="changed settings for deployment" />
     <MESSAGE value="changed staticfiles to static when debug= False" />
@@ -1079,7 +1078,8 @@
     <MESSAGE value="changed privacy policy" />
     <MESSAGE value="updated title" />
     <MESSAGE value="changed index text" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed index text" />
+    <MESSAGE value="changed tittle of privacy/terms of use" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed tittle of privacy/terms of use" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1411,14 +1411,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="159" selection-start-line="22" selection-start-column="159" selection-end-line="22" selection-end-column="159" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/walk-through.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1429,8 +1421,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/privacy_policy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="68" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
+        <state relative-caret-position="360">
+          <caret line="56" column="46" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="179" selection-start-line="22" selection-start-column="179" selection-end-line="22" selection-end-column="179" />
           <folding />
         </state>
       </provider>
