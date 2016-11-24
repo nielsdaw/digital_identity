@@ -281,9 +281,11 @@
 
     <!-- Hotfix for instagram locations -->
     <script type="text/javascript">
+        instagram_data = {{ instagram_locations|safe }};
+        facebook_data = {{ facebook_locations|safe }};
+        facebook_data2 = {{ facebook_locations_2|safe }}
         $(document).ready(function() {
-            instagram_data = {{ instagram_locations|safe }};
-            setAllMarkers(instagram_data);
+            setAllMarkers(instagram_data, facebook_data, facebook_data2);
         })
     </script>
 {% endblock %}

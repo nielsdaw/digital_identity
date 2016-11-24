@@ -20,13 +20,34 @@ $(document).ready(function () {
 });
 
 
-// Loop through a list of markers
+// Loop through optional list of markers
 // and bind it to my map
-function setAllMarkers(list){
-    for (i = 0; i < list.length; i++) {
-        marker = L.marker([list[i][0], list[i][1]]).addTo(mymap);
-        marker.bindPopup(list[i][2]);
+function setAllMarkers(list1, list2, list3){
+    list1 = list1 || 0;
+    list2 = list2 || 0;
+    list3 = list3 || 0;
+
+    if (list1){
+        for (i = 0; i < list1.length; i++) {
+            marker = L.marker([list1[i][0], list1[i][1]]).addTo(mymap);
+            marker.bindPopup(list1[i][2]);
+        }
     }
+
+    if (list2){
+        for (i = 0; i < list2.length; i++) {
+            marker = L.marker([list2[i][0], list2[i][1]]).addTo(mymap);
+            marker.bindPopup(list2[i][2]);
+        }
+    }
+
+    if (list3){
+        for (i = 0; i < list3.length; i++) {
+            marker = L.marker([list3[i][0], list3[i][1]]).addTo(mymap);
+            marker.bindPopup(list3[i][2]);
+        }
+    }
+
 }
 
 // create the map

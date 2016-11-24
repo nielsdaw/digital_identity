@@ -18,9 +18,10 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
     else:
         social_media_dict = strategy.session_get('social_media')
 
+
     # Facebook
     if backend.name == 'facebook':
-        print("facebook response: {}".format(response))
+        # print("facebook response: {}".format(response))
 
         # instantiate new facebook dashboard, without storing to database
         facebook_profile = FacebookProfile.objects.create_facebook_profile(
@@ -49,8 +50,7 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
 
     # Instagram
     elif backend.name == 'instagram':
-        print("instagram response: {}".format(response))
-        services.get_media_locations(response['access_token'])
+        # print("instagram response: {}".format(response))
 
         # instantiate instagram object
         instagram_profile = InstagramProfile.objects.create_instagram_profile(
@@ -74,7 +74,7 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
 
     # LinkedIn
     elif backend.name == 'linkedin':
-        print("LinkedIn response: {}".format(response))
+        # print("LinkedIn response: {}".format(response))
 
         # instantiate linkedin object
         linkedin_profile = LinkedinProfile.objects.create_linkedin_profile(

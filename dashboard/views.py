@@ -27,18 +27,27 @@ class SocialMe(TemplateView):
     current_date = datetime.date.today()
 
     def get(self, request, *args, **kwargs):
-
+        # social media
         social = service.get_social_medias(request)
+
+        # facebook
+        facebook = service.check_for_social_media(request, 'facebook')
+        facebook_places = service.get_tagged_places(facebook['auth_token'])
+        facebook_likes_locations = service.get_likes_locations(facebook['auth_token'])
+        print(facebook_likes_locations)
+
+        # instagram
         instagram = service.check_for_social_media(request, 'instagram')
-        locations_instagram = None
-
+        instagram_locations = {}
         if service.check_for_social_media(request, 'instagram'):
-            locations_instagram = service.get_media_locations(instagram['access_token'])
+            instagram_locations = service.get_media_locations(instagram['access_token'])
 
-        instagram_locations_list = simplejson.dumps(locations_instagram)
-        print(instagram_locations_list)
-
-        return render(request, self.template_name, {'date': self.current_date, 'social': social, 'instagram_locations': instagram_locations_list})
+        return render(request, self.template_name, {'date': self.current_date,
+                                                    'social': social,
+                                                    'instagram_locations': instagram_locations,
+                                                    'facebook_locations': facebook_places,
+                                                    'facebook_locations_2': facebook_likes_locations,
+                                                    })
 
 
 @method_decorator(login_required, name='dispatch')

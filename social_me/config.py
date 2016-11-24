@@ -139,7 +139,6 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
             'birthday,'
             'devices,'
             'relationship_status,'
-            'tagged_places,'
             'hometown,'
             'location'
 }
