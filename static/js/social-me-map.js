@@ -16,9 +16,8 @@ var markers = [
 
 $(document).ready(function () {
     createMap(mymap);
-    setAllMarkers(markers);
+    // setAllMarkers(markers);
 });
-
 
 
 // Loop through a list of markers

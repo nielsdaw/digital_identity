@@ -37,6 +37,7 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
             response.get('access_token'),
             'ipad'
         )
+
         # get correct size of profile picture
         facebook_profile.profile_picture_url = services.get_fb_photo_url(response.get('access_token'), 250, 250)
 
@@ -49,7 +50,7 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
     # Instagram
     elif backend.name == 'instagram':
         print("instagram response: {}".format(response))
-        services.get_recent_instagram_likes(response['access_token'])
+        services.get_media_locations(response['access_token'])
 
         # instantiate instagram object
         instagram_profile = InstagramProfile.objects.create_instagram_profile(

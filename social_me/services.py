@@ -5,6 +5,51 @@ import facebook
 import json
 
 
+# -- generic service --
+
+
+def get_social_medias(request):
+    """
+    Takes a request and return a dict of social_medias
+    :param request:
+    :return: a dict of social media(s)
+    """
+    social_medias = request.session['social_media']
+    return social_medias
+
+
+def check_for_social_media(request, social_media_name):
+    """
+    Check if the social_media_name is in the current session of the request
+    :param request:
+    :param social_media_name:
+    :return: a dict with the social media or False
+    """
+
+
+    if social_media_name in request.session['social_media']:
+        social_media = request.session['social_media'][social_media_name]
+        print("what is in session: {}".format(social_media))
+        return social_media
+
+    if social_media_name in request.session['social_media']:
+        social_media = request.session['social_media'][social_media_name]
+        print("what is in session: {}".format(social_media))
+        return social_media
+
+    if social_media_name in request.session['social_media']:
+        social_media = request.session['social_media'][social_media_name]
+        print("what is in session: {}".format(social_media))
+        return social_media
+
+    if social_media_name in request.session['social_media']:
+        social_media = request.session['social_media'][social_media_name]
+        print("what is in session: {}".format(social_media))
+        return social_media
+
+    return False
+
+
 # --- Instagram services ---
 
 def get_recent_instagram_photos(auth_token):
@@ -17,6 +62,7 @@ def get_recent_instagram_photos(auth_token):
     params = {'access_token': auth_token}
     r = requests.get(url, params=params)
     recent_photos = r.json()
+    print(recent_photos)
     url_of_photos = []
     for item in recent_photos['data']:
         url_of_photos.append(item['images']['standard_resolution']['url'])
@@ -39,13 +85,23 @@ def get_recent_instagram_likes(auth_token):
 
 
 def get_media_locations(auth_token):
+    """
+    Get a list of lists with latitude[0], longitude[1], name[2], from instagram photos.
+    :param auth_token:
+    :return: list of lists
+    """
     url = 'https://api.instagram.com/v1/users/self/media/recent/'
     params = {'access_token': auth_token}
     r = requests.get(url, params=params)
     recent_photos = r.json()
-    url_of_photos = []
+    list_of_locations = []
     for item in recent_photos['data']:
-        url_of_photos.append(item['images'])
+        check = item['location']
+        print(check)
+        if item['location']:
+            list_of_locations.append([item['location']['latitude'], item['location']['longitude'], item['location']['name']])
+            print(item['location']['latitude'])
+    return list_of_locations
 
 
 
@@ -70,7 +126,25 @@ def get_fb_photo_url(auth_token, height, width):
 def get_friends(auth_token):
     graph = facebook.GraphAPI(access_token=auth_token, version='2.8')
     friends = graph.get_connections(id='me', connection_name='friends')
-    print(rs)
+    print(friends)
+
+
+def get_cafes_and_bars(auth_token):
+    url = 'https://graph.facebook.com/me/?fields=likes{category,category_list,name,location}'
+    params = {'access_token': auth_token}
+    r = requests.get(url, params=params)
+    result = r.json()
+    print(result)
+
+
+def get_participated_events(auth_token):
+    url = 'https://graph.facebook.com/me/?fields=events'
+    # url = 'https://graph.facebook.com/me/?fields=events{name,place}'
+    params = {'access_token': auth_token}
+    r = requests.get(url, params=params)
+    result = r.json()
+    print(result)
+
 
 
 

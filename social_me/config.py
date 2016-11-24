@@ -109,7 +109,17 @@ SOCIAL_AUTH_FACEBOOK_SCOPE = [
     'public_profile',
     'email',
     'user_friends',
+    'user_birthday',
+    'user_relationships',
+    'user_hometown',
+    'user_tagged_places',
+    'user_location',
+    'user_likes',
+    'user_events',
 ]
+
+# 'user_work_history'
+# 'user_education_history'
 
 SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
   'fields': 'id,'
@@ -127,7 +137,11 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
             'friends,'
             'about,'
             'birthday,'
-            'devices'
+            'devices,'
+            'relationship_status,'
+            'tagged_places,'
+            'hometown,'
+            'location'
 }
 
 # --- FACEBOOK PUBLIC AVAILABLE FIELDS ---

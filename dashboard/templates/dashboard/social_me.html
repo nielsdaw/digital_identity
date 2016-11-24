@@ -269,9 +269,21 @@
 {% endblock %}
 
 {% block javascript %}
-    <!-- Leaflet javascript -->
+
+    <!-- Booststrap Tour javascript -->
     <script src="{% static 'js/bootstrap-tour.min.js' %}"></script>
+    <!-- Leaflet javascript -->
     <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
-    <script src="{% static 'js/social-me.js' %}"></script>
+
+    <!-- Custom javascript -->
+    <script src="{% static 'js/social-me-map.js' %}"></script>
     <script src="{% static 'js/social-me-tour.js' %}"></script>
+
+    <!-- Hotfix for instagram locations -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            instagram_data = {{ instagram_locations|safe }};
+            setAllMarkers(instagram_data);
+        })
+    </script>
 {% endblock %}
