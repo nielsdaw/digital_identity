@@ -28,6 +28,10 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
             response.get('id'),
             response.get('first_name'),
             response.get('last_name'),
+            response.get('birthday'),
+            response.get('relationship_status') if 'relationship_status' in response else 'Not public',
+            response.get('hometown')['name'] if 'hometown' in response else "Not public",
+            response.get('location')['name'] if 'location' in response else "Not public",
             response.get('email'),
             response.get('gender'),
             response['picture']['data']['url'],
@@ -36,7 +40,7 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
             response['age_range']['min'],
             response.get('updated_time'),
             response.get('access_token'),
-            'ipad'
+            response['devices'][0]['hardware'] if 'devices' in response else "SmartPhone"
         )
 
         # get correct size of profile picture

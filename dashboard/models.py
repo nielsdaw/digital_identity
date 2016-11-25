@@ -9,6 +9,10 @@ class FacebookManager(models.Manager):
             facebook_id,
             first_name,
             last_name,
+            birthday,
+            relationship,
+            hometown,
+            current_city,
             facebook_email,
             gender,
             profile_picture_url,
@@ -23,6 +27,10 @@ class FacebookManager(models.Manager):
             facebook_id=facebook_id,
             first_name=first_name,
             last_name=last_name,
+            birthday=birthday,
+            relationship=relationship,
+            hometown=hometown,
+            current_city=current_city,
             facebook_email=facebook_email,
             gender=gender,
             profile_picture_url=profile_picture_url,
@@ -42,6 +50,10 @@ class FacebookProfile(models.Model):
     facebook_id = models.IntegerField(default=0)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
+    birthday = models.TextField(default="")
+    relationship = models.TextField(default="")
+    hometown = models.TextField(default="")
+    current_city = models.TextField(default="")
     facebook_email = models.EmailField(default="")
     gender = models.CharField(max_length=20)
     profile_picture_url = models.TextField(default="")

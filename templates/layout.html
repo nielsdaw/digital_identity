@@ -53,7 +53,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{% url 'dashboard:social_me' %}">
+                            <a href="{% url 'dashboard:social_me' %}" id="social-me-nav">
                                 <i class="fa fa-address-card" aria-hidden="true"></i>
                                 Social Me
                             </a>
@@ -101,6 +101,25 @@
                     </div>
                   </div>
                 </div>
+                <!-- -->
+
+                <!-- Loader Modal -->
+                <div class="modal fade" id="loader-modal" tabindex="-1" role="dialog" aria-labelledby="loader-modal">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title text-center" id="myModalLabel"> Please wait...</h4>
+                      </div>
+                      <div class="modal-body text-center">
+                          <div class="center-loader">
+                            <div class="loader"><img src="{% static 'img/cube.gif' %}"></div>
+                          </div>
+                          We're loading you're data from the connected social media's.
+                          <br>(It takes about 30 seconds)
+                      </div>
+                      </div>
+                    </div>
+                  </div>
                 <!-- -->
         {% endif %}
 

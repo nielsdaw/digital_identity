@@ -58,8 +58,8 @@
                         <div class="row">
                             <div class="col-md-5 passport-text col-xs-6">
                                 <p>
-                                    Nationality:<br>
-                                    <span class="lead" id="elem_city"><strong>Danish</strong></span>
+                                    Hometown:<br>
+                                    <span class="lead" id="elem_city"><strong>{{ social.facebook.hometown }}</strong></span>
                                 </p>
                             </div>
                             <div class="col-md-offset-2 col-md-5 passport-text col-xs-6">
@@ -73,14 +73,14 @@
                             <div class="col-md-5 passport-text col-xs-6">
                                 <p>
                                     Date of birth:<br>
-                                    <span class="lead"><strong>21 08 90</strong></span>
+                                    <span class="lead"><strong>{{ social.facebook.birthday }}</strong></span>
                                 </p>
 
                             </div>
                             <div class="col-md-offset-2 col-md-5 passport-text col-xs-6">
                                 <p>
                                     Current city.:<br>
-                                    <span class="lead"><strong>Madrid</strong></span>
+                                    <span class="lead"><strong>{{ social.facebook.current_city }}</strong></span>
                                 </p>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                             <div class="col-md-5 passport-text col-xs-6">
                                 <p>
                                     Civil status:<br>
-                                    <span class="lead"><strong>Married</strong></span>
+                                    <span class="lead"><strong>{{ social.facebook.relationship }}</strong></span>
                                 </p>
                             </div>
                             <div class="col-md-offset-2 col-md-5 passport-text col-xs-6">
@@ -179,19 +179,19 @@
                         <div class="row ">
                             <div class="col-md-5 col-xs-5 img-four pull-left p-b-2" id="preferences">
 
-                                {% if social.facebook %}
+                                {% if social.spotify %}
                                     <img src="http://placehold.it/100x100" alt="profile-picture" class="pull-left img-rounded img-responsive">
                                     <img src="http://placehold.it/100x100" alt="profile-picture" class="pull-left img-rounded img-responsive">
                                 {% endif %}
 
                                 {% if social.facebook %}
-                                    <img src="http://placehold.it/100x100" alt="profile-picture" class="pull-left img-rounded img-responsive">
-                                    <img src="http://placehold.it/100x100" alt="profile-picture" class="pull-left img-rounded img-responsive">
+                                    <img src="{{ facebook_bars.0.2 }}" alt="profile-picture" class="pull-left img-rounded img-responsive">
+                                    <img src="{{ facebook_cafes.0.2 }}" alt="profile-picture" class="pull-left img-rounded img-responsive">
                                 {% endif %}
                             </div>
 
                             <div class="col-md-7 ">
-                                {% if social.facebook %}
+                                {% if social.spotify %}
                                     <p>
                                         <i class="fa fa-headphones" aria-hidden="true"></i>
                                         You like listening to rock & roll, jazz, r&b
@@ -206,12 +206,12 @@
                                     <p class="p-t-1">
                                         <i class="fa fa-glass" aria-hidden="true"></i>
                                         You like going out in some of these places:
-                                        Demode, La bicicleta, Mondo and more
+                                        {{ facebook_bars.0.0 }}, {{ facebook_bars.1.0 }}, {{ facebook_bars.2.0 }} {{ facebook_bars.3.0 }}
                                     </p>
                                     <p class="p-t-1">
                                         <i class="fa fa-cutlery" aria-hidden="true"></i>
-                                        Some of your favorite cafes and restaurants are:
-                                        La bicicleta, La pescata
+                                        Some of your preferred cafes and restaurants are:
+                                        {{ facebook_cafes.0.0 }}, {{ facebook_cafes.1.0 }}, {{ facebook_cafes.2.0 }} {{ facebook_cages.4.0 }}
                                     </p>
                                 {% endif %}
                             </div>
@@ -262,9 +262,6 @@
             </div>
         </div>
     {% endif %}
-
-
-
 
 {% endblock %}
 

@@ -285,4 +285,10 @@ body{
     border: 1px solid red;
 }
 
+.center-loader{
+    width: 50%;
+    margin: 0 auto;
+    height:150px;
+    text-align: center;
+}
 

@@ -32,9 +32,16 @@ class SocialMe(TemplateView):
 
         # facebook
         facebook = service.check_for_social_media(request, 'facebook')
-        facebook_places = service.get_tagged_places(facebook['auth_token'])
-        facebook_likes_locations = service.get_likes_locations(facebook['auth_token'])
-        print(facebook_likes_locations)
+        facebook_token = facebook['auth_token']
+        facebook_places = service.get_tagged_places(facebook_token)
+        facebook_likes_locations = service.get_likes_locations(facebook_token)
+        facebook_cafes_and_bars = service.get_cafes_and_bars(facebook_token)
+
+        # hotfix to clean pictures
+        clean_bar_photo = service.get_fb_photo_url_by_id(facebook_token,facebook_cafes_and_bars[0][0][3], 100, 100)
+        clean_cafe_photo = service.get_fb_photo_url_by_id(facebook_token, facebook_cafes_and_bars[1][0][3], 100, 100)
+        facebook_cafes_and_bars[0][0][2] = clean_cafe_photo
+        facebook_cafes_and_bars[1][0][2] = clean_bar_photo
 
         # instagram
         instagram = service.check_for_social_media(request, 'instagram')
@@ -47,6 +54,8 @@ class SocialMe(TemplateView):
                                                     'instagram_locations': instagram_locations,
                                                     'facebook_locations': facebook_places,
                                                     'facebook_locations_2': facebook_likes_locations,
+                                                    'facebook_cafes': facebook_cafes_and_bars[0],
+                                                    'facebook_bars': facebook_cafes_and_bars[1],
                                                     })
 
 

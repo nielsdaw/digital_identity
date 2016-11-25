@@ -5,8 +5,7 @@ from django.views import generic
 from django.views.generic import TemplateView
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
-from django.contrib import messages
-
+from . import services
 
 class IndexView(TemplateView):
     template_name = "index.html"

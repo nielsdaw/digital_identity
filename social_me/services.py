@@ -1,12 +1,8 @@
 import requests
 import spotipy
-import facebook
-
-import json
 
 
-# -- generic service --
-
+# -- General services --
 
 def get_social_medias(request):
     """
@@ -121,34 +117,132 @@ def get_fb_photo_url(auth_token, height, width):
     return photo_url['data']['url']
 
 
-def get_friends(auth_token):
-    graph = facebook.GraphAPI(access_token=auth_token, version='2.8')
-    friends = graph.get_connections(id='me', connection_name='friends')
-    print(friends)
+def get_fb_photo_url_by_id(auth_token, user_id, height, width):
+    """
+    Call the facebook API to get users profile picture with specified
+    height and width, by using auth token.
+    :param auth_token: users authentication token
+    :param user_id of the user/event/page
+    :param height: the requested height
+    :param width: the requested width
+    :return: Return a string of URL to photo
+    """
+    url = 'https://graph.facebook.com/' + user_id + '/picture?redirect=false'
+    params = {'access_token': auth_token, 'height': height, 'width': width}
+    r = requests.get(url, params=params)
+    print(r)
+    photo_url = r.json()
+    return photo_url['data']['url']
 
 
 def get_cafes_and_bars(auth_token):
-    url = 'https://graph.facebook.com/me/?fields=likes{category,category_list,name,location}'
+    """
+    Get a list of cafes and bars/night clubs from facebook Likes
+    :param auth_token:
+    :return: a list with two lists [0] cafes, [1] bars/night clubs
+    """
+    url = 'https://graph.facebook.com/me/?fields=likes{category,category_list,name,picture}'
     params = {'access_token': auth_token}
     r = requests.get(url, params=params)
     result = r.json()
+    first_loop = True
+    if_condition = None
+    list_of_cafes = []
+    list_of_bars = []
+    check_list_of_cafes = {'Breakfast & Brunch Restaurant': True,
+                     'Restaurant/Cafe': True,
+                     'Cafe': True,
+                     'Coffee Shop': True,
+                     'Restaurant': True
+                     }
 
+    check_list_of_bars = {'Dance & Night Club': True,
+                    'Bar': True,
+                    'Club': True,
+                    'Party Entertainment Venue': True,
+                    'Performance & Sports Venue': True,
+                    'Live Music Venue': True
+                    }
+
+    # loop through the json result and call the next request if exist
+    # catch KeyError, if 'next' key doesn't exist, since there are no more likes
     while True:
         try:
-            for item in result['likes']['data']:
-                print(item)
+            if first_loop:
+                if_condition = result['likes']['data']
+            else:
+                if_condition = result['data']
+
+            # loop through content
+            for item in if_condition:
+                # check for cafes in category
+                if item['category'] in check_list_of_cafes:
+                    list_of_cafes.append(
+                        [
+                            item['name'],
+                            item['category'],
+                            item['picture']['data']['url'],
+                            item['id']
+                        ]
+                    )
+                    continue
+                # check for bars in category
+                elif item['category'] in check_list_of_bars:
+                    list_of_bars.append(
+                        [
+                            item['name'],
+                            item['category'],
+                            item['picture']['data']['url'],
+                            item['id']
+                        ]
+                    )
+                    continue
+
+                # loop through category_list to check for bars and cafes
+                elif 'category_list' in item:
+                    for category in item['category_list']:
+                        if category['name'] in check_list_of_cafes:
+                            list_of_cafes.append(
+                                [
+                                    item['name'],
+                                    category['name'],
+                                    item['picture']['data']['url'],
+                                    item['id']
+                                ]
+                            )
+                            break
+
+                        elif category['name'] in check_list_of_bars:
+                            list_of_bars.append(
+                                [
+                                    item['name'],
+                                    category['name'],
+                                    item['picture']['data']['url'],
+                                    item['id']
+                                ]
+                            )
+                            break
 
             # Attempt to make a request to the next page of data, if it exists.
-            result = requests.get(result['likes']['paging']['next']).json()
+            if first_loop:
+                result = requests.get(result['likes']['paging']['next']).json()
+                first_loop = False
+
+            # after first request, the response json pattern changes
+            else:
+                result = requests.get(result['paging']['next']).json()
+
         except KeyError:
-            # When there are no more pages (['paging']['next']), break from the
-            # loop and end the script.
             break
+
+    # return lists in a list
+    response = [list_of_cafes, list_of_bars]
+    return response
 
 
 def get_likes_locations(auth_token):
     """
-    Get a list of lists with latitude[0], longitude[1], name[2], from facebook likes.
+    Get a list of lists with latitude[0], longitude[1], name[2], based from facebook likes.
     :param auth_token:
     :return: list of lists
     """
@@ -173,7 +267,6 @@ def get_likes_locations(auth_token):
 
                 # check for location
                 if 'location' in item:
-                    print(item)
 
                     # check for latitude (implicitly altitude will be there)
                     if 'latitude' in item['location']:
@@ -195,9 +288,7 @@ def get_likes_locations(auth_token):
             # after first request, the response json pattern changes
             else:
                 result = requests.get(result['paging']['next']).json()
-
         except KeyError:
-            print(KeyError)
             break
     return list_of_locations
 
@@ -215,7 +306,6 @@ def get_tagged_places(auth_token):
     result = r.json()
     list_of_locations = []
     list_of_names = {}
-    print(result)
     for item in result['data']:
         if item['place']['location'] and item['place']['name'] not in list_of_names:
             list_of_locations.append(
@@ -227,6 +317,8 @@ def get_tagged_places(auth_token):
             list_of_names[item['place']['name']] = True
 
     return list_of_locations
+
+
 
 
 def get_participated_events(auth_token):
