@@ -37,18 +37,11 @@ $(document).ready(function () {
 // Loader Modal
 // close the sidebar and hide the menu-bar-button
 $(document).ready(function () {
-    $("#social-me").click(function(e) {
+    $(".social-me").click(function(e) {
         e.preventDefault();
-        $("#loader-modal").addClass("in");
-        $("#loader-modal").show();
+        $("#loader-modal").addClass("in").show();
         window.location.href = "/dashboard/social_me";
-    });
-
-    $("#social-me-nav").click(function(e) {
-        e.preventDefault();
-        $("#loader-modal").addClass("in");
-        $("#loader-modal").show();
-        window.location.href = "/dashboard/social_me";
+        document.body.innerHTML += '<div class="modal-backdrop fade in"></div>';
     });
 });
 

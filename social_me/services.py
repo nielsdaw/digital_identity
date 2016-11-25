@@ -1,6 +1,6 @@
 import requests
 import spotipy
-
+import flickrapi
 
 # -- General services --
 
@@ -23,22 +23,6 @@ def check_for_social_media(request, social_media_name):
     """
     if social_media_name in request.session['social_media']:
         social_media = request.session['social_media'][social_media_name]
-        print("what is in session: {}".format(social_media))
-        return social_media
-
-    if social_media_name in request.session['social_media']:
-        social_media = request.session['social_media'][social_media_name]
-        print("what is in session: {}".format(social_media))
-        return social_media
-
-    if social_media_name in request.session['social_media']:
-        social_media = request.session['social_media'][social_media_name]
-        print("what is in session: {}".format(social_media))
-        return social_media
-
-    if social_media_name in request.session['social_media']:
-        social_media = request.session['social_media'][social_media_name]
-        print("what is in session: {}".format(social_media))
         return social_media
 
     return False
@@ -319,38 +303,105 @@ def get_tagged_places(auth_token):
     return list_of_locations
 
 
-
-
-def get_participated_events(auth_token):
-    url = 'https://graph.facebook.com/me/?fields=events'
-    # url = 'https://graph.facebook.com/me/?fields=events{name,place}'
-    params = {'access_token': auth_token}
-    r = requests.get(url, params=params)
-    result = r.json()
-    print(result)
-
-
-
-
 # ---- Spotify services ---
 
 def get_spotify_artists(auth_token):
     """
+    Get top artists for user in list of list [0] name, [1] img-url.
     :param auth_token:
-    :return: top artists of user
+    :return: list of lists
     """
     sp = spotipy.Spotify(auth=auth_token)
+    artists = []
     top_artists = sp.current_user_top_artists(5, 0, 'long_term')
-    return top_artists
+    for item in top_artists['items']:
+        artists.append(
+            [
+                item['name'],
+                item['images'][0]['url']
+            ]
+        )
+    return artists
 
 def get_spotify_tracks(auth_token):
     """
+    Get top tracks for user in list of list [0] track-name, [1] album-name, [2] img-url.
     :param auth_token:
-    :return: top_tracks of user
+    :return: list of lists
     """
     sp = spotipy.Spotify(auth=auth_token)
-    top_tracks = sp.current_user_top_tracks(5, 0, 'long_term')
+    result = sp.current_user_top_tracks(5, 0, 'long_term')
+    top_tracks = []
+    for item in result['items']:
+        top_tracks.append(
+            [
+                item['name'],
+                item['album']['name'],
+                item['album']['images'][0]['url']
+            ]
+        )
     return top_tracks
+
+
+
+# --- flickr services ---
+
+
+def get_flickr_image_linkedin(string):
+    """
+    Get an image url for search string, based on LinkedIn search.
+    If the word 'at' is found, the string will be sliced after 'at' to the end
+    :param string:
+    :return: photo url or empty string
+    """
+    api_key ="547355d7b9210ad86fbbec85af8c0bc7"
+    api_secret = "61b624c29e15f2d8"
+    search_string = ""
+
+    bad_search_words = {'Student': True,
+                        'Working': True,
+                        'Searching': True,
+
+                        }
+    count = 0
+
+    # check the words
+    for word in string.split():
+        if 'at' in word:
+            search_string = string[(count+4):]
+            break
+        if word.istitle() and word not in bad_search_words:
+            search_string += " {}".format(word)
+        count += len(word)
+    flickr = flickrapi.FlickrAPI(api_key, api_secret,format='parsed-json')
+    extras = 'url_c'
+    result = flickr.photos.search(text=search_string, per_page=1, extras=extras)
+    try:
+        photo_url = result['photos']['photo'][0]['url_c']
+        return photo_url
+    except KeyError:
+        return ""
+
+
+def get_flickr_image(string):
+    """
+    Get an image url for search string.
+    :param string:
+    :return: photo url or empty string
+    """
+    api_key ="547355d7b9210ad86fbbec85af8c0bc7"
+    api_secret = "61b624c29e15f2d8"
+    search_string = ""
+    flickr = flickrapi.FlickrAPI(api_key, api_secret,format='parsed-json')
+    extras = 'url_c'
+    result = flickr.photos.search(text=search_string, per_page=1, extras=extras)
+    try:
+        photo_url = result['photos']['photo'][0]['url_c']
+        return photo_url
+    except KeyError:
+        return ""
+
+
 
 
 

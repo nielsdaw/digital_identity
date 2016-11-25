@@ -31,7 +31,7 @@
                                 Passeport Digitale
                             </strong>
                         </div>
-                        <img src="{{ social.facebook.profile_picture_url }}" alt="profile-picture" class="center-block img-rounded passport-img">
+                            <img src="{{ social.facebook.profile_picture_url }}" alt="profile-picture" class="center-block img-rounded passport-img">
                         <div class="text-center">
                             <p>
                                 Passport number.:<br>
@@ -80,7 +80,11 @@
                             <div class="col-md-offset-2 col-md-5 passport-text col-xs-6 word-wrapper">
                                 <p>
                                     Current city.:<br>
-                                    <span class="lead"><strong>{{ social.facebook.current_city }}</strong></span>
+                                    {% if social.linkedin  %}
+                                        <span class="lead"><strong>{{ social.linkedin.location }}</strong></span>
+                                    {% else %}
+                                        <span class="lead"><strong>{{ social.facebook.current_city }}</strong></span>
+                                    {% endif %}
                                 </p>
                             </div>
                         </div>
@@ -116,7 +120,11 @@
                             <div class="col-md-12 passport-text col-xs-12 word-wrapper">
                                 <p>
                                     Email:<br>
-                                    <span class="lead"><strong>{{ social.facebook.facebook_email }}</strong></span>
+                                    {% if social.linkedin  %}
+                                        <span class="lead"><strong>{{ social.linkedin.email }}</strong></span>
+                                    {% else %}
+                                        <span class="lead"><strong>{{ social.facebook.facebook_email }}</strong></span>
+                                    {% endif %}
                                 </p>
                             </div>
                         </div>
@@ -140,26 +148,47 @@
                             <div class="col-md-7 col-xs-7" id="work">
                                <p>
                                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                                   You are studying in IT University of Copenhagen
+                                   {% if social.linkedin  %}
+                                        You are {{ social.linkedin.headline }}
+                                   {% else %}
+                                        Can't get work/education info from test users
+                                   {% endif %}
                                 </p>
                                <p class="p-t-1">
                                    <i class="fa fa-industry" aria-hidden="true"></i>
-                                   You have interests within computering and infomation technologies
+                                   {% if social.linkedin  %}
+                                        You are looking for interesting positions within the industry of {{ social.linkedin.industry }}
+                                   {% else %}
+                                        Can't get work/education info from test users
+                                   {% endif %}
                                 </p>
                                <p class="p-t-1">
                                    <i class="fa fa-certificate" aria-hidden="true"></i>
-                                   You have skills within HTML, CSS, Javascript, Python and more
+                                   {% if social.linkedin  %}
+                                       You have skills within {{ social.linkedin.skills }}
+                                       Can't get work/education info from test users
+                                   {% else %}
+                                        Can't get work/education info from test users
+                                   {% endif %}
                                 </p>
                                <p class="p-t-1">
                                    <i class="fa fa-suitcase" aria-hidden="true"></i>
-                                   You would like to work at Facebook, Instagram, LinkedIn and Spotify
+                                  {% if social.linkedin  %}
+                                       You would like to work in areas (based on data I don't have access to yet)
+                                   {% else %}
+                                        Can't get work/education info from test users
+                                   {% endif %}
                                 </p>
                             </div>
-                            <div class="col-xs-5 col-md-5 img-four pull-right p-b-2">
-                                <img src="http://placehold.it/100x100" alt="profile-picture" class="pull-right img-rounded img-responsive">
-                                <img src="http://placehold.it/100x100" alt="profile-picture" class="pull-right img-rounded img-responsive">
-                                <img src="http://placehold.it/100x100" alt="profile-picture" class="pull-right img-rounded img-responsive">
-                                <img src="http://placehold.it/100x100" alt="profile-picture" class="pull-right img-rounded img-responsive">
+                            <div class="col-xs-5 col-md-5 img-two pull-right">
+                                {% if social.linkedin  %}
+                                    <div class="m-b-2">
+                                        <img src="{{ linkedin_img.0 }}" alt="" class="img-rounded img-responsive">
+                                    </div>
+                                    <div>
+                                        <img src="{{ social.linkedin.profile_picture_url }}" alt="" class="img-rounded img-responsive">
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -180,8 +209,10 @@
                             <div class="col-md-5 col-xs-5 img-four pull-left p-b-2" id="preferences">
 
                                 {% if social.spotify %}
-                                    <img src="http://placehold.it/100x100" alt="profile-picture" class="pull-left img-rounded img-responsive">
-                                    <img src="http://placehold.it/100x100" alt="profile-picture" class="pull-left img-rounded img-responsive">
+                                    <img src="{{ spotify_data.0.0.1 }}" alt="profile-picture" class="pull-left img-rounded img-responsive">
+                                    <img src="{{ spotify_data.0.1.1 }}" alt="profile-picture" class="pull-left img-rounded img-responsive">
+                                    <img src="{{ spotify_data.1.0.2 }}" alt="profile-picture" class="pull-left img-rounded img-responsive">
+                                    <img src="{{ spotify_data.1.1.2 }}" alt="profile-picture" class="pull-left img-rounded img-responsive">
                                 {% endif %}
 
                                 {% if social.facebook %}
@@ -194,11 +225,22 @@
                                 {% if social.spotify %}
                                     <p>
                                         <i class="fa fa-headphones" aria-hidden="true"></i>
-                                        You like listening to rock & roll, jazz, r&b
+                                        You like listening to
+                                        {% for item in spotify_data.1 %}
+
+                                            '{{ item.0 }},
+
+                                        {% endfor %}
+
                                     </p>
                                     <p class="p-t-1">
                                         <i class="fa fa-music" aria-hidden="true"></i>
-                                        Some of your favorite artists are Pink Floyd, Kanye West, and more.
+                                        Some of your favorite artists are
+                                        {% for item in spotify_data.0 %}
+
+                                            {{ item.0 }},
+
+                                        {% endfor %}
                                     </p>
                                 {% endif %}
 
@@ -245,7 +287,7 @@
 
 
     <!-- Last level - suggestion of more connections -->
-    {% if request.session.social_media|length < 3 %}
+    {% if request.session.social_media|length < 4 %}
         <div class="row p-t-4 p-b-3">
             <div class="col-md-4 col-xs-10 col-xs-offset-1 col-md-offset-4 well profile-well">
                 <div class="text-center">

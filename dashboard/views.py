@@ -28,7 +28,8 @@ class SocialMe(TemplateView):
 
     def get(self, request, *args, **kwargs):
         # social media
-        social = service.get_social_medias(request)
+        social_medias = service.get_social_medias(request)
+        data = {}
 
         # facebook
         facebook = service.check_for_social_media(request, 'facebook')
@@ -37,7 +38,7 @@ class SocialMe(TemplateView):
         facebook_likes_locations = service.get_likes_locations(facebook_token)
         facebook_cafes_and_bars = service.get_cafes_and_bars(facebook_token)
 
-        # hotfix to clean pictures
+        # hotfix to clean facebook pictures
         clean_bar_photo = service.get_fb_photo_url_by_id(facebook_token,facebook_cafes_and_bars[0][0][3], 100, 100)
         clean_cafe_photo = service.get_fb_photo_url_by_id(facebook_token, facebook_cafes_and_bars[1][0][3], 100, 100)
         facebook_cafes_and_bars[0][0][2] = clean_cafe_photo
@@ -46,16 +47,31 @@ class SocialMe(TemplateView):
         # instagram
         instagram = service.check_for_social_media(request, 'instagram')
         instagram_locations = {}
-        if service.check_for_social_media(request, 'instagram'):
+        if instagram:
             instagram_locations = service.get_media_locations(instagram['access_token'])
 
+        # linkedin
+        linkedin = service.check_for_social_media(request, 'linkedin')
+        linkedin_imgages = []
+        if linkedin:
+           linkedin_imgages.append(service.get_flickr_image_linkedin(linkedin['headline']))
+
+        # spotify
+        spotify = service.check_for_social_media(request, 'spotify')
+        spotify_data = []
+        if spotify:
+            spotify_data.append(service.get_spotify_artists(spotify['access_token']))
+            spotify_data.append(service.get_spotify_tracks(spotify['access_token']))
+
         return render(request, self.template_name, {'date': self.current_date,
-                                                    'social': social,
+                                                    'social': social_medias,
                                                     'instagram_locations': instagram_locations,
                                                     'facebook_locations': facebook_places,
                                                     'facebook_locations_2': facebook_likes_locations,
                                                     'facebook_cafes': facebook_cafes_and_bars[0],
                                                     'facebook_bars': facebook_cafes_and_bars[1],
+                                                    'linkedin_img': linkedin_imgages,
+                                                    'spotify_data': spotify_data,
                                                     })
 
 
