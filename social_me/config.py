@@ -31,6 +31,8 @@ SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/connect/'
 # URL where the user will be redirected in case of an error
 SOCIAL_AUTH_LOGIN_ERROR_URL = '/connect/'
 
+# no need to raise exception - since a redirect to connect appear
+SOCIAL_AUTH_RAISE_EXCEPTIONS = False
 
 # Used to redirect new registered users, will be used in place of SOCIAL_AUTH_LOGIN_REDIRECT_URL if defined.
 # Note that ?next=/foo is appended if present, if you want new users to go to next, you’ll need to do it yourself.

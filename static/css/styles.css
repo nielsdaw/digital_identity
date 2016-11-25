@@ -16,7 +16,6 @@ body{
         -o-background-size: cover;
         background-size: cover;
         overflow: hidden;
-        height: 470px;
         opacity: 0.6;
         border-radius: 15px;
     }
@@ -36,7 +35,6 @@ body{
         -o-background-size: cover;
         background-size: cover;
         overflow: hidden;
-        height: 600px;
         overflow-y: auto;
         opacity: 0.6;
         border-radius: 15px;
@@ -290,5 +288,9 @@ body{
     margin: 0 auto;
     height:150px;
     text-align: center;
+}
+
+.word-wrapper{
+    word-wrap: break-word;
 }
 

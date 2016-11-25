@@ -78,7 +78,7 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
 
     # LinkedIn
     elif backend.name == 'linkedin':
-        # print("LinkedIn response: {}".format(response))
+        print("LinkedIn response: {}".format(response))
 
         # instantiate linkedin object
         linkedin_profile = LinkedinProfile.objects.create_linkedin_profile(
