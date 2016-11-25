@@ -62,6 +62,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'social.apps.django_app.middleware.SocialAuthExceptionMiddleware',
+    'social_me.middleware.SocialAuthExceptionMiddlewareCustom',
 ]
 
 ROOT_URLCONF = 'social_me.urls'
