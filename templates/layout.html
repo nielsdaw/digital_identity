@@ -34,7 +34,7 @@
 
     </head>
     <body>
-{#        {% if user.is_authenticated %}#}
+        {% if user.is_authenticated %}
             <div id="wrapper">
                 <!-- Sidebar -->
                 <div id="sidebar-wrapper">
@@ -53,7 +53,6 @@
                             </a>
                         </li>
                         <li>
-{#                            <a href="{% url 'dashboard:social_me' %}" class="social-me">#}
                             <a href="" class="social-me">
                                 <i class="fa fa-address-card" aria-hidden="true"></i>
                                 Social Me
@@ -122,19 +121,19 @@
                     </div>
                   </div>
                 <!-- -->
-{#        {% endif %}#}
+        {% endif %}
 
             <div id="page-content-wrapper" >
                  <div class="container-fluid">
                         <div class="row">
                             <div class="menu-bar p-t-1">
-{#                                {% if user.is_authenticated %}<!-- Menu bar -->#}
+                                {% if user.is_authenticated %}<!-- Menu bar -->
                                     <div class="col-md-3 fixed-hidden" id="menu-div">
                                         <a class="btn menu-bar-color" id="menu-toggle-2">
                                             <i class="fa fa-bars" id="side-bar" aria-hidden="true"></i>
                                         </a>
                                     </div><!-- Menu bar END -->
-{#                                {% endif %}#}
+                                {% endif %}
                             </div>
                         </div>
 
