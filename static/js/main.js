@@ -40,8 +40,10 @@ $(document).ready(function () {
     $(".social-me").click(function(e) {
         e.preventDefault();
         $("#loader-modal").addClass("in").show();
-        window.location.href = "/dashboard/social_me";
         document.body.innerHTML += '<div class="modal-backdrop fade in"></div>';
+        setTimeout(function() {
+          window.location.href = "/dashboard/social_me";
+        }, 2000);
     });
 });
 
