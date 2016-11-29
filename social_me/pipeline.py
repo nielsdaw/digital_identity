@@ -21,17 +21,34 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
 
     # Facebook
     if backend.name == 'facebook':
-        # print("facebook response: {}".format(response))
+        print("facebook response: {}".format(response))
+        relationship = 'Not public'
+        hometown = 'Not public'
+        location = "Not public"
+        devices = "SmartPhone"
 
-        # instantiate new facebook dashboard, without storing to database
+        if 'relationship_status' in response:
+            relationship = response.get('relationship_status')
+
+        if 'hometown' in response:
+            hometown = response.get('hometown')['name']
+
+        if 'location' in response:
+            location = response.get('location')['name']
+
+        if 'devices' in response:
+            devices = response.get['devices'][0]['hardware']
+
+
+            # instantiate new facebook dashboard, without storing to database
         facebook_profile = FacebookProfile.objects.create_facebook_profile(
             response.get('id'),
             response.get('first_name'),
             response.get('last_name'),
             response.get('birthday'),
-            response.get('relationship_status') if 'relationship_status' in response else 'Not public',
-            response.get('hometown')['name'] if 'hometown' in response else "Not public",
-            response.get('location')['name'] if 'location' in response else "Not public",
+            relationship,
+            hometown,
+            location,
             response.get('email'),
             response.get('gender'),
             response['picture']['data']['url'],
@@ -40,7 +57,7 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
             response['age_range']['min'],
             response.get('updated_time'),
             response.get('access_token'),
-            response['devices'][0]['hardware'] if 'devices' in response else "SmartPhone"
+            devices
         )
 
         # get correct size of profile picture
