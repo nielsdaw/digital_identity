@@ -3,7 +3,7 @@
  */
 
 // Variables
-var mymap = L.map('mapid').setView([40.423775571194, -3.7021841036754], 13);
+var mymap = L.map('mapid').setView([40.416775, -3.703790], 2);
 var id = "nillernoels.24baa0ml";
 var access_token = "pk.eyJ1IjoibmlsbGVybm9lbHMiLCJhIjoiY2l2am50dmFhMDBiNzJ1cGd0bzVsY3VjMSJ9.Hr1EeBRdOpIOTYHxmXtZSA";
 
@@ -40,7 +40,6 @@ function setAllMarkers(list1, list2, list3){
             marker.bindPopup(list3[i][2]);
         }
     }
-
 }
 
 // create the map

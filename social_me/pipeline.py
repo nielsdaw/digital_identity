@@ -40,7 +40,7 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
             devices = response['devices'][0]['hardware']
 
 
-            # instantiate new facebook dashboard, without storing to database
+        # instantiate new facebook dashboard, without storing to database
         facebook_profile = FacebookProfile.objects.create_facebook_profile(
             response.get('id'),
             response.get('first_name'),

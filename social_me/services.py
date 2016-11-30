@@ -72,6 +72,7 @@ def get_media_locations(auth_token):
     params = {'access_token': auth_token}
     r = requests.get(url, params=params)
     recent_photos = r.json()
+    print(recent_photos)
     list_of_locations = []
     for item in recent_photos['data']:
         if item['location']:
@@ -98,6 +99,7 @@ def get_fb_photo_url(auth_token, height, width):
     params = {'access_token': auth_token, 'height': height, 'width': width}
     r = requests.get(url, params=params)
     photo_url = r.json()
+    print("photo url {}".format(photo_url))
     return photo_url['data']['url']
 
 
@@ -114,8 +116,8 @@ def get_fb_photo_url_by_id(auth_token, user_id, height, width):
     url = 'https://graph.facebook.com/' + user_id + '/picture?redirect=false'
     params = {'access_token': auth_token, 'height': height, 'width': width}
     r = requests.get(url, params=params)
-    print(r)
     photo_url = r.json()
+    print("id photo url {}".format(photo_url))
     return photo_url['data']['url']
 
 
@@ -129,6 +131,7 @@ def get_cafes_and_bars(auth_token):
     params = {'access_token': auth_token}
     r = requests.get(url, params=params)
     result = r.json()
+    print("cafe & bars: {}".format(result))
     first_loop = True
     if_condition = None
     list_of_cafes = []
@@ -219,8 +222,21 @@ def get_cafes_and_bars(auth_token):
         except KeyError:
             break
 
+    # hotfix to get pretty img else insert dunmmy data
+    if list_of_bars:
+        list_of_bars[0][2] = get_fb_photo_url_by_id(auth_token, list_of_bars[0][3], 100, 100)
+    else:
+        list_of_bars.append(["You haven't liked any bars or nightclubs", "0", "http://placehold.it/150x150", "0"])
+
+    # hotfix to get pretty img else insert dunmmy data
+    if list_of_cafes:
+        list_of_cafes[0][2] = get_fb_photo_url_by_id(auth_token, list_of_cafes[0][3], 100, 100)
+    else:
+        list_of_cafes.append(["You haven't liked any cafes or restaurants", "0", "http://placehold.it/150x150", "0"])
+
     # return lists in a list
     response = [list_of_cafes, list_of_bars]
+    print("list: {}".format(response))
     return response
 
 
@@ -234,6 +250,7 @@ def get_likes_locations(auth_token):
     params = {'access_token': auth_token}
     r = requests.get(url, params=params)
     result = r.json()
+    print("likes loc: {}".format(result))
     list_of_locations = []
     first_loop = True
     if_condition = None
@@ -288,6 +305,7 @@ def get_tagged_places(auth_token):
     params = {'access_token': auth_token}
     r = requests.get(url, params=params)
     result = r.json()
+    print("tagged p: {}".format(result))
     list_of_locations = []
     list_of_names = {}
     for item in result['data']:

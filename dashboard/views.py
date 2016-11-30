@@ -38,12 +38,6 @@ class SocialMe(TemplateView):
         facebook_likes_locations = service.get_likes_locations(facebook_token)
         facebook_cafes_and_bars = service.get_cafes_and_bars(facebook_token)
 
-        # hotfix to clean facebook pictures
-        clean_bar_photo = service.get_fb_photo_url_by_id(facebook_token,facebook_cafes_and_bars[0][0][3], 100, 100)
-        clean_cafe_photo = service.get_fb_photo_url_by_id(facebook_token, facebook_cafes_and_bars[1][0][3], 100, 100)
-        facebook_cafes_and_bars[0][0][2] = clean_cafe_photo
-        facebook_cafes_and_bars[1][0][2] = clean_bar_photo
-
         # instagram
         instagram = service.check_for_social_media(request, 'instagram')
         instagram_locations = {}
