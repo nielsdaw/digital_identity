@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dc3b095-c158-4018-9a2d-baa2f14560eb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/social_me.html" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/social_me.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/views.py" afterPath="$PROJECT_DIR$/dashboard/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/social_me/config.py" afterPath="$PROJECT_DIR$/social_me/config.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/social_me/pipeline.py" afterPath="$PROJECT_DIR$/social_me/pipeline.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/social_me/services.py" afterPath="$PROJECT_DIR$/social_me/services.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/social-me-map.js" afterPath="$PROJECT_DIR$/static/js/social-me-map.js" />
     </list>
     <ignored path="social_me.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,7 +27,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/social_me/settings/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -87,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pipeline.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pipeline.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/social_me/pipeline.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+            <state relative-caret-position="330">
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -172,7 +166,6 @@
         <option value="$PROJECT_DIR$/static/js/main.js" />
         <option value="$PROJECT_DIR$/templates/layout.html" />
         <option value="$PROJECT_DIR$/static/js/Leaflet.Sleep.js" />
-        <option value="$PROJECT_DIR$/social_me/pipeline.py" />
         <option value="$PROJECT_DIR$/social_me/views.py" />
         <option value="$PROJECT_DIR$/dashboard/views.py" />
         <option value="$PROJECT_DIR$/dashboard/templates/dashboard/social_me.html" />
@@ -180,6 +173,7 @@
         <option value="$PROJECT_DIR$/static/js/social-me-map.js" />
         <option value="$PROJECT_DIR$/social_me/services.py" />
         <option value="$PROJECT_DIR$/social_me/settings/__init__.py" />
+        <option value="$PROJECT_DIR$/social_me/pipeline.py" />
       </list>
     </option>
   </component>
@@ -612,13 +606,6 @@
       <option name="presentableId" value="Default" />
       <updated>1478518452346</updated>
     </task>
-    <task id="LOCAL-00064" summary="changed prod static file settings">
-      <created>1479731365054</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1479731365054</updated>
-    </task>
     <task id="LOCAL-00065" summary="changed prod static file settings">
       <created>1479732362260</created>
       <option name="number" value="00065" />
@@ -955,7 +942,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480505441957</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="added events locations to social me">
+      <created>1480631262374</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1480631262374</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1026,7 +1020,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="updated all templates to be responsive" />
     <MESSAGE value="test without ssl" />
     <MESSAGE value="ssl enabled again" />
     <MESSAGE value="added url to allowed hosts" />
@@ -1051,7 +1044,8 @@
     <MESSAGE value="fixed bugs with bars &amp; cafes" />
     <MESSAGE value="added leafletSleep to static and social me" />
     <MESSAGE value="updated to prod env" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated to prod env" />
+    <MESSAGE value="added events locations to social me" />
+    <option name="LAST_COMMIT_MESSAGE" value="added events locations to social me" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1340,14 +1334,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/social_me/pipeline.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
@@ -1404,6 +1390,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/social_me/pipeline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
         </state>
       </provider>
