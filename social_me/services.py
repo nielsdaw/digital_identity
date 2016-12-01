@@ -40,7 +40,6 @@ def get_recent_instagram_photos(auth_token):
     params = {'access_token': auth_token}
     r = requests.get(url, params=params)
     recent_photos = r.json()
-    print(recent_photos)
     url_of_photos = []
     for item in recent_photos['data']:
         url_of_photos.append(item['images']['standard_resolution']['url'])
@@ -56,10 +55,7 @@ def get_recent_instagram_likes(auth_token):
     url = 'https://api.instagram.com/v1/users/self/media/liked?'
     params = {'access_token': auth_token, 'count': 100}
     r = requests.get(url, params=params)
-    print('url: {}'.format(r.url))
     recent_likes = r.json()
-
-    print("recent likes: {}".format(recent_likes))
 
 
 def get_media_locations(auth_token):
@@ -72,7 +68,6 @@ def get_media_locations(auth_token):
     params = {'access_token': auth_token}
     r = requests.get(url, params=params)
     recent_photos = r.json()
-    print(recent_photos)
     list_of_locations = []
     for item in recent_photos['data']:
         if item['location']:
@@ -99,7 +94,6 @@ def get_fb_photo_url(auth_token, height, width):
     params = {'access_token': auth_token, 'height': height, 'width': width}
     r = requests.get(url, params=params)
     photo_url = r.json()
-    print("photo url {}".format(photo_url))
     return photo_url['data']['url']
 
 
@@ -117,7 +111,6 @@ def get_fb_photo_url_by_id(auth_token, user_id, height, width):
     params = {'access_token': auth_token, 'height': height, 'width': width}
     r = requests.get(url, params=params)
     photo_url = r.json()
-    print("id photo url {}".format(photo_url))
     return photo_url['data']['url']
 
 
@@ -131,7 +124,6 @@ def get_cafes_and_bars(auth_token):
     params = {'access_token': auth_token}
     r = requests.get(url, params=params)
     result = r.json()
-    print("cafe & bars: {}".format(result))
     first_loop = True
     if_condition = None
     list_of_cafes = []
@@ -236,7 +228,6 @@ def get_cafes_and_bars(auth_token):
 
     # return lists in a list
     response = [list_of_cafes, list_of_bars]
-    print("list: {}".format(response))
     return response
 
 
@@ -250,7 +241,6 @@ def get_likes_locations(auth_token):
     params = {'access_token': auth_token}
     r = requests.get(url, params=params)
     result = r.json()
-    print("likes loc: {}".format(result))
     list_of_locations = []
     first_loop = True
     if_condition = None
@@ -305,7 +295,6 @@ def get_tagged_places(auth_token):
     params = {'access_token': auth_token}
     r = requests.get(url, params=params)
     result = r.json()
-    print("tagged p: {}".format(result))
     list_of_locations = []
     list_of_names = {}
     for item in result['data']:
@@ -319,6 +308,53 @@ def get_tagged_places(auth_token):
             list_of_names[item['place']['name']] = True
 
     return list_of_locations
+
+
+def get_events_locations(auth_token):
+    """
+    Takes auth_token to get all locations of events.
+    Creates a list of lists with latitude[0], longitude[1], name[2], from facebook
+    :param auth_token:
+    :return: list of lists
+    """
+    url = 'https://graph.facebook.com/me/events?fields=name,place'
+    params = {'access_token': auth_token}
+    r = requests.get(url, params=params)
+    result = r.json()
+    list_of_locations = []
+    data = None
+
+    # loop through the json result and call the next request if exist
+    # catch KeyError, if 'next' key doesn't exist, since there are no more likes
+    while True:
+        try:
+            data = result['data']
+            for item in data:
+                # check if place in item
+                if 'place' in item:
+                    # check for location
+                    if 'location' in item['place']:
+
+                        # check for latitude (implicitly altitude will be there)
+                        if 'latitude' in item['place']['location']:
+                            list_of_locations.append(
+                                [
+                                    item['place']['location']['latitude'],
+                                    item['place']['location']['longitude'],
+                                    ('<b>{}</b><br>{}'.format(item['place']['name'], item['place']['location']['street']) if
+                                     'street' in item['place']['location'] else
+                                     "<b>{}</b>".format(item['place']['name'])),
+                                ]
+                            )
+            # Attempt to make a request to the next page of data, if it exists.
+            result = requests.get(result['paging']['next']).json()
+        except KeyError:
+            break
+    print(list_of_locations)
+    return list_of_locations
+
+
+
 
 
 # ---- Spotify services ---
@@ -359,7 +395,6 @@ def get_spotify_tracks(auth_token):
             ]
         )
     return top_tracks
-
 
 
 # --- flickr services ---

@@ -276,7 +276,7 @@
                         Places you've been (or would like to go)
                     </h3>
                     <p>
-                        Based on your likes and tags
+                        Based on your likes, events and tags
                     </p>
                 </div>
                 <div id="social-map">
@@ -319,13 +319,14 @@
     <script src="{% static 'js/social-me-map.js' %}"></script>
     <script src="{% static 'js/social-me-tour.js' %}"></script>
 
-    <!-- Hotfix for instagram locations -->
+    <!-- Hotfix for locations -->
     <script type="text/javascript">
-        instagram_data = {{ instagram_locations|safe }};
-        facebook_data = {{ facebook_locations|safe }};
-        facebook_data2 = {{ facebook_locations_2|safe }}
+        data1 = {{ instagram_locations|safe }};
+        data2 = {{ facebook_locations|safe }};
+        data3 = {{ facebook_locations_2|safe }}
+        data4 = {{ facebook_locations_3|safe }}
         $(document).ready(function() {
-            setAllMarkers(instagram_data, facebook_data, facebook_data2);
+            setAllMarkers(data1, data2, data3, data4);
         })
     </script>
 {% endblock %}

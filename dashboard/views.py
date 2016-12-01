@@ -37,6 +37,7 @@ class SocialMe(TemplateView):
         facebook_places = service.get_tagged_places(facebook_token)
         facebook_likes_locations = service.get_likes_locations(facebook_token)
         facebook_cafes_and_bars = service.get_cafes_and_bars(facebook_token)
+        facebook_event_locations = service.get_events_locations(facebook_token)
 
         # instagram
         instagram = service.check_for_social_media(request, 'instagram')
@@ -62,6 +63,7 @@ class SocialMe(TemplateView):
                                                     'instagram_locations': instagram_locations,
                                                     'facebook_locations': facebook_places,
                                                     'facebook_locations_2': facebook_likes_locations,
+                                                    'facebook_locations_3': facebook_event_locations,
                                                     'facebook_cafes': facebook_cafes_and_bars[0],
                                                     'facebook_bars': facebook_cafes_and_bars[1],
                                                     'linkedin_img': linkedin_imgages,

@@ -27,6 +27,7 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
         location = "Not public"
         devices = "SmartPhone"
 
+        # hot fix
         if 'relationship_status' in response:
             relationship = response.get('relationship_status')
 

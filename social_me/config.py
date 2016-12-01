@@ -87,12 +87,7 @@ SOCIAL_AUTH_INSTAGRAM_SECRET = 'aca530c8df194fa680dfca86aaa26363'
 
 SOCIAL_AUTH_INSTAGRAM_AUTH_EXTRA_ARGUMENTS = {
     'scope':
-        'basic '
-        'public_content '
-        'follower_list '
-        'comments '
-        'relationships '
-        'likes'
+        'basic'
 }
 
 
