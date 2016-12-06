@@ -358,42 +358,52 @@ def get_fb_work(auth_token):
     """
     Takes auth_token to get user's work information.
     :param auth_token:
-    :return: a string
+    :return: a list with a string and url string
     """
     url = 'https://graph.facebook.com/me/?fields=work'
     params = {'access_token': auth_token}
     r = requests.get(url, params=params)
     result = r.json()
     work_data = ""
-    for item in result['work']:
-        if 'employer' in item:
-            if 'name' in item['employer']:
-                work_data += "{}, ".format(item['employer']['name'])
+    work_id = ""
+    if 'work' in result:
+        for item in result['work']:
+            if 'employer' in item:
+                work_id = item['employer']['id']
+                if 'name' in item['employer']:
+                    work_data += "{}, ".format(item['employer']['name'])
     if not work_data:
-        return "No work data provided"
+        return ["You have no work data", "http://placehold.it/150x150"]
     else:
-        return work_data[0:len(work_data) - 2]
+        # hotfix to get img url
+        img_url = get_fb_photo_url_by_id(auth_token, work_id, 150,150)
+        return [work_data[0:len(work_data) - 2], img_url]
 
 
 def get_fb_education(auth_token):
     """
     Takes auth_token to get user's education information.
     :param auth_token:
-    :return: a string
+    :return: a list with a string and url string
     """
     url = 'https://graph.facebook.com/me/?fields=education'
     params = {'access_token': auth_token}
     r = requests.get(url, params=params)
     result = r.json()
     education_data = ""
-    for item in result['education']:
-        if 'school' in item:
-            if 'name' in item['school']:
-                education_data += "{}, ".format(item['school']['name'])
+    education_id = ""
+    if 'education' in result:
+        for item in result['education']:
+            if 'school' in item:
+                education_id = item['school']['id']
+                if 'name' in item['school']:
+                    education_data += "{}, ".format(item['school']['name'])
     if not education_data:
-        return "No education data provided"
+        return ["You have no education data", "http://placehold.it/150x150"]
     else:
-        return education_data[0:len(education_data)-2]
+        # hotfix to get img url
+        img_url = get_fb_photo_url_by_id(auth_token, education_id, 150,150)
+        return [education_data[0:len(education_data)-2], img_url]
 
 
 # ---- Spotify services ---
