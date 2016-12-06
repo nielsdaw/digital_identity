@@ -2,6 +2,7 @@ import requests
 import spotipy
 import flickrapi
 
+
 # -- General services --
 
 def get_social_medias(request):
@@ -350,11 +351,49 @@ def get_events_locations(auth_token):
             result = requests.get(result['paging']['next']).json()
         except KeyError:
             break
-    print(list_of_locations)
     return list_of_locations
 
 
+def get_fb_work(auth_token):
+    """
+    Takes auth_token to get user's work information.
+    :param auth_token:
+    :return: a string
+    """
+    url = 'https://graph.facebook.com/me/?fields=work'
+    params = {'access_token': auth_token}
+    r = requests.get(url, params=params)
+    result = r.json()
+    work_data = ""
+    for item in result['work']:
+        if 'employer' in item:
+            if 'name' in item['employer']:
+                work_data += "{}, ".format(item['employer']['name'])
+    if not work_data:
+        return "No work data provided"
+    else:
+        return work_data[0:len(work_data) - 2]
 
+
+def get_fb_education(auth_token):
+    """
+    Takes auth_token to get user's education information.
+    :param auth_token:
+    :return: a string
+    """
+    url = 'https://graph.facebook.com/me/?fields=education'
+    params = {'access_token': auth_token}
+    r = requests.get(url, params=params)
+    result = r.json()
+    education_data = ""
+    for item in result['education']:
+        if 'school' in item:
+            if 'name' in item['school']:
+                education_data += "{}, ".format(item['school']['name'])
+    if not education_data:
+        return "No education data provided"
+    else:
+        return education_data[0:len(education_data)-2]
 
 
 # ---- Spotify services ---
@@ -376,6 +415,7 @@ def get_spotify_artists(auth_token):
             ]
         )
     return artists
+
 
 def get_spotify_tracks(auth_token):
     """
@@ -399,7 +439,6 @@ def get_spotify_tracks(auth_token):
 
 # --- flickr services ---
 
-
 def get_flickr_image_linkedin(string):
     """
     Get an image url for search string, based on LinkedIn search.
@@ -414,7 +453,6 @@ def get_flickr_image_linkedin(string):
     bad_search_words = {'Student': True,
                         'Working': True,
                         'Searching': True,
-
                         }
     count = 0
 
@@ -453,11 +491,3 @@ def get_flickr_image(string):
         return photo_url
     except KeyError:
         return ""
-
-
-
-
-
-
-
-

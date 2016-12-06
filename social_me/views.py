@@ -31,6 +31,7 @@ class HomePageView(TemplateView):
 
     # get request
     def get(self, request, *args, **kwargs):
+
         return render(request, self.template_name, {'user': request.user})
 
 

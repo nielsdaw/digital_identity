@@ -38,8 +38,9 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
             location = response.get('location')['name']
 
         if 'devices' in response:
-            if 'hardware' in response['devices']:
-                devices = response['devices'][0]['hardware']
+            if 'os' in response['devices'][0]:
+                if 'iOS' in response['devices'][0]['os']:
+                    devices = 'iPhone'
 
 
         # instantiate new facebook dashboard, without storing to database

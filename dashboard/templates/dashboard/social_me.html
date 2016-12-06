@@ -142,57 +142,56 @@
                 </h3>
             </div>
             <div class="row">
-                <div class="col-md-12">
-                    <div class="profile-well well well-md">
-                        <div class="row ">
-                            <div class="col-md-7 col-xs-7" id="work">
-                               <p>
-                                   <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                                   {% if social.linkedin  %}
-                                        You are {{ social.linkedin.headline }}
-                                   {% else %}
-                                        Can't get work/education info from test users
-                                   {% endif %}
-                                </p>
-                               <p class="p-t-1">
-                                   <i class="fa fa-industry" aria-hidden="true"></i>
-                                   {% if social.linkedin  %}
-                                        You are looking for interesting positions within the industry of {{ social.linkedin.industry }}
-                                   {% else %}
-                                        Can't get work/education info from test users
-                                   {% endif %}
-                                </p>
-                               <p class="p-t-1">
-                                   <i class="fa fa-certificate" aria-hidden="true"></i>
-                                   {% if social.linkedin  %}
-                                       You have skills within {{ social.linkedin.skills }}
-                                       Can't get work/education info from test users
-                                   {% else %}
-                                        Can't get work/education info from test users
-                                   {% endif %}
-                                </p>
-                               <p class="p-t-1">
-                                   <i class="fa fa-suitcase" aria-hidden="true"></i>
-                                  {% if social.linkedin  %}
-                                       You would like to work in areas (based on data I don't have access to yet)
-                                   {% else %}
-                                        Can't get work/education info from test users
-                                   {% endif %}
-                                </p>
+              <div class="col-md-12">
+                  <div class="profile-well well well-md">
+                      {% if social.linkedin  %}
+                        <div class="row p-t-1">
+                            <div class="col-md-9 col-xs-7">
+                              <p>
+                                <i class="fa fa-certificate" aria-hidden="true"></i>
+                                <b>You are</b> <i>{{ social.linkedin.headline }}</i>
+                              </p>
                             </div>
-                            <div class="col-xs-5 col-md-5 img-two pull-right">
-                                {% if social.linkedin  %}
-                                    <div class="m-b-2">
-                                        <img src="{{ linkedin_img.0 }}" alt="" class="img-rounded img-responsive">
-                                    </div>
-                                    <div>
-                                        <img src="{{ social.linkedin.profile_picture_url }}" alt="" class="img-rounded img-responsive">
-                                    </div>
-                                {% endif %}
+                            <div class="col-md-3 col-xs-5 img-four p-b-2" id="preferences">
+                              <img src="{{ linkedin_img.0 }}" alt="" class="img-rounded img-responsive pull-right">
                             </div>
                         </div>
-                    </div>
-                </div>
+                        <div class="row p-t-1">
+                            <div class="col-md-9 col-xs-7">
+                              <p>
+                                <i class="fa fa-industry" aria-hidden="true"></i>
+                                <b>You are looking for interesting positions within the industry of</b> <i>{{ social.linkedin.industry }}</i>
+                              </p>
+                            </div>
+                            <div class="col-md-3 col-xs-5 img-four p-b-2" id="preferences">
+                              <img src="{{ social.linkedin.profile_picture_url }}" alt="" class="img-rounded pull-right img-responsive">
+                            </div>
+                        </div>
+                      {% endif %}
+                        <div class="row p-t-1">
+                            <div class="col-md-9 col-xs-7">
+                              <p>
+                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                <b>You have studied here:</b> <i>{{ facebook_education }}</i>
+                              </p>
+                            </div>
+                            <div class="col-md-3 col-xs-5 img-four p-b-2" id="preferences">
+                              <img src="" alt="" class="img-rounded img-responsive pull-right">
+                            </div>
+                        </div>
+                        <div class="row p-t-1">
+                            <div class="col-md-9 col-xs-7">
+                              <p>
+                                   <i class="fa fa-suitcase" aria-hidden="true"></i>
+                                  <b>You have worked here:</b> <i>{{ facebook_work }}</i>
+                              </p>
+                            </div>
+                            <div class="col-md-3 col-xs-5 img-four p-b-2" id="preferences">
+                              <img src="" alt="" class="img-rounded img-responsive pull-right">
+                            </div>
+                        </div>
+                  </div>
+              </div>
             </div>
         </div>
 
@@ -205,65 +204,66 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="profile-well well well-md">
-                        <div class="row ">
-                            <div class="col-md-5 col-xs-5 img-four pull-left p-b-2" id="preferences">
-
-                                {% if social.spotify %}
-                                    <img src="{{ spotify_data.0.0.1 }}" alt="profile-picture" class="pull-left img-rounded img-responsive">
-                                    <img src="{{ spotify_data.0.1.1 }}" alt="profile-picture" class="pull-left img-rounded img-responsive">
-                                    <img src="{{ spotify_data.1.0.2 }}" alt="profile-picture" class="pull-left img-rounded img-responsive">
-                                    <img src="{{ spotify_data.1.1.2 }}" alt="profile-picture" class="pull-left img-rounded img-responsive">
-                                {% endif %}
-
-                                {% if social.facebook %}
-                                    <img src="{{ facebook_bars.0.2 }}" alt="profile-picture" class="pull-left img-rounded img-responsive">
-                                    <img src="{{ facebook_cafes.0.2 }}" alt="profile-picture" class="pull-left img-rounded img-responsive">
-                                {% endif %}
+                        <div class="row p-t-1">
+                            <div class="col-md-3 col-xs-5 img-four pull-left p-b-2" id="preferences">
+                                <img src="{{ facebook_bars.0.2 }}" alt="profile-picture" class="pull-left img-rounded img-responsive">
                             </div>
-
-                            <div class="col-md-7 ">
-                                {% if social.spotify %}
-                                    <p>
-                                        <i class="fa fa-headphones" aria-hidden="true"></i>
-                                        You like listening to
-                                        {% for item in spotify_data.1 %}
-
-                                            '{{ item.0 }},
-
-                                        {% endfor %}
-
-                                    </p>
-                                    <p class="p-t-1">
-                                        <i class="fa fa-music" aria-hidden="true"></i>
-                                        Some of your favorite artists are
-                                        {% for item in spotify_data.0 %}
-
-                                            {{ item.0 }},
-
-                                        {% endfor %}
-                                    </p>
-                                {% endif %}
-
-                                {% if social.facebook %}
-                                    <p class="p-t-1">
-                                        <i class="fa fa-glass" aria-hidden="true"></i>
-                                        You like going out in some of these places:
-                                        {{ facebook_bars.0.0 }}, {{ facebook_bars.1.0 }}, {{ facebook_bars.2.0 }} {{ facebook_bars.3.0 }}
-                                    </p>
-                                    <p class="p-t-1">
-                                        <i class="fa fa-cutlery" aria-hidden="true"></i>
-                                        Some of your preferred cafes and restaurants are:
-                                        {{ facebook_cafes.0.0 }}, {{ facebook_cafes.1.0 }}, {{ facebook_cafes.2.0 }} {{ facebook_cages.4.0 }}
-                                    </p>
-                                {% endif %}
+                            <div class="col-md-9 col-xs-7">
+                                <p>
+                                    <i class="fa fa-glass" aria-hidden="true"></i>
+                                    <b>You like going out in some of these places:</b>
+                                    <i>{{ facebook_bars.0.0 }}</i>, <i>{{ facebook_bars.1.0 }}</i>, <i>{{ facebook_bars.2.0 }}</i>, <i>{{ facebook_bars.3.0 }}</i>
+                                </p>
                             </div>
                         </div>
+                        <div class="row p-t-1">
+                            <div class="col-md-3 col-xs-5 img-four pull-left p-b-2" id="preferences">
+                                <img src="{{ facebook_cafes.0.2 }}" alt="profile-picture" class="pull-left img-rounded img-responsive">
+                            </div>
+                            <div class="col-md-9 col-xs-7">
+                                <p>
+                                    <i class="fa fa-cutlery" aria-hidden="true"></i>
+                                    <b>Some of your preferred cafes and restaurants are:</b>
+                                    <i>{{ facebook_cafes.0.0 }}, </i>{{ facebook_cafes.1.0 }}, <i>{{ facebook_cafes.2.0 }}</i>, <i>{{ facebook_cafes.4.0 }}</i>
+                                </p>
+                            </div>
+                        </div>
+                        {% if social.spotify %}
+                        <div class="row p-t-1">
+                            <div class="col-md-3 col-xs-5 img-four pull-left p-b-2" id="preferences">
+                                <img src="{{ spotify_data.1.0.2 }}" alt="profile-picture" class="pull-left img-rounded img-responsive">
+                            </div>
+                            <div class="col-md-9 col-xs-7">
+                                <p>
+                                    <i class="fa fa-headphones" aria-hidden="true"></i>
+                                    <b>You like listening to:</b>
+                                    {% for item in spotify_data.1 %}
+                                        '<i>{{ item.0 }}'</i>,
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row p-t-1">
+                            <div class="col-md-3 col-xs-5 img-four pull-left p-b-2" id="preferences">
+                                <img src="{{ spotify_data.0.0.1 }}" alt="profile-picture" class="pull-left img-rounded img-responsive">
+                            </div>
+                            <div class="col-md-9 col-xs-7">
+                                <p>
+                                    <i class="fa fa-music" aria-hidden="true"></i>
+                                    <b>Some of your favorite artists are:</b>
+                                    {% for item in spotify_data.0 %}
+                                        <i>{{ item.0 }}</i>,
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
+
 
     <!-- third level rows - Leaflet map -->
     <div class="row">

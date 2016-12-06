@@ -113,10 +113,11 @@ SOCIAL_AUTH_FACEBOOK_SCOPE = [
     'user_location',
     'user_likes',
     'user_events',
+    'user_work_history',
+    'user_education_history'
 ]
 
-# 'user_work_history'
-# 'user_education_history'
+
 
 SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
   'fields': 'id,'
@@ -139,26 +140,6 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
             'hometown,'
             'location'
 }
-
-# --- FACEBOOK PUBLIC AVAILABLE FIELDS ---
-# 'id,'
-# 'name,'
-# 'first_name,'
-# 'last_name,'
-# 'link,'
-# 'gender,'
-# 'locale,'
-# 'picture,'
-# 'email,'
-# 'age_range,'
-# 'timezone,'
-# 'updated,'
-# 'birthday,'
-# 'about,'
-# 'data,'
-# 'paging,'
-# 'summary'
-# 'friends' ['data'] or ['summary']
 
 
 # LinkedIn settings

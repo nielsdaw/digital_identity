@@ -38,6 +38,9 @@ class SocialMe(TemplateView):
         facebook_likes_locations = service.get_likes_locations(facebook_token)
         facebook_cafes_and_bars = service.get_cafes_and_bars(facebook_token)
         facebook_event_locations = service.get_events_locations(facebook_token)
+        facebook_work = service.get_fb_work(facebook_token)
+        facebook_education = service.get_fb_education(facebook_token)
+
 
         # instagram
         instagram = service.check_for_social_media(request, 'instagram')
@@ -66,6 +69,8 @@ class SocialMe(TemplateView):
                                                     'facebook_locations_3': facebook_event_locations,
                                                     'facebook_cafes': facebook_cafes_and_bars[0],
                                                     'facebook_bars': facebook_cafes_and_bars[1],
+                                                    'facebook_work': facebook_work,
+                                                    'facebook_education': facebook_education,
                                                     'linkedin_img': linkedin_imgages,
                                                     'spotify_data': spotify_data,
                                                     })
