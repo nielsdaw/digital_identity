@@ -61,7 +61,7 @@ L.Control.sleepMapControl = function(){
 L.Map.mergeOptions({
   sleep: true,
   sleepTime: 750,
-  wakeTime: 2000,
+  wakeTime: 1000,
   wakeMessageTouch: 'Touch to Wake',
   sleepNote: true,
   hoverToWake: true,
@@ -118,7 +118,7 @@ L.Map.Sleep = L.Handler.extend({
     } else if (this._map.options.wakeMessage) {
       noteString = this._map.options.wakeMessage;
     } else if (this._map.options.hoverToWake) {
-      noteString = 'Click or Hold the mouse';
+      noteString = 'Hold the mouse over the map to activate it';
     } else {
       noteString = 'click to wake';
     }
@@ -174,7 +174,7 @@ L.Map.Sleep = L.Handler.extend({
     }
 
     L.DomUtil.setOpacity( this._map._container, this._map.options.sleepOpacity);
-    this.sleepNote.style.opacity = .4;
+    this.sleepNote.style.opacity = 1;
     this._addSleepingListeners();
   },
 
