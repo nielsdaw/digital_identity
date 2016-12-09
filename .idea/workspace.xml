@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dc3b095-c158-4018-9a2d-baa2f14560eb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/Leaflet.Sleep.js" afterPath="$PROJECT_DIR$/static/js/Leaflet.Sleep.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/main.js" afterPath="$PROJECT_DIR$/static/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/layout.html" afterPath="$PROJECT_DIR$/templates/layout.html" />
     </list>
     <ignored path="social_me.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,103 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/social_me/settings/__init__.py">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="social_me.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/social_me.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="300" column="0" selection-start-line="300" selection-start-column="0" selection-end-line="300" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Leaflet.Sleep.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/Leaflet.Sleep.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="120" column="62" selection-start-line="120" selection-start-column="62" selection-end-line="120" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1350">
-              <caret line="90" column="1" selection-start-line="90" selection-start-column="1" selection-end-line="90" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="local.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/social_me/settings/local.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="services.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/social_me/services.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5595">
-              <caret line="375" column="38" selection-start-line="375" selection-start-column="38" selection-end-line="375" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pipeline.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/social_me/pipeline.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="40" column="46" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="60" column="85" selection-start-line="60" selection-start-column="85" selection-end-line="60" selection-end-column="85" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2820">
-              <caret line="188" column="24" selection-start-line="188" selection-start-column="12" selection-end-line="188" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/social_me/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+            <state relative-caret-position="398">
+              <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -192,8 +100,6 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/social_me/wsgi.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/static/js/main.js" />
-        <option value="$PROJECT_DIR$/templates/layout.html" />
         <option value="$PROJECT_DIR$/static/js/social-me-map.js" />
         <option value="$PROJECT_DIR$/social_me/config.py" />
         <option value="$PROJECT_DIR$/social_me/views.py" />
@@ -203,6 +109,8 @@
         <option value="$PROJECT_DIR$/dashboard/templates/dashboard/social_me.html" />
         <option value="$PROJECT_DIR$/static/js/Leaflet.Sleep.js" />
         <option value="$PROJECT_DIR$/social_me/settings/__init__.py" />
+        <option value="$PROJECT_DIR$/templates/layout.html" />
+        <option value="$PROJECT_DIR$/static/js/main.js" />
       </list>
     </option>
   </component>
@@ -242,6 +150,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -335,6 +244,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="social_me" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="social_me" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="social_me" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -373,7 +300,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -616,13 +542,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1478518452346</updated>
-    </task>
-    <task id="LOCAL-00070" summary="updated gitignore">
-      <created>1479733973521</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1479733973521</updated>
     </task>
     <task id="LOCAL-00071" summary="updated settings for prod -bug with bootstrap.css">
       <created>1479744655949</created>
@@ -960,7 +879,14 @@
       <option name="project" value="LOCAL" />
       <updated>1481055705876</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="updated leafletmapsleep, more visable button">
+      <created>1481117525257</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1481117525258</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TodoView">
@@ -976,7 +902,7 @@
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22374798" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.226979" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.503231" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1031,7 +957,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="changed privacy policy" />
     <MESSAGE value="updated title" />
     <MESSAGE value="changed index text" />
     <MESSAGE value="changed tittle of privacy/terms of use" />
@@ -1056,7 +981,8 @@
     <MESSAGE value="updated design of social_me page&#10;" />
     <MESSAGE value="updated prod conf" />
     <MESSAGE value="removed Bootstrap tour on social_me page" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed Bootstrap tour on social_me page" />
+    <MESSAGE value="updated leafletmapsleep, more visable button" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated leafletmapsleep, more visable button" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1279,21 +1205,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="54" column="28" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="39" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1308,7 +1219,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2100">
           <caret line="140" column="22" selection-start-line="140" selection-start-column="22" selection-end-line="140" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1316,63 +1226,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/styles.css">
+    <entry file="file://$PROJECT_DIR$/templates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="90" column="1" selection-start-line="90" selection-start-column="1" selection-end-line="90" selection-end-column="1" />
+        <state relative-caret-position="2400">
+          <caret line="162" column="0" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/social_me/pipeline.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="40" column="46" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2820">
-          <caret line="188" column="24" selection-start-line="188" selection-start-column="12" selection-end-line="188" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/social_me/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="60" column="85" selection-start-line="60" selection-start-column="85" selection-end-line="60" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/social_me/services.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5595">
-          <caret line="375" column="38" selection-start-line="375" selection-start-column="38" selection-end-line="375" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/social_me.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
+        <state relative-caret-position="104">
           <caret line="300" column="0" selection-start-line="300" selection-start-column="0" selection-end-line="300" selection-end-column="0" />
           <folding />
         </state>
@@ -1386,10 +1253,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2863">
+          <caret line="104" column="9" selection-start-line="104" selection-start-column="8" selection-end-line="104" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/social_me/services.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="375" column="38" selection-start-line="375" selection-start-column="38" selection-end-line="375" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/social_me/pipeline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="40" column="46" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="60" column="85" selection-start-line="60" selection-start-column="85" selection-end-line="60" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="188" column="24" selection-start-line="188" selection-start-column="12" selection-end-line="188" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/social_me/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/social_me/settings/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
           <folding />
         </state>
       </provider>
