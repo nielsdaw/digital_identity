@@ -26,8 +26,13 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
         hometown = 'Not public'
         location = "Not public"
         devices = "SmartPhone"
+        email = 'not public'
 
-        # hot fix
+        # hot fix's
+        if response.get('email'):
+            email = response.get('email')
+
+
         if 'relationship_status' in response:
             relationship = response.get('relationship_status')
 
@@ -52,7 +57,7 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
             relationship,
             hometown,
             location,
-            response.get('email'),
+            email,
             response.get('gender'),
             response['picture']['data']['url'],
             response['friends']['summary']['total_count'],
