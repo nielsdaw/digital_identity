@@ -25,7 +25,7 @@ $(document).ready(function () {
 //Start Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
 $(document).ready(function () {
     window.cookieconsent_options = {
-        "message":"Cookies are used, but I'm sure you don't care anyway",
+        "message":"Cookies are used, but I'm sure you don't bother",
         "dismiss":"I accept",
         "learnMore":"Read the '100' pages here",
         "link":'/privacy_policy',
