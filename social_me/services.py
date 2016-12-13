@@ -11,8 +11,11 @@ def get_social_medias(request):
     :param request:
     :return: a dict of social media(s)
     """
-    social_medias = request.session['social_media']
-    return social_medias
+    try:
+        social_medias = request.session['social_media']
+        return social_medias
+    except KeyError:
+        return ""
 
 
 def check_for_social_media(request, social_media_name):
@@ -22,8 +25,9 @@ def check_for_social_media(request, social_media_name):
     :param social_media_name:
     :return: a dict with the social media or False
     """
-    if social_media_name in request.session['social_media']:
-        social_media = request.session['social_media'][social_media_name]
+    social_medias = get_social_medias(request)
+    if social_media_name in social_medias:
+        social_media = social_medias[social_media_name]
         return social_media
 
     return False
@@ -42,11 +46,15 @@ def get_recent_instagram_photos(auth_token):
     r = requests.get(url, params=params)
     recent_photos = r.json()
     url_of_photos = []
-    for item in recent_photos['data']:
-        url_of_photos.append(item['images']['standard_resolution']['url'])
+    try:
+        for item in recent_photos['data']:
+            url_of_photos.append(item['images']['standard_resolution']['url'])
+    except KeyError:
+        print("Key Error")
     return url_of_photos
 
 
+# unused
 def get_recent_instagram_likes(auth_token):
     """
     Call the instagram API to get all recent likes from user with auth token.
@@ -70,13 +78,16 @@ def get_media_locations(auth_token):
     r = requests.get(url, params=params)
     recent_photos = r.json()
     list_of_locations = []
-    for item in recent_photos['data']:
-        if item['location']:
-            list_of_locations.append(
-                [item['location']['latitude'],
-                 item['location']['longitude'],
-                 "<b>{}</b>".format(item['location']['name'])]
-            )
+    try:
+        for item in recent_photos['data']:
+            if item['location']:
+                list_of_locations.append(
+                    [item['location']['latitude'],
+                     item['location']['longitude'],
+                     "<b>{}</b>".format(item['location']['name'])]
+                )
+    except KeyError:
+        print("Key Error")
     return list_of_locations
 
 
@@ -95,8 +106,10 @@ def get_fb_photo_url(auth_token, height, width):
     params = {'access_token': auth_token, 'height': height, 'width': width}
     r = requests.get(url, params=params)
     photo_url = r.json()
-    return photo_url['data']['url']
-
+    try:
+        return photo_url['data']['url']
+    except KeyError:
+        return ""
 
 def get_fb_photo_url_by_id(auth_token, user_id, height, width):
     """
@@ -112,7 +125,10 @@ def get_fb_photo_url_by_id(auth_token, user_id, height, width):
     params = {'access_token': auth_token, 'height': height, 'width': width}
     r = requests.get(url, params=params)
     photo_url = r.json()
-    return photo_url['data']['url']
+    try:
+        return photo_url['data']['url']
+    except KeyError:
+        return ""
 
 
 def get_cafes_and_bars(auth_token):
@@ -298,16 +314,20 @@ def get_tagged_places(auth_token):
     result = r.json()
     list_of_locations = []
     list_of_names = {}
-    for item in result['data']:
-        if item['place']['location'] and item['place']['name'] not in list_of_names:
-            if 'latitude' in item['place']['location']:
-                list_of_locations.append(
-                    [item['place']['location']['latitude'],
-                     item['place']['location']['longitude'],
-                     "<b>{}</b>".format(item['place']['name'])]
-                )
-                # make sure there are dublicates
-                list_of_names[item['place']['name']] = True
+
+    try:
+        for item in result['data']:
+            if item['place']['location'] and item['place']['name'] not in list_of_names:
+                if 'latitude' in item['place']['location']:
+                    list_of_locations.append(
+                        [item['place']['location']['latitude'],
+                         item['place']['location']['longitude'],
+                         "<b>{}</b>".format(item['place']['name'])]
+                    )
+                    # make sure there are dublicates
+                    list_of_names[item['place']['name']] = True
+    except KeyError:
+        print("key error")
 
     return list_of_locations
 
@@ -367,18 +387,21 @@ def get_fb_work(auth_token):
     result = r.json()
     work_data = ""
     work_id = ""
-    if 'work' in result:
-        for item in result['work']:
-            if 'employer' in item:
-                work_id = item['employer']['id']
-                if 'name' in item['employer']:
-                    work_data += "{}, ".format(item['employer']['name'])
-    if not work_data:
-        return ["You have no work data", "http://placehold.it/150x150"]
-    else:
-        # hotfix to get img url
-        img_url = get_fb_photo_url_by_id(auth_token, work_id, 150,150)
-        return [work_data[0:len(work_data) - 2], img_url]
+    try:
+        if 'work' in result:
+            for item in result['work']:
+                if 'employer' in item:
+                    work_id = item['employer']['id']
+                    if 'name' in item['employer']:
+                        work_data += "{}, ".format(item['employer']['name'])
+        if not work_data:
+            return ["You have no work data", "http://placehold.it/150x150"]
+        else:
+            # hotfix to get img url
+            img_url = get_fb_photo_url_by_id(auth_token, work_id, 150,150)
+            return [work_data[0:len(work_data) - 2], img_url]
+    except KeyError:
+        return ""
 
 
 def get_fb_education(auth_token):
@@ -393,18 +416,21 @@ def get_fb_education(auth_token):
     result = r.json()
     education_data = ""
     education_id = ""
-    if 'education' in result:
-        for item in result['education']:
-            if 'school' in item:
-                education_id = item['school']['id']
-                if 'name' in item['school']:
-                    education_data += "{}, ".format(item['school']['name'])
-    if not education_data:
-        return ["You have no education data", "http://placehold.it/150x150"]
-    else:
-        # hotfix to get img url
-        img_url = get_fb_photo_url_by_id(auth_token, education_id, 150,150)
-        return [education_data[0:len(education_data)-2], img_url]
+    try:
+        if 'education' in result:
+            for item in result['education']:
+                if 'school' in item:
+                    education_id = item['school']['id']
+                    if 'name' in item['school']:
+                        education_data += "{}, ".format(item['school']['name'])
+        if not education_data:
+            return ["You have no education data", "http://placehold.it/150x150"]
+        else:
+            # hotfix to get img url
+            img_url = get_fb_photo_url_by_id(auth_token, education_id, 150,150)
+            return [education_data[0:len(education_data)-2], img_url]
+    except KeyError:
+        return ""
 
 
 # ---- Spotify services ---
@@ -418,14 +444,17 @@ def get_spotify_artists(auth_token):
     sp = spotipy.Spotify(auth=auth_token)
     artists = []
     top_artists = sp.current_user_top_artists(5, 0, 'long_term')
-    for item in top_artists['items']:
-        artists.append(
-            [
-                item['name'],
-                item['images'][0]['url']
-            ]
-        )
-    return artists
+    try:
+        for item in top_artists['items']:
+            artists.append(
+                [
+                    item['name'],
+                    item['images'][0]['url']
+                ]
+            )
+        return artists
+    except KeyError:
+        return ""
 
 
 def get_spotify_tracks(auth_token):
@@ -437,15 +466,18 @@ def get_spotify_tracks(auth_token):
     sp = spotipy.Spotify(auth=auth_token)
     result = sp.current_user_top_tracks(5, 0, 'long_term')
     top_tracks = []
-    for item in result['items']:
-        top_tracks.append(
-            [
-                item['name'],
-                item['album']['name'],
-                item['album']['images'][0]['url']
-            ]
-        )
-    return top_tracks
+    try:
+        for item in result['items']:
+            top_tracks.append(
+                [
+                    item['name'],
+                    item['album']['name'],
+                    item['album']['images'][0]['url']
+                ]
+            )
+        return top_tracks
+    except KeyError:
+        return ""
 
 
 # --- flickr services ---
