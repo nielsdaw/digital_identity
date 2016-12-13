@@ -300,13 +300,14 @@ def get_tagged_places(auth_token):
     list_of_names = {}
     for item in result['data']:
         if item['place']['location'] and item['place']['name'] not in list_of_names:
-            list_of_locations.append(
-                [item['place']['location']['latitude'],
-                 item['place']['location']['longitude'],
-                 "<b>{}</b>".format(item['place']['name'])]
-            )
-            # make sure there are dublicates
-            list_of_names[item['place']['name']] = True
+            if 'latitude' in item['place']['location']:
+                list_of_locations.append(
+                    [item['place']['location']['latitude'],
+                     item['place']['location']['longitude'],
+                     "<b>{}</b>".format(item['place']['name'])]
+                )
+                # make sure there are dublicates
+                list_of_names[item['place']['name']] = True
 
     return list_of_locations
 
