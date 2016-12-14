@@ -228,7 +228,8 @@ def get_cafes_and_bars(auth_token):
             else:
                 result = requests.get(result['paging']['next']).json()
 
-        except KeyError:
+        except KeyError as e:
+            print("key error: {}".format(e))
             break
 
     # hotfix to get pretty img else insert dunmmy data
@@ -296,7 +297,8 @@ def get_likes_locations(auth_token):
             # after first request, the response json pattern changes
             else:
                 result = requests.get(result['paging']['next']).json()
-        except KeyError:
+        except KeyError as e:
+            print("key error: {}".format(e))
             break
     return list_of_locations
 
@@ -326,8 +328,8 @@ def get_tagged_places(auth_token):
                     )
                     # make sure there are dublicates
                     list_of_names[item['place']['name']] = True
-    except KeyError:
-        print("key error")
+    except KeyError as e:
+        print("key error: {}".format(e))
 
     return list_of_locations
 
@@ -370,7 +372,8 @@ def get_events_locations(auth_token):
                             )
             # Attempt to make a request to the next page of data, if it exists.
             result = requests.get(result['paging']['next']).json()
-        except KeyError:
+        except KeyError as e:
+            print("key error: {}".format(e))
             break
     return list_of_locations
 
@@ -400,7 +403,8 @@ def get_fb_work(auth_token):
             # hotfix to get img url
             img_url = get_fb_photo_url_by_id(auth_token, work_id, 150,150)
             return [work_data[0:len(work_data) - 2], img_url]
-    except KeyError:
+    except KeyError as e:
+        print("key error: {}".format(e))
         return ""
 
 
@@ -429,7 +433,8 @@ def get_fb_education(auth_token):
             # hotfix to get img url
             img_url = get_fb_photo_url_by_id(auth_token, education_id, 150,150)
             return [education_data[0:len(education_data)-2], img_url]
-    except KeyError:
+    except KeyError as e:
+        print("key error: {}".format(e))
         return ""
 
 
@@ -453,7 +458,8 @@ def get_spotify_artists(auth_token):
                 ]
             )
         return artists
-    except KeyError:
+    except KeyError as e:
+        print("key error: {}".format(e))
         return ""
 
 
@@ -476,7 +482,8 @@ def get_spotify_tracks(auth_token):
                 ]
             )
         return top_tracks
-    except KeyError:
+    except KeyError as e:
+        print("key error: {}".format(e))
         return ""
 
 
@@ -513,7 +520,8 @@ def get_flickr_image_linkedin(string):
     try:
         photo_url = result['photos']['photo'][0]['url_c']
         return photo_url
-    except KeyError:
+    except KeyError as e:
+        print("key error: {}".format(e))
         return ""
 
 
@@ -532,5 +540,6 @@ def get_flickr_image(string):
     try:
         photo_url = result['photos']['photo'][0]['url_c']
         return photo_url
-    except KeyError:
+    except KeyError as e:
+        print("key error: {}".format(e))
         return ""
