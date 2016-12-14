@@ -213,7 +213,6 @@ class SpotifyProfile(models.Model):
     objects = SpotifyManager()
 
 
-
 class TwitterProfile(models.Model):
     # TODO create this model - Twitter
     pass

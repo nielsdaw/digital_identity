@@ -18,30 +18,12 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
     else:
         social_media_dict = strategy.session_get('social_media')
 
-
     # Facebook
     if backend.name == 'facebook':
         print("facebook response: {}".format(response))
-        relationship = 'Not public'
-        hometown = 'Not public'
-        location = "Not public"
+
+        # hotfix of devices
         devices = "SmartPhone"
-        email = 'not public'
-
-        # hot fix's
-        if response.get('email'):
-            email = response.get('email')
-
-
-        if 'relationship_status' in response:
-            relationship = response.get('relationship_status')
-
-        if 'hometown' in response:
-            hometown = response.get('hometown')['name']
-
-        if 'location' in response:
-            location = response.get('location')['name']
-
         if 'devices' in response:
             if 'os' in response['devices'][0]:
                 if 'iOS' in response['devices'][0]['os']:
@@ -53,12 +35,12 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
             response.get('id'),
             response.get('first_name'),
             response.get('last_name'),
-            response.get('birthday'),
-            relationship,
-            hometown,
-            location,
-            email,
-            response.get('gender'),
+            response.get('birthday') if 'birthday' in response else 'Not Public',
+            response.get('relationship_status') if 'relationship_status' in response else 'Not public',
+            response.get('hometown')['name'] if 'hometown' in response else 'Not public',
+            response.get('location')['name'] if 'location' in response else 'Not public',
+            response.get('email') if 'email' in response else 'Not public',
+            response.get('gender') if 'gender' in response else 'Not Public',
             response['picture']['data']['url'],
             response['friends']['summary']['total_count'],
             response.get('link'),
@@ -100,7 +82,6 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
         # add instagram dict to social media dict
         social_media_dict.update({'instagram': instagram_dict})
 
-
     # LinkedIn
     elif backend.name == 'linkedin':
         print("LinkedIn response: {}".format(response))
@@ -109,15 +90,15 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
         linkedin_profile = LinkedinProfile.objects.create_linkedin_profile(
             response['firstName'],
             response['lastName'],
-            response['emailAddress'],
-            response['headline'],
-            response['industry'],
-            response['location']['name'],
-            response['currentShare']['content']['title'],
-            response['numConnections'],
-            response['summary'] if 'summary' in response else "",
-            response['specialties'] if 'specialities' in response else "",
-            response['positions']['_total'],
+            response['emailAddress'] if 'emailAddress' in response else 'Not Public',
+            response['headline'] if 'headline' in response else 'not available',
+            response['industry'] if 'industry' in response else 'not available',
+            response['location']['name'] if 'location' in response else '',
+            response['currentShare']['content']['title'] if 'currentShare' in response else 'not available',
+            response['numConnections'] if 'numConnections' in response else 'Not Public',
+            response['summary'] if 'summary' in response else '',
+            response['specialties'] if 'specialities' in response else '',
+            response['positions']['_total'] if 'positions' in response else 'Not Public',
             response['pictureUrls']['values'][0]
         )
 
@@ -126,7 +107,6 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
 
         # add linkedin dict to social media dict
         social_media_dict.update({'linkedin': linkedin_dict})
-
 
 
     # Spotify
@@ -146,6 +126,5 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
         # add linkedin dict to social media dict
         social_media_dict.update({'spotify': spotify_dict})
 
-
-    #update social media in session
+    # update social media in session
     strategy.session_set('social_media', social_media_dict)
