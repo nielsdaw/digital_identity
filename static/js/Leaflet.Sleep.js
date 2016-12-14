@@ -60,7 +60,7 @@ L.Control.sleepMapControl = function(){
 
 L.Map.mergeOptions({
   sleep: true,
-  sleepTime: 750,
+  sleepTime: 3000,
   wakeTime: 1000,
   wakeMessageTouch: 'Touch to Wake',
   sleepNote: true,
