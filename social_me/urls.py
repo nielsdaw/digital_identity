@@ -53,6 +53,9 @@ urlpatterns = [
         r'^dashboard/',
         include('dashboard.urls', namespace='dashboard')
     ),
+    url(r'api/',
+        include('api.urls', namespace='api')
+        ),
     url(
         '',
         include('social.apps.django_app.urls', namespace='social')

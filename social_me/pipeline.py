@@ -29,7 +29,6 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
                     if 'iOS' in response['devices'][0]['os']:
                         devices = 'iPhone'
 
-
             # instantiate new facebook dashboard, without storing to database
             facebook_profile = FacebookProfile.objects.create_facebook_profile(
                 response.get('id'),

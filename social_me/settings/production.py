@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social.apps.django_app.default',
     'dashboard',
+    'api',
+    'restless',
 ]
 
 MIDDLEWARE_CLASSES = [

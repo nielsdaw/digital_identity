@@ -165,20 +165,6 @@ SOCIAL_AUTH_LINKEDIN_FIELD_SELECTORS = [
     'picture-urls::(original)',
 ]
 
-# ---LINKEDIN PUBLIC AVAILABLE FIELDS ---
-#    'email-address',
-#     'headline',
-#     'industry',
-#     'location',
-#     'current-share',
-#     'num-connections',
-#     'summary',
-#     'num-connections-capped',
-#     'specialties',
-#     'positions',
-#     'picture-url',
-
-
 
 # --- Spotify settings ---
 

@@ -81,7 +81,6 @@ class FacebookDetailView(TemplateView):
     template_name = "dashboard/facebook_detail.html"
 
     def get(self, request, *args, **kwargs):
+
         if 'facebook' in request.session['social_media']:
-            fb = request.session['social_media']['spotify']
-            print("what is in session: {}".format(fb))
-        return render(request, self.template_name, {'facebook': request.session['social_media']['facebook']})
+            return render(request, self.template_name, )
