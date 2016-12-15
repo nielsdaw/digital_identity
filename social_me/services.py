@@ -538,8 +538,8 @@ def get_flickr_image(string):
     extras = 'url_c'
     result = flickr.photos.search(text=search_string, per_page=1, extras=extras)
     try:
-        photo_url = result['photos']['photo'][0]['url_c']
-        return photo_url
+        # photo_url = result['photos']['photo'][0]['url_c']
+        return ""
     except KeyError as e:
         print("key error: {}".format(e))
         return ""
