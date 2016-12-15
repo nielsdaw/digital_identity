@@ -50,8 +50,8 @@
       <file leaf-file-name="services.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/social_me/services.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="541" column="16" selection-start-line="541" selection-start-column="16" selection-end-line="541" selection-end-column="16" />
+            <state relative-caret-position="458">
+              <caret line="524" column="17" selection-start-line="524" selection-start-column="17" selection-end-line="524" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -512,13 +512,6 @@
       <option name="presentableId" value="Default" />
       <updated>1478518452346</updated>
     </task>
-    <task id="LOCAL-00086" summary="added url to allowed hosts">
-      <created>1479840560550</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1479840560550</updated>
-    </task>
     <task id="LOCAL-00087" summary="hotfix for field devices">
       <created>1479841586474</created>
       <option name="number" value="00087" />
@@ -855,7 +848,14 @@
       <option name="project" value="LOCAL" />
       <updated>1481740068037</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="changed leaflet sleep time">
+      <created>1481832506170</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1481832506171</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1300,8 +1300,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/social_me/services.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="541" column="16" selection-start-line="541" selection-start-column="16" selection-end-line="541" selection-end-column="16" />
+        <state relative-caret-position="458">
+          <caret line="524" column="17" selection-start-line="524" selection-start-column="17" selection-end-line="524" selection-end-column="17" />
           <folding />
         </state>
       </provider>
