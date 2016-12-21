@@ -32,6 +32,7 @@ class TestMiddleware(SocialAuthExceptionMiddleware):
             else:
                 messages.add_message(request, messages.INFO, auth_unexpected)
 
+        print(exception)
         return redirect(url)
 
 
