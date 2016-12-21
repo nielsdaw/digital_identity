@@ -31,8 +31,8 @@ class TestMiddleware(SocialAuthExceptionMiddleware):
                 messages.add_message(request, messages.INFO, auth_cancel.format(backend_name))
             else:
                 messages.add_message(request, messages.INFO, auth_unexpected)
-
-        print(exception)
+        
+        print("AuthException: {}".format(exception))
         return redirect(url)
 
 
