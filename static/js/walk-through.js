@@ -23,17 +23,20 @@ $(document).ready(function () {
             {
             element: "#connect-profiles",
             title: "Connect profiles ",
-            content: "Here you can connect your social media profiles."
+            content: "Here you can connect your social media profiles.",
+            placement: "top"
             },
             {
             element: "#social-me",
             title: "Social Me",
-            content: "Here you can view your Social Me, which is based on the information you provide on your connected social media profiles."
+            content: "Here you can view your Social Me, which is based on the information you provide on your connected social media profiles.",
+            placement: "top"
             },
             {
             element: "#dashboard",
             title: "Dashboard",
-            content: "Here you can have a brief overview of your connected social media profiles."
+            content: "Here you can have a brief overview of your connected social media profiles.",
+            placement: "top"
             },
         ]});
 
