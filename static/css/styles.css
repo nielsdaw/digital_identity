@@ -62,6 +62,10 @@ body{
         height:150px;
     }
 
+    #menu-space{
+        padding-bottom: 2em;
+    }
+
 }
 
 .passport-text .lead{
@@ -89,10 +93,6 @@ body{
     height: 100px;
     width: 100px;
 }
-
-/*div{*/
-    /*border: 1px solid black;*/
-/*}*/
 
 .menu-bar{
     height: 40px;
@@ -241,6 +241,10 @@ body{
     color: #5fba7d;
     text-shadow: 1px 1px 1px #ccc;
     font-size: 1.3em;
+}
+
+.success-color{
+    color: rgba(40, 189, 47, 1);
 }
 
 /* Green check icon */

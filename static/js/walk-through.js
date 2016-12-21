@@ -1,7 +1,24 @@
+/**
+ * Created by nielsdaw on 22/11/2016.
+ */
+
 $(document).ready(function () {
     // Instance the tour
     var tour = new Tour({
         name: "social-tour",
+        backdrop: true,
+        template: "<div class='popover tour'>" +
+                    "<div class='arrow'></div>" +
+                    "<h3 class='popover-title'></h3>" +
+                    "<div class='popover-content'></div>" +
+                    "<div class='popover-navigation'>" +
+                        "<div class='btn-group'>" +
+                            "<button class='btn btn-sm btn-danger' data-role='prev'>« Prev</button>" +
+                            "<button class='btn btn-sm btn-warning' data-role='next'>Next »</button>"+
+                        "</div>"+
+                        "<button class='btn btn-sm btn-success' data-role='end'>End tour</button>" +
+                    "</div>" +
+                "</div>",
         steps: [
             {
             element: "#connect-profiles",
@@ -18,11 +35,6 @@ $(document).ready(function () {
             title: "Dashboard",
             content: "Here you can have a brief overview of your connected social media profiles."
             },
-            {
-            element: "#side-bar",
-            title: "Sidebar",
-            content: "Click here to view the sidebar"
-            }
         ]});
 
         // Initialize the tour

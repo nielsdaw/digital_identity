@@ -9,33 +9,35 @@ from django.utils.http import urlquote
 from social.exceptions import SocialAuthBaseException
 from social.utils import social_logger
 from social.apps.django_app.middleware import SocialAuthExceptionMiddleware
-from django.shortcuts import HttpResponse
 from social import exceptions as social_exceptions
 from django.utils.deprecation import MiddlewareMixin
 
 
 class TestMiddleware(SocialAuthExceptionMiddleware):
 
-    def process_exception(request, exception):
-        if hasattr(social_exceptions, 'AuthCanceled'):
-            return HttpResponse("I'm the Pony %s" % exception)
-        else:
-            raise exception
+    def process_exception(self, request, exception):
+        auth_unexpected = 'An unexpected error occurred, please try to connect again!'
+        auth_associated = 'The {} account you are trying to connect is already used by someone else. Please try again!'
+        auth_cancel = 'You cancelled the connection to {}. Please try again!'
+        url = self.get_redirect_uri(request, exception)
 
-    def __init__(self, get_response):
-        self.get_response = get_response
-        # One-time configuration and initialization.
+        if isinstance(exception, SocialAuthBaseException):
+            backend = getattr(request, 'backend', None)
+            backend_name = getattr(backend, 'name', 'unknown-backend')
 
-    def __call__(self, request):
-        # Code to be executed for each request before
-        # the view (and later middleware) are called.
+            if type(exception) == social_exceptions.AuthAlreadyAssociated:
+                messages.add_message(request, messages.INFO, auth_associated.format(backend_name))
+            elif type(exception) == social_exceptions.AuthCanceled:
+                messages.add_message(request, messages.INFO, auth_cancel.format(backend_name))
+            else:
+                messages.add_message(request, messages.INFO, auth_unexpected)
 
-        response = self.get_response(request)
+        return redirect(url)
 
-        # Code to be executed for each request/response after
-        # the view is called.
 
-        return response
+
+
+
 
 
 class SocialAuthExceptionMiddlewareCustom(MiddlewareMixin):
