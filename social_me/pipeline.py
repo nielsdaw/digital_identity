@@ -1,6 +1,7 @@
 from dashboard.models import FacebookProfile, InstagramProfile, LinkedinProfile, SpotifyProfile
 from django.forms.models import model_to_dict
 from social_me import services
+from django.contrib import messages
 
 
 def update_profile(strategy, backend, user, response, *args, **kwargs):
@@ -117,7 +118,7 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
                 response['email'],
                 response['followers']['total'],
                 response['access_token'],
-                response['images'][0]['url']
+                response['images'][0]['url'] if len(response['images']) > 0 else 'not available'
             )
             # change it to dict, in order to set in session
             spotify_dict = model_to_dict(spotify_profile)
@@ -129,4 +130,4 @@ def update_profile(strategy, backend, user, response, *args, **kwargs):
         strategy.session_set('social_media', social_media_dict)
 
     except KeyError as e:
-        print("pipeline KeyError: {}".format(e))
+        print("Pipeline KeyError: {}".format(e))
