@@ -6,6 +6,7 @@ body{
     background-size: cover;
     overflow-x: hidden;
     font-size: 18px;
+    will-change: transform;
 }
 
 @media (min-width: 1035px) {
