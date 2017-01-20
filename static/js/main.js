@@ -35,7 +35,6 @@ $(document).ready(function () {
 
 
 // Loader Modal
-// close the sidebar and hide the menu-bar-button
 $(document).ready(function () {
     $(".social-me").click(function(e) {
         e.preventDefault();

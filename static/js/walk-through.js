@@ -16,7 +16,7 @@ $(document).ready(function () {
                             "<button class='btn btn-sm btn-danger' data-role='prev'>« Prev</button>" +
                             "<button class='btn btn-sm btn-warning' data-role='next'>Next »</button>"+
                         "</div>"+
-                        "<button class='btn btn-sm btn-success' data-role='end'>End tour</button>" +
+                        "<button class='btn btn-sm btn-success' data-role='end'>Close</button>" +
                     "</div>" +
                 "</div>",
         steps: [
