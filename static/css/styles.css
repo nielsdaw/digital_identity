@@ -1,14 +1,16 @@
-body{
-    background: url("../img/background/Elegant_Background-2.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    overflow-x: hidden;
-    font-size: 18px;
-}
 
 @media (min-width: 1035px) {
+
+    body{
+        background: url("../img/background/Elegant_Background-2.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow-x: hidden;
+        font-size: 18px;
+    }
+
     .passport{
         background: url("../img/passport1.jpeg");
         -webkit-background-size: cover;
@@ -39,6 +41,17 @@ body{
 }
 
 @media (max-width: 1034px) {
+
+    body{
+        background: url("../img/background/Elegant_Background-mobile.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow-x: hidden;
+        font-size: 18px;
+    }
+
     .passport{
         background: url("../img/passport1.jpeg");
         -webkit-background-size: cover;
